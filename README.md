@@ -17,6 +17,18 @@ Realizzato in HTML/CSS/JS vanilla, senza framework né CMS. Deploy su Netlify/Cl
 - `privacy.html` — Privacy & cookie
 - `404.html` — Pagina non trovata
 
+## Deploy
+
+GitHub Pages: https://alessiopesit-boop.github.io/alessiopes-web
+
+Push su `main` → deploy automatico. Release → versione taggata (gestita da release-please).
+
+## Setup locale
+
+```bash
+npm run serve   # avvia server locale
+```
+
 ## Stato
 
 Alpha — struttura e design completati, contenuti reali e immagini da inserire.

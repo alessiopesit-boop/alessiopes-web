@@ -1,0 +1,9 @@
+{
+  "name": "alessiopes-web",
+  "version": "0.1.0",
+  "description": "Sito personale di Alessio Pes — sviluppatore web e software freelance",
+  "private": true,
+  "scripts": {
+    "serve": "npx serve ."
+  }
+}
