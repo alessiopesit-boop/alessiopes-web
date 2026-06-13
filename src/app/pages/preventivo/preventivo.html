@@ -1,0 +1,112 @@
+<header class="page-head">
+  <div class="glow"></div>
+  <div class="wrap inner">
+    <span class="kicker">Preventivo in un minuto</span>
+    <h1>Costruisci il tuo <span class="brace">preventivo</span>.</h1>
+    <p>Scegli cosa ti serve: la stima si aggiorna mentre scegli. È indicativa e senza impegno — serve a darti un'idea chiara prima ancora di sentirci. Quando hai finito, me la mandi su WhatsApp con un tocco.</p>
+  </div>
+</header>
+
+<main>
+  <section class="block tight">
+    <div class="wrap">
+      <div class="cfg">
+        <!-- FORM -->
+        <form class="cfg-form reveal" autocomplete="off" (submit)="$event.preventDefault()">
+
+          <div class="cfg-group">
+            <div class="cfg-q mono"><span class="qn">01</span> Cosa ti serve?</div>
+            <div class="cfg-opts">
+              @for (t of types; track t.val; let i = $index) {
+                <button type="button" class="cfg-opt" [class.on]="typeIdx() === i" (click)="selectType(i)">{{ t.short }}<span class="px">{{ t.px }}</span></button>
+              }
+            </div>
+          </div>
+
+          @if (isVetrina()) {
+            <div class="cfg-group">
+              <div class="cfg-q mono"><span class="qn">02</span> Quante pagine, all'incirca?</div>
+              <div class="cfg-slider">
+                <input type="range" min="3" max="12" step="1" [value]="pages()" (input)="onPages($event)" />
+                <span class="val mono">{{ pagesLabel() }}</span>
+              </div>
+              <div class="cfg-hint mono">Fino a 5 pagine sono incluse nel prezzo base.</div>
+            </div>
+          }
+
+          <div class="cfg-group">
+            <div class="cfg-q mono"><span class="qn">03</span> Funzioni extra <span style="color:var(--faint);font-size:12px;">(facoltative)</span></div>
+            <div class="cfg-opts">
+              @for (a of addons; track a.val; let i = $index) {
+                <button type="button" class="cfg-opt" [class.on]="isAddonOn(i)" (click)="toggleAddon(i)">{{ a.short }}<span class="px">{{ a.px }}</span></button>
+              }
+            </div>
+          </div>
+
+          <div class="cfg-group">
+            <div class="cfg-q mono"><span class="qn">04</span> Vuoi farti trovare su Google?</div>
+            <div class="cfg-opts">
+              @for (g of googleOpts; track g.label; let i = $index) {
+                <button type="button" class="cfg-opt" [class.on]="googleIdx() === i" (click)="googleIdx.set(i)">{{ g.short }}@if (g.px) {<span class="px">{{ g.px }}</span>}</button>
+              }
+            </div>
+          </div>
+
+          <div class="cfg-group">
+            <div class="cfg-q mono"><span class="qn">05</span> Manutenzione dopo i 3 mesi inclusi?</div>
+            <div class="cfg-opts">
+              @for (m of maintOpts; track m.label; let i = $index) {
+                <button type="button" class="cfg-opt" [class.on]="maintIdx() === i" (click)="maintIdx.set(i)">{{ m.short }}</button>
+              }
+            </div>
+            <div class="cfg-hint mono">Aggiornamenti, backup, sicurezza e piccole modifiche incluse. Sempre disdicibile.</div>
+          </div>
+
+          <div class="cfg-group">
+            <div class="cfg-q mono"><span class="qn">06</span> Da dove partiamo?</div>
+            <div class="cfg-opts">
+              @for (s of startOpts; track s.label; let i = $index) {
+                <button type="button" class="cfg-opt" [class.on]="startIdx() === i" (click)="startIdx.set(i)">{{ s.short }}</button>
+              }
+            </div>
+          </div>
+
+          <div class="cfg-group">
+            <div class="cfg-q mono"><span class="qn">07</span> Quando vorresti partire?</div>
+            <div class="cfg-opts">
+              @for (w of whenOpts; track w.label; let i = $index) {
+                <button type="button" class="cfg-opt" [class.on]="whenIdx() === i" (click)="whenIdx.set(i)">{{ w.short }}</button>
+              }
+            </div>
+          </div>
+
+          <div class="cfg-group">
+            <div class="cfg-q mono"><span class="qn">08</span> Vuoi aggiungere due righe? <span style="color:var(--faint);font-size:12px;">(facoltativo)</span></div>
+            <textarea maxlength="500" rows="4" [value]="note()" (input)="onNote($event)" placeholder="Raccontami in breve la tua attività, cosa ti piace, esempi di siti che ti piacciono..." style="width:100%;font-family:var(--sans);font-size:15px;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 15px;resize:vertical;"></textarea>
+            <div class="cfg-hint mono" style="display:flex;justify-content:space-between;gap:12px;"><span>Niente dati sensibili: è solo una bozza per orientarci.</span><span>{{ noteLeft() }} caratteri</span></div>
+          </div>
+
+        </form>
+
+        <!-- OUTPUT -->
+        <aside class="cfg-out reveal d2">
+          <span class="lbl mono">Stima una tantum</span>
+          <div class="cfg-total mono"><span class="cur">~</span>{{ totalText() }}<span class="cur">€</span></div>
+          <div class="mono" style="font-size:11px;color:var(--accent-2);margin-top:4px;">prezzo finale · nessuna IVA da aggiungere</div>
+          <ul class="cfg-recap">
+            @for (r of recap(); track r[0]) {
+              <li><span>{{ r[0] }}</span><b>{{ r[1] }}</b></li>
+            }
+          </ul>
+          <div class="cfg-recurring mono" [innerHTML]="recurringHtml()"></div>
+          <a class="btn btn-wa" [href]="waHref()" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.2 0-.3 0-.5s-.5-1.3-.7-1.7-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.8 11.8 0 0 0 4.6 4c2.1.7 2.1.5 2.5.5a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>
+            Invia su WhatsApp <span class="arrow">→</span>
+          </a>
+          <a class="btn btn-ghost" [href]="mailHref()">Oppure invia per email</a>
+          <p class="cfg-disc mono">Stima indicativa e finale: in regime forfettario non applico IVA. Gli eventuali budget pubblicitari si pagano a parte, direttamente a Google. Il preventivo definitivo lo concordiamo insieme prima di iniziare, senza impegno.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
