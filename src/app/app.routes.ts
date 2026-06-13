@@ -9,20 +9,17 @@ export const routes: Routes = [
   {
     path: 'servizi',
     title: 'Servizi e prezzi — Alessio Pes',
-    data: { soon: 'Servizi e prezzi' },
-    loadComponent: () => import('./pages/coming-soon/coming-soon').then((m) => m.ComingSoon),
+    loadComponent: () => import('./pages/servizi/servizi').then((m) => m.Servizi),
   },
   {
     path: 'progetti',
     title: 'Progetti — Alessio Pes',
-    data: { soon: 'Progetti' },
-    loadComponent: () => import('./pages/coming-soon/coming-soon').then((m) => m.ComingSoon),
+    loadComponent: () => import('./pages/progetti/progetti').then((m) => m.Progetti),
   },
   {
     path: 'chi-sono',
     title: 'Chi sono — Alessio Pes',
-    data: { soon: 'Chi sono' },
-    loadComponent: () => import('./pages/coming-soon/coming-soon').then((m) => m.ComingSoon),
+    loadComponent: () => import('./pages/chi-sono/chi-sono').then((m) => m.ChiSono),
   },
   {
     path: 'preventivo',
@@ -45,8 +42,7 @@ export const routes: Routes = [
   {
     path: 'contatti',
     title: 'Contatti — Alessio Pes',
-    data: { soon: 'Contatti' },
-    loadComponent: () => import('./pages/coming-soon/coming-soon').then((m) => m.ComingSoon),
+    loadComponent: () => import('./pages/contatti/contatti').then((m) => m.Contatti),
   },
   {
     path: 'privacy',
