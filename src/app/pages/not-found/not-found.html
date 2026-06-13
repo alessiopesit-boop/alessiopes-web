@@ -1,0 +1,33 @@
+<header class="hero" id="top">
+  <canvas id="net" appParticleNetwork></canvas>
+  <div class="hero-glow"></div>
+  <div class="hero-grid-fade"></div>
+  <div class="wrap" style="position:relative; z-index:2; width:100%; padding:112px 0 60px; text-align:center; display:flex; flex-direction:column; align-items:center;">
+    <span class="kicker" style="justify-content:center;">Errore 404</span>
+    <div class="nf-code">404</div>
+    <h1 style="font-family:var(--mono); font-weight:800; font-size:clamp(28px,4.4vw,46px); letter-spacing:-0.03em; line-height:1.08; margin-top:6px; text-wrap:balance;">Questa pagina non esiste <span class="brace">.</span></h1>
+    <p style="color:var(--muted); margin-top:18px; max-width:48ch; font-size:clamp(15px,1.6vw,18px); text-wrap:pretty;">Forse il link è vecchio, la pagina è stata spostata o c'è un refuso nell'indirizzo. Nessun problema: torna alla home, oppure scrivimi e ti indico al volo quello che cerchi.</p>
+
+    <div class="terminal" style="max-width:540px; width:100%; margin:34px auto 0; text-align:left;">
+      <div class="term-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">alessio&#64;studio: ~/pagina-richiesta</span></div>
+      <div class="term-body" style="min-height:auto;">
+        <div class="line"><span class="dim">alessio&#64;studio:~$ </span><span class="out">apri pagina-richiesta</span></div>
+        <div class="line dim">cerco nel sito…</div>
+        <div class="line nf-err">✗ 404 — pagina non trovata</div>
+        <div class="line cm"># spostata, rinominata o link non più valido</div>
+        <div class="line"><span class="dim">alessio&#64;studio:~$ </span><span class="out">torna --alla-home</span><span class="cursor-blk blink"></span></div>
+      </div>
+    </div>
+
+    <div class="hero-cta" style="justify-content:center; margin-top:32px;">
+      <a routerLink="/" class="btn btn-primary">Torna alla home <span class="arrow">→</span></a>
+      <a routerLink="/contatti" class="btn btn-ghost">Scrivimi</a>
+    </div>
+
+    <div class="hero-meta" style="justify-content:center; margin-top:34px;">
+      <span><a routerLink="/servizi" style="color:var(--accent);">Servizi e prezzi</a></span>
+      <span><a routerLink="/progetti" style="color:var(--accent);">Progetti</a></span>
+      <span><a routerLink="/faq" style="color:var(--accent);">FAQ</a></span>
+    </div>
+  </div>
+</header>

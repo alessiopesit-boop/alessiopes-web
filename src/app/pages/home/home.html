@@ -1,38 +1,5 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Alessio Pes — Siti web e software su misura per la tua attività</title>
-<meta name="description" content="Realizzo siti web, gestionali e app su misura per piccole attività e P.IVA. Tutto custom, niente WordPress. Dal primo incontro al sito online, sempre io." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/site.css" />
-<script src="image-slot.js"></script>
-</head>
-<body>
-
-<nav id="nav">
-  <div class="wrap nav-inner">
-    <a href="index.html" class="logo"><span class="mark">AP</span> Alessio Pes</a>
-    <div class="nav-links">
-      <a href="servizi.html">Servizi e prezzi</a>
-      <a href="progetti.html">Progetti</a>
-      <a href="chi-sono.html">Chi sono</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contatti.html">Contatti</a>
-      <button class="theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Tema chiaro/scuro">
-        <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-        <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2 12h2.4M19.6 12H22M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/></svg>
-      </button>
-      <a href="preventivo.html" class="nav-cta">Preventivo →</a>
-    </div>
-  </div>
-</nav>
-
 <header class="hero" id="top">
-  <canvas id="net"></canvas>
+  <canvas id="net" appParticleNetwork></canvas>
   <div class="hero-glow"></div>
   <div class="hero-grid-fade"></div>
   <div class="wrap hero-inner">
@@ -41,8 +8,8 @@
       <h1>Il sito che la tua attività <span class="hl">merita</span> davvero <span class="brace">.</span></h1>
       <p class="lede">Siti, gestionali e app fatti su misura per te — non template riciclati. Ti faccio trovare dai clienti, ti tolgo i pensieri tecnici, e parli sempre con una persona sola: io.</p>
       <div class="hero-cta">
-        <a href="servizi.html" class="btn btn-primary">Vedi servizi e prezzi <span class="arrow">→</span></a>
-        <a href="preventivo.html" class="btn btn-ghost">Calcola il preventivo</a>
+        <a routerLink="/servizi" class="btn btn-primary">Vedi servizi e prezzi <span class="arrow">→</span></a>
+        <a routerLink="/preventivo" class="btn btn-ghost">Calcola il preventivo</a>
       </div>
       <div class="hero-meta">
         <span><b>1-2 settimane</b> per un sito vetrina</span>
@@ -52,8 +19,8 @@
     </div>
     <div class="term-side">
       <div class="terminal">
-        <div class="term-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">alessio@studio: ~/nuovo-progetto</span></div>
-        <div class="term-body" id="typed"></div>
+        <div class="term-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">alessio&#64;studio: ~/nuovo-progetto</span></div>
+        <div class="term-body" appTerminal></div>
       </div>
     </div>
   </div>
@@ -76,11 +43,11 @@
           <h2 class="sec-title"><span class="num mono">01</span>Cosa posso fare per te</h2>
           <p class="sec-note" style="margin-top:10px;">// Dal sito vetrina al software su misura.</p>
         </div>
-        <a href="servizi.html" class="btn btn-ghost">Dettagli e prezzi <span class="arrow">→</span></a>
+        <a routerLink="/servizi" class="btn btn-ghost">Dettagli e prezzi <span class="arrow">→</span></a>
       </div>
 
       <div class="svc-grid reveal">
-        <a class="svc-card" href="servizi.html#vetrina">
+        <a class="svc-card" routerLink="/servizi" fragment="vetrina">
           <span class="ix mono">/01</span>
           <h3>Sito vetrina</h3>
           <span class="for mono">per chi vuole esserci ed essere trovato</span>
@@ -89,7 +56,7 @@
           <span class="go mono">Scopri di più <span class="arrow">→</span></span>
         </a>
 
-        <a class="svc-card" href="servizi.html#gestionale">
+        <a class="svc-card" routerLink="/servizi" fragment="gestionale">
           <span class="ix mono">/02</span>
           <h3>Sito + portale di gestione</h3>
           <span class="for mono">per chi vuole gestire tutto da solo</span>
@@ -98,7 +65,7 @@
           <span class="go mono">Scopri di più <span class="arrow">→</span></span>
         </a>
 
-        <a class="svc-card" href="servizi.html#ecommerce">
+        <a class="svc-card" routerLink="/servizi" fragment="ecommerce">
           <span class="ix mono">/03</span>
           <h3>Negozio online</h3>
           <span class="for mono">per chi vuole vendere i suoi prodotti</span>
@@ -107,7 +74,7 @@
           <span class="go mono">Scopri di più <span class="arrow">→</span></span>
         </a>
 
-        <a class="svc-card" href="servizi.html#app">
+        <a class="svc-card" routerLink="/servizi" fragment="app">
           <span class="ix mono">/04</span>
           <h3>App e software su misura</h3>
           <span class="for mono">per chi ha un'idea o un processo da digitalizzare</span>
@@ -145,33 +112,33 @@
           <h2 class="sec-title"><span class="num mono">03</span>Lavori recenti</h2>
           <p class="sec-note" style="margin-top:10px;">// Alcune cose che ho già realizzato e messo online.</p>
         </div>
-        <a href="progetti.html" class="btn btn-ghost">Tutti i progetti <span class="arrow">→</span></a>
+        <a routerLink="/progetti" class="btn btn-ghost">Tutti i progetti <span class="arrow">→</span></a>
       </div>
 
       <div class="proj-grid reveal">
         <article class="card">
           <div class="card-media">
             <div class="media-status"><span class="status live"><span class="led"></span>Online</span></div>
-            <image-slot id="proj-termo" shape="rect" fit="cover" placeholder="↑ screenshot del sito"></image-slot>
+            <image-slot placeholder="↑ screenshot del sito" />
           </div>
           <div class="card-content">
             <div class="card-top"><span class="card-idx mono">/01</span><span class="ptype">Sito vetrina · cliente P.IVA</span></div>
             <h3>Impresa termoidraulica</h3>
             <p>Sito professionale per un'impresa di termoidraulica: servizi, contatti rapidi e presenza online per farsi trovare dai clienti della zona.</p>
-            <a class="card-link mono" href="progetti.html">Vedi il progetto <span class="arrow">→</span></a>
+            <a class="card-link mono" routerLink="/progetti">Vedi il progetto <span class="arrow">→</span></a>
           </div>
         </article>
 
         <article class="card">
           <div class="card-media">
             <div class="media-status"><span class="status live"><span class="led"></span>Su Google Play</span></div>
-            <image-slot id="proj-glifo" shape="rect" fit="cover" placeholder="↑ screenshot Play Store"></image-slot>
+            <image-slot placeholder="↑ screenshot Play Store" />
           </div>
           <div class="card-content">
             <div class="card-top"><span class="card-idx mono">/02</span><span class="ptype">App mobile · pubblicata</span></div>
             <h3>Glifo — quiz di scrittura</h3>
             <p>Gioco a quiz pubblicato sul Play Store: dato un simbolo, riconosci la scrittura corretta. Sviluppata e rilasciata da zero.</p>
-            <a class="card-link mono" href="progetti.html">Vedi il progetto <span class="arrow">→</span></a>
+            <a class="card-link mono" routerLink="/progetti">Vedi il progetto <span class="arrow">→</span></a>
           </div>
         </article>
       </div>
@@ -183,7 +150,7 @@
     <div class="wrap">
       <div class="about-grid">
         <div class="about-photo reveal">
-          <image-slot id="foto-alessio-home" shape="rounded" radius="16" fit="cover" placeholder="↑ una tua foto (PNG/JPG)"></image-slot>
+          <image-slot placeholder="↑ una tua foto (PNG/JPG)" />
           <div class="photo-cap mono"><span class="led"></span> Alessio Pes · sviluppatore</div>
         </div>
         <div class="reveal d2">
@@ -191,7 +158,7 @@
           <p class="about-lede" style="margin-top:18px;">Sono <span class="accent">Alessio</span>. Costruisco siti e software su misura per piccole attività — e li seguo dall'idea fino al <span class="accent">server online</span>.</p>
           <p class="body">Non sono un'agenzia: sono una persona sola. Questo per te significa rispondo io, decidiamo insieme, e non finisci mai parcheggiato in un call center. Lavoro tutto su misura, senza WordPress: <span class="accent">il tuo sito, i contenuti e i dati restano tuoi</span> e li mantengo io, così sei sempre seguito — senza contratti capestro.</p>
           <div class="hero-cta">
-            <a href="chi-sono.html" class="btn btn-ghost">Conoscimi meglio <span class="arrow">→</span></a>
+            <a routerLink="/chi-sono" class="btn btn-ghost">Conoscimi meglio <span class="arrow">→</span></a>
           </div>
         </div>
       </div>
@@ -239,49 +206,6 @@
       <h3>Hai un'attività e ti serve un sito fatto bene?</h3>
       <p>Raccontamelo: ti rispondo con un'idea concreta, tempi e prezzo — senza impegno.</p>
     </div>
-    <a href="contatti.html" class="btn btn-primary reveal d1">Parliamone <span class="arrow">→</span></a>
+    <a routerLink="/contatti" class="btn btn-primary reveal d1">Parliamone <span class="arrow">→</span></a>
   </div>
 </section>
-
-<footer>
-  <div class="wrap foot-inner">
-    <div class="foot-brand">
-      <a href="index.html" class="logo"><span class="mark">AP</span> Alessio Pes</a>
-      <span class="c">Siti web, gestionali e app su misura per piccole attività e P.IVA. Tutto custom, niente WordPress.</span>
-    </div>
-    <div class="foot-cols">
-      <div class="foot-col">
-        <h5>Sito</h5>
-        <a href="servizi.html">Servizi e prezzi</a>
-        <a href="google.html">Farsi trovare su Google</a>
-        <a href="preventivo.html">Calcola preventivo</a>
-        <a href="progetti.html">Progetti</a>
-        <a href="chi-sono.html">Chi sono</a>
-        <a href="faq.html">FAQ</a>
-      <a href="contatti.html">Contatti</a>
-      </div>
-      <div class="foot-col">
-        <h5>Contatti</h5>
-        <a href="https://wa.me/390000000000">WhatsApp</a>
-        <a href="mailto:ciao@alessiopes.it">ciao@alessiopes.it</a>
-        <a href="privacy.html">Privacy &amp; cookie</a>
-      </div>
-    </div>
-  </div>
-  <div class="wrap" style="margin-top:30px;">
-    <span class="c mono" style="color:var(--faint);font-size:12px;">© 2026 Alessio Pes · alessiopes.it — P.IVA in apertura. Sviluppato e messo online da me.</span>
-  </div>
-</footer>
-
-<script src="assets/site.js"></script>
-
-<template id="__bundler_thumbnail">
-  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <rect width="100" height="100" fill="#16182a"/>
-    <rect x="34" y="34" width="32" height="32" rx="7" fill="#7aa2ff"/>
-    <text x="50" y="57" font-family="monospace" font-size="15" font-weight="700" fill="#16182a" text-anchor="middle">AP</text>
-  </svg>
-</template>
-
-</body>
-</html>
