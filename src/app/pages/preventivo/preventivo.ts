@@ -1,0 +1,248 @@
+import { Component, computed, signal } from '@angular/core';
+import { RevealDirective } from '../../core/reveal.directive';
+
+// ⚙️ DA SOSTITUIRE con i tuoi recapiti reali
+const WHATSAPP = '390000000000'; // numero WhatsApp (prefisso internazionale, senza +)
+const EMAIL = 'ciao@alessiopes.it';
+
+type TypeVal = 'vetrina' | 'gestione' | 'ecommerce' | 'app';
+
+interface TypeOpt {
+  val: TypeVal;
+  base: number;
+  label: string;
+  short: string;
+  px: string;
+}
+interface AddonOpt {
+  val: string;
+  price: number;
+  short: string;
+  px: string;
+}
+interface GoogleOpt {
+  setup: number;
+  mo: number;
+  label: string;
+  short: string;
+  px: string;
+  budget?: string;
+}
+interface MaintOpt {
+  maint: boolean;
+  label: string;
+  short: string;
+}
+interface SimpleOpt {
+  label: string;
+  short: string;
+}
+
+const recurringAnnual: Record<TypeVal, number> = { vetrina: 90, gestione: 180, ecommerce: 240, app: 240 };
+const maintMonthly: Record<TypeVal, number> = { vetrina: 15, gestione: 39, ecommerce: 49, app: 79 };
+const typeAnnualLabel: Record<TypeVal, string> = {
+  vetrina: 'dominio + hosting',
+  gestione: 'server + hosting',
+  ecommerce: 'server + hosting',
+  app: 'server + servizi',
+};
+
+@Component({
+  selector: 'app-preventivo',
+  imports: [RevealDirective],
+  templateUrl: './preventivo.html',
+})
+export class Preventivo {
+  readonly types: TypeOpt[] = [
+    { val: 'vetrina', base: 590, label: 'Sito vetrina', short: 'Sito vetrina', px: 'da 590€' },
+    { val: 'gestione', base: 1800, label: 'Sito + portale di gestione', short: 'Sito + gestione', px: 'da 1.800€' },
+    { val: 'ecommerce', base: 2900, label: 'E-commerce su misura', short: 'E-commerce', px: 'da 2.900€' },
+    { val: 'app', base: 3900, label: 'App o software su misura', short: 'App / software', px: 'da 3.900€' },
+  ];
+  readonly addons: AddonOpt[] = [
+    { val: 'Prenotazioni online', price: 400, short: 'Prenotazioni online', px: '+400€' },
+    { val: 'Area riservata / login', price: 500, short: 'Area riservata', px: '+500€' },
+    { val: 'Blog / news gestibili', price: 250, short: 'Blog / news', px: '+250€' },
+    { val: 'Newsletter / raccolta contatti', price: 200, short: 'Newsletter', px: '+200€' },
+    { val: 'Galleria foto avanzata', price: 150, short: 'Galleria foto', px: '+150€' },
+    { val: 'Chat WhatsApp integrata', price: 120, short: 'Chat WhatsApp', px: '+120€' },
+    { val: 'Sito multilingua', price: 300, short: 'Multilingua', px: '+300€' },
+  ];
+  readonly googleOpts: GoogleOpt[] = [
+    { setup: 0, mo: 0, label: 'No, per ora solo il sito', short: 'No, per ora', px: '' },
+    { setup: 150, mo: 0, label: 'Profilo Google + Maps', short: 'Profilo Google', px: '+150€' },
+    {
+      setup: 250,
+      mo: 150,
+      label: 'Google Ads',
+      short: 'Google Ads',
+      px: '+250€ · 150€/mese',
+      budget: '~300-500€/mese a Google (≈10-15€/giorno), lo decidi tu',
+    },
+    {
+      setup: 200,
+      mo: 120,
+      label: 'Local Services Ads',
+      short: 'Local Services Ads',
+      px: '+200€ · 120€/mese',
+      budget: 'paghi per contatto ~15-30€ (molti con tetto ~300€/mese)',
+    },
+  ];
+  readonly maintOpts: MaintOpt[] = [
+    { maint: false, label: 'No, interventi a pacchetto', short: 'No, a pacchetto' },
+    { maint: true, label: 'Sì, canone mensile', short: 'Sì, canone mensile' },
+  ];
+  readonly startOpts: SimpleOpt[] = [
+    { label: 'Parto da zero', short: 'Parto da zero' },
+    { label: 'Ho già un sito da rifare', short: 'Ho già un sito da rifare' },
+    { label: 'Ho già dominio e hosting', short: 'Ho già dominio/hosting' },
+  ];
+  readonly whenOpts: SimpleOpt[] = [
+    { label: 'Il prima possibile', short: 'Il prima possibile' },
+    { label: 'Entro 1-2 mesi', short: 'Entro 1-2 mesi' },
+    { label: 'Sto solo valutando', short: 'Sto solo valutando' },
+  ];
+
+  // selezioni
+  readonly typeIdx = signal(0);
+  readonly pages = signal(5);
+  readonly addonSel = signal<ReadonlySet<number>>(new Set());
+  readonly googleIdx = signal(0);
+  readonly maintIdx = signal(1); // default: canone
+  readonly startIdx = signal(0);
+  readonly whenIdx = signal(0);
+  readonly note = signal('');
+
+  // derivati
+  readonly type = computed(() => this.types[this.typeIdx()]);
+  readonly isVetrina = computed(() => this.type().val === 'vetrina');
+  readonly pagesLabel = computed(() => {
+    const n = this.pages();
+    return n + (n === 1 ? ' pagina' : ' pagine');
+  });
+  private readonly pageExtra = computed(() =>
+    this.isVetrina() ? Math.max(0, this.pages() - 5) * 90 : 0,
+  );
+  private readonly addonTotal = computed(() =>
+    [...this.addonSel()].reduce((sum, i) => sum + this.addons[i].price, 0),
+  );
+  private readonly google = computed(() => this.googleOpts[this.googleIdx()]);
+  private readonly wantMaint = computed(() => this.maintOpts[this.maintIdx()].maint);
+
+  readonly oneTime = computed(() =>
+    this.round10(this.type().base + this.pageExtra() + this.addonTotal() + this.google().setup),
+  );
+  private readonly annual = computed(() => recurringAnnual[this.type().val]);
+  private readonly monthly = computed(
+    () => (this.wantMaint() ? maintMonthly[this.type().val] : 0) + this.google().mo,
+  );
+
+  readonly recap = computed<[string, string][]>(() => {
+    const t = this.type();
+    const rows: [string, string][] = [];
+    rows.push(['Soluzione', t.label]);
+    if (this.isVetrina())
+      rows.push(['Pagine', this.pages() + (this.pageExtra() ? ' (+' + this.fmt(this.pageExtra()) + '€)' : '')]);
+    const addonLabels = [...this.addonSel()].map((i) => this.addons[i].val);
+    rows.push(['Funzioni extra', addonLabels.length ? addonLabels.join(', ') : 'nessuna']);
+    rows.push(['Google', this.google().label]);
+    const m = this.maintOpts[this.maintIdx()];
+    rows.push(['Manutenzione', this.wantMaint() ? m.label + ' (' + maintMonthly[t.val] + '€/mese)' : m.label]);
+    rows.push(['Da dove', this.startOpts[this.startIdx()].label]);
+    rows.push(['Quando', this.whenOpts[this.whenIdx()].label]);
+    return rows;
+  });
+
+  readonly recurringHtml = computed(() => {
+    const t = this.type().val;
+    const prefix = this.isVetrina() ? '~' : 'da ~';
+    const suffix = this.isVetrina() ? '' : ' · varia col traffico';
+    const parts: string[] = [];
+    parts.push(
+      'Dal 2° anno: <b>' + prefix + this.fmt(this.annual()) + '€/anno</b> di ' + typeAnnualLabel[t] + suffix + ' (li gestisco io).',
+    );
+    const monthly = this.monthly();
+    const gMo = this.google().mo;
+    if (monthly > 0)
+      parts.push(
+        'Mensile: <b>~' +
+          this.fmt(monthly) +
+          '€/mese</b>' +
+          (gMo
+            ? ' (gestione Google ' +
+              this.fmt(gMo) +
+              '€' +
+              (this.wantMaint() ? ' + manutenzione ' + maintMonthly[t] + '€' : '') +
+              ')'
+            : '') +
+          '.',
+      );
+    const budget = this.google().budget;
+    if (budget) parts.push('Budget pubblicitario (a carico tuo, a Google): <b>' + budget + '</b>.');
+    return parts.join('<br>');
+  });
+
+  private readonly message = computed(() => {
+    const lines: string[] = [];
+    lines.push('Ciao Alessio! Ho usato il configuratore sul sito:');
+    lines.push('');
+    this.recap().forEach((r) => lines.push('• ' + r[0] + ': ' + r[1]));
+    lines.push('');
+    lines.push('Stima una tantum: ~' + this.fmt(this.oneTime()) + '€');
+    const prefix = this.isVetrina() ? '~' : 'da ~';
+    lines.push(
+      'Annuo: ' + prefix + this.fmt(this.annual()) + '€' + (this.monthly() ? ' · Mensile: ~' + this.fmt(this.monthly()) + '€' : ''),
+    );
+    const budget = this.google().budget;
+    if (budget) lines.push('Budget pubblicità (a Google, a parte): ' + budget);
+    const note = this.note().trim();
+    if (note) {
+      lines.push('');
+      lines.push('Note: ' + note);
+    }
+    lines.push('');
+    lines.push('Vorrei un preventivo preciso. Grazie!');
+    return lines.join('\n');
+  });
+
+  readonly waHref = computed(() => 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(this.message()));
+  readonly mailHref = computed(
+    () =>
+      'mailto:' +
+      EMAIL +
+      '?subject=' +
+      encodeURIComponent('Richiesta preventivo dal sito') +
+      '&body=' +
+      encodeURIComponent(this.message()),
+  );
+
+  readonly totalText = computed(() => this.fmt(this.oneTime()));
+  readonly noteLeft = computed(() => 500 - this.note().length);
+
+  // azioni
+  selectType(i: number): void {
+    this.typeIdx.set(i);
+  }
+  toggleAddon(i: number): void {
+    const next = new Set(this.addonSel());
+    if (next.has(i)) next.delete(i);
+    else next.add(i);
+    this.addonSel.set(next);
+  }
+  isAddonOn(i: number): boolean {
+    return this.addonSel().has(i);
+  }
+  onPages(e: Event): void {
+    this.pages.set(parseInt((e.target as HTMLInputElement).value, 10));
+  }
+  onNote(e: Event): void {
+    this.note.set((e.target as HTMLTextAreaElement).value);
+  }
+
+  private fmt(n: number): string {
+    return n.toLocaleString('it-IT');
+  }
+  private round10(n: number): number {
+    return Math.round(n / 10) * 10;
+  }
+}

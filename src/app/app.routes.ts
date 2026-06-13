@@ -24,20 +24,17 @@ export const routes: Routes = [
   {
     path: 'preventivo',
     title: 'Calcola il preventivo — Alessio Pes',
-    data: { soon: 'Calcola il preventivo' },
-    loadComponent: () => import('./pages/coming-soon/coming-soon').then((m) => m.ComingSoon),
+    loadComponent: () => import('./pages/preventivo/preventivo').then((m) => m.Preventivo),
   },
   {
     path: 'google',
     title: 'Farsi trovare su Google — Alessio Pes',
-    data: { soon: 'Farsi trovare su Google' },
-    loadComponent: () => import('./pages/coming-soon/coming-soon').then((m) => m.ComingSoon),
+    loadComponent: () => import('./pages/google/google').then((m) => m.Google),
   },
   {
     path: 'faq',
     title: 'Domande frequenti — Alessio Pes',
-    data: { soon: 'Domande frequenti' },
-    loadComponent: () => import('./pages/coming-soon/coming-soon').then((m) => m.ComingSoon),
+    loadComponent: () => import('./pages/faq/faq').then((m) => m.Faq),
   },
   {
     path: 'contatti',
@@ -47,8 +44,7 @@ export const routes: Routes = [
   {
     path: 'privacy',
     title: 'Privacy & cookie — Alessio Pes',
-    data: { soon: 'Privacy & cookie' },
-    loadComponent: () => import('./pages/coming-soon/coming-soon').then((m) => m.ComingSoon),
+    loadComponent: () => import('./pages/privacy/privacy').then((m) => m.Privacy),
   },
   {
     path: '**',
