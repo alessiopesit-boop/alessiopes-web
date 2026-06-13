@@ -15,13 +15,13 @@ Sito personale di Alessio Pes (servizi web per PMI/P.IVA) realizzato in **Angula
 
 ## Struttura
 
-- `src/app/app.ts` — shell: `<app-nav>`, `<router-outlet>`, `<app-footer>`, `<app-cookie-banner>`, `<app-page-loader>`
-- `src/app/app.routes.ts` — route (le pagine non ancora portate puntano a `ComingSoon` via `data.soon`)
-- `src/app/core/` — `ThemeService`, `RevealDirective` (`.reveal` on-scroll)
-- `src/app/shared/` — `Nav` (+ hamburger mobile), `Footer`, `CookieBanner`, `PageLoader` (4 quadrati),
+- `src/app/app.ts` - shell: `<app-nav>`, `<router-outlet>`, `<app-footer>`, `<app-cookie-banner>`, `<app-page-loader>`
+- `src/app/app.routes.ts` - route (le pagine non ancora portate puntano a `ComingSoon` via `data.soon`)
+- `src/app/core/` - `ThemeService`, `RevealDirective` (`.reveal` on-scroll)
+- `src/app/shared/` - `Nav` (+ hamburger mobile), `Footer`, `CookieBanner`, `PageLoader` (4 quadrati),
   `ParticleNetwork` (direttiva su `canvas[appParticleNetwork]`), `Terminal` (direttiva `[appTerminal]`),
-  `ImageSlot` (selettore `image-slot`, placeholder statico — niente drag&drop in questo MVP)
-- `src/app/pages/` — `home`, `not-found`, `coming-soon` (le altre pagine arrivano nelle PR successive)
+  `ImageSlot` (selettore `image-slot`, placeholder statico, niente drag&drop in questo MVP)
+- `src/app/pages/` - `home`, `not-found`, `coming-soon` (le altre pagine arrivano nelle PR successive)
 
 Gli effetti che toccano DOM/`window`/canvas girano solo lato browser (`afterNextRender`), per non rompere il prerender.
 

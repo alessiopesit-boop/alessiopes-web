@@ -1,7 +1,7 @@
 {
   "name": "alessiopes-web",
   "version": "0.1.0",
-  "description": "Sito personale di Alessio Pes — sviluppatore web e software freelance",
+  "description": "Sito personale di Alessio Pes, sviluppatore web e software freelance",
   "private": true,
   "packageManager": "npm@10.3.0",
   "scripts": {

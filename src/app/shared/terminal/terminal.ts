@@ -21,7 +21,7 @@ export class Terminal {
   private readonly P = 'alessio@studio:~$ ';
   private readonly seq: Seq[] = [
     { cmd: 'nuovo-cliente --tipo "negozio di zona"' },
-    { out: 'ok — vediamo di cosa hai bisogno', cls: 'dim' },
+    { out: 'ok, vediamo di cosa hai bisogno', cls: 'dim' },
     { cmd: './crea-sito --su-misura' },
     { out: 'design ........ ✓ pensato per te', cls: 'ok', step: true },
     { out: 'mobile ........ ✓ perfetto da telefono', cls: 'ok', step: true },
