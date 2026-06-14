@@ -432,6 +432,9 @@ footer { border-top: 1px solid var(--line); padding: 44px 0; }
   .card { flex-basis: 100%; max-width: 100%; }
   .sec-head { align-items: flex-start; }
   .steps { grid-template-columns: 1fr; }
+  /* Le card sono comunque a tutta larghezza: griglia ed elenco rendono uguale,
+     quindi il toggle vista su mobile non serve. */
+  .view-toggle { display: none; }
 }
 @media (max-width: 560px) {
   .card { flex-direction: column; }
@@ -444,7 +447,6 @@ footer { border-top: 1px solid var(--line); padding: 44px 0; }
   /* CTA a tutta larghezza: evita coppie di bottoni di larghezze diverse. */
   .hero-cta .btn, .cta-band .inner .btn { width: 100%; justify-content: center; }
   .price { padding: 26px 22px; }
-  .view-toggle { width: 100%; } .view-toggle button { flex: 1; justify-content: center; }
   /* Opzioni configuratore: griglia 2 colonne uniforme invece di chip a larghezze diverse.
      Selettore discendente per vincere sulla regola base .cfg-opts (display:flex). */
   .cfg-form .cfg-opts { display: grid; grid-template-columns: 1fr 1fr; }
