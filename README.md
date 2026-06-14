@@ -1,21 +1,21 @@
 # alessiopes.it
 
-Sito commerciale personale di Alessio Pes — sviluppatore web e software freelance.
+Sito commerciale personale di Alessio Pes, sviluppatore web e software freelance.
 
 Realizzato in **Angular** (standalone components) con **prerendering statico (SSG)** per un buon SEO, servito come sito statico su GitHub Pages.
 
 ## Pagine
 
-- `/` — Home
-- `/servizi` — Servizi e prezzi
-- `/preventivo` — Configuratore preventivo interattivo
-- `/progetti` — Portfolio progetti
-- `/chi-sono` — Bio
-- `/contatti` — Contatti (WhatsApp + email)
-- `/faq` — Domande frequenti
-- `/google` — Servizi Google (Ads, LSA, Profilo)
-- `/privacy` — Privacy & cookie
-- `*` — Pagina non trovata (404)
+- `/` - Home
+- `/servizi` - Servizi e prezzi
+- `/preventivo` - Configuratore preventivo interattivo
+- `/progetti` - Portfolio progetti
+- `/chi-sono` - Bio
+- `/contatti` - Contatti (WhatsApp + email)
+- `/faq` - Domande frequenti
+- `/google` - Servizi Google (Ads, LSA, Profilo)
+- `/privacy` - Privacy & cookie
+- `*` - Pagina non trovata (404)
 
 ## Stack
 
@@ -42,4 +42,4 @@ Il workflow builda con `--base-href=/alessiopes-web/` e copia `index.csr.html` c
 
 ## Stato
 
-Alpha — design portato in Angular. Contenuti reali, immagini e recapiti (WhatsApp, URL progetti) da inserire.
+Alpha: design portato in Angular. Contenuti reali, immagini e recapiti (WhatsApp, URL progetti) da inserire.
