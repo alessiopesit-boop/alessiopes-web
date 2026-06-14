@@ -88,15 +88,15 @@ nav.scrolled { background: color-mix(in oklch, var(--bg) 72%, transparent); back
 .nav-burger { display: none; width: 40px; height: 40px; border-radius: 9px; border: 1px solid var(--line);
   background: var(--bg-2); cursor: pointer; padding: 0; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
   flex: none; transition: border-color .2s; -webkit-tap-highlight-color: transparent; }
-.nav-burger span { display: block; width: 18px; height: 1.7px; background: var(--muted); border-radius: 2px;
+.nav-burger span { display: block; width: 18px; height: 2px; background: var(--muted); border-radius: 2px;
   transition: transform .28s cubic-bezier(.2,.7,.2,1), opacity .2s, background .2s; }
 .nav-burger:hover { border-color: var(--accent); }
 .nav-burger:hover span { background: var(--accent); }
 .nav-burger.on { border-color: var(--accent); }
 .nav-burger.on span { background: var(--accent); }
-.nav-burger.on span:nth-child(1) { transform: translateY(6.7px) rotate(45deg); }
+.nav-burger.on span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-burger.on span:nth-child(2) { opacity: 0; }
-.nav-burger.on span:nth-child(3) { transform: translateY(-6.7px) rotate(-45deg); }
+.nav-burger.on span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 .mobile-menu { position: fixed; top: 72px; left: 0; right: 0; z-index: 49;
   background: color-mix(in oklch, var(--bg) 95%, transparent); backdrop-filter: blur(16px);
@@ -170,8 +170,9 @@ nav.scrolled { background: color-mix(in oklch, var(--bg) 72%, transparent); back
 section.block { padding: 112px 0; position: relative; }
 section.block.tight { padding: 80px 0; }
 .sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 48px; flex-wrap: wrap; }
-.sec-title { font-family: var(--mono); font-weight: 800; font-size: clamp(26px, 3.4vw, 40px); letter-spacing: -0.02em; }
-.sec-title .num { color: var(--accent); font-size: 0.55em; vertical-align: super; margin-right: 12px; font-weight: 500; }
+.sec-title { font-family: var(--mono); font-weight: 800; font-size: clamp(26px, 3.4vw, 40px); letter-spacing: -0.02em;
+  display: flex; align-items: center; gap: 12px; }
+.sec-title .num { color: var(--accent); font-size: 0.72em; font-weight: 500; line-height: 1; flex: none; }
 .sec-note { font-family: var(--mono); font-size: 13px; color: var(--faint); max-width: 32ch; }
 
 /* ---------- PAGE HEADER (pagine interne) ---------- */
@@ -213,7 +214,7 @@ section.block.tight { padding: 80px 0; }
   border: 1px solid color-mix(in oklch, var(--accent-2) 50%, var(--line)); border-radius: 100px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 8px; }
 .price .badge .led { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 8px var(--accent-2); animation: pulse 1.8s infinite; }
 @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
-.price .ix { font-family: var(--mono); font-size: 13px; color: var(--accent); }
+.price .ix { font-family: var(--mono); font-size: 13px; color: var(--accent); display: block; }
 .price h3 { font-family: var(--mono); font-size: clamp(22px, 2.6vw, 28px); font-weight: 800; letter-spacing: -0.02em; margin-top: 12px; }
 .price .case { color: var(--muted); font-size: 15px; margin-top: 16px; text-wrap: pretty; }
 .price .case b { color: var(--text); font-weight: 600; }
@@ -243,6 +244,13 @@ section.block.tight { padding: 80px 0; }
 .why .g { font-family: var(--mono); color: var(--accent); font-size: 13px; }
 .why h4 { font-family: var(--mono); font-size: 16px; font-weight: 700; margin-top: 12px; letter-spacing: -0.01em; }
 .why p { color: var(--muted); font-size: 14px; margin-top: 10px; text-wrap: pretty; }
+/* Conteggio colonne specifico, solo da tablet in su: sotto i 761px le griglie
+   tornano a 1 colonna (regole responsive piu' avanti). Sostituisce gli stili
+   inline che, vincendo sulle media query, schiacciavano le card su mobile. */
+@media (min-width: 761px) {
+  .why-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .trust-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+}
 .vs-line { font-family: var(--mono); font-size: 13.5px; color: var(--muted); margin-top: 26px; border-left: 2px solid var(--accent); padding: 6px 0 6px 18px; }
 .vs-line b { color: var(--text); }
 
@@ -268,7 +276,7 @@ section.block.tight { padding: 80px 0; }
 .status .led { width: 7px; height: 7px; border-radius: 50%; }
 .status.live { color: var(--accent-2); border-color: color-mix(in oklch, var(--accent-2) 50%, var(--line)); }
 .status.live .led { background: var(--accent-2); box-shadow: 0 0 8px var(--accent-2); animation: pulse 1.8s infinite; }
-.status.dev { color: var(--muted); } .status.dev .led { background: var(--faint); }
+.status.dev { color: var(--muted); } .status.dev .led { background: var(--muted); box-shadow: 0 0 6px color-mix(in oklch, var(--muted) 60%, transparent); }
 .card-content { flex: 1; padding: 24px 26px; display: flex; flex-direction: column; min-width: 0; }
 .card-top { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
 .card-idx { font-family: var(--mono); font-size: 12.5px; color: var(--faint); }
@@ -315,9 +323,12 @@ section.block.tight { padding: 80px 0; }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary .pm { font-size: 22px; color: var(--accent); transition: transform .25s; flex: none; line-height: 1; }
 .faq details[open] summary .pm { transform: rotate(45deg); }
+/* La risposta entra con una piccola animazione all'apertura. */
+.faq details[open] .ans { animation: faqAns .3s ease; }
+@keyframes faqAns { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 .faq .ans { color: var(--muted); font-size: 15px; padding: 0 40px 24px 0; max-width: 70ch; text-wrap: pretty; }
 .faq .ans a { color: var(--accent); }
-.faq-group { margin-top: 48px; }
+.faq-group { margin-top: 68px; }
 .faq-group:first-of-type { margin-top: 0; }
 .faq-group-label { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.04em;
   display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
@@ -349,13 +360,16 @@ section.block.tight { padding: 80px 0; }
 .contact-info { display: grid; gap: 14px; }
 .info-row { display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); }
 .info-row:last-child { border-bottom: 1px solid var(--line); }
-.info-row .ic { color: var(--accent); font-family: var(--mono); flex: none; width: 22px; }
-.info-row .k { font-family: var(--mono); font-size: 12px; color: var(--faint); }
-.info-row .v { font-size: 15px; color: var(--text); margin-top: 3px; }
+.info-row .ic { color: var(--accent); font-family: var(--mono); flex: none; width: 30px; font-size: 21px; line-height: 1.2; }
+.info-row .k { font-family: var(--mono); font-size: 14px; color: var(--faint); }
+.info-row .v { font-size: 16px; color: var(--text); margin-top: 4px; }
+.info-row .vsub { font-family: var(--mono); font-size: 12.5px; color: var(--faint); margin-top: 5px; }
 
 /* ---------- CTA BAND ---------- */
 .cta-band { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.cta-band .inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; padding: 56px 0; }
+/* Padding solo verticale: lo shorthand azzerava lo spazio orizzontale dato da .wrap,
+   lasciando il testo attaccato ai bordi su mobile. */
+.cta-band .inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; padding-top: 56px; padding-bottom: 56px; }
 .cta-band h3 { font-family: var(--mono); font-size: clamp(22px, 3vw, 32px); font-weight: 800; letter-spacing: -0.02em; text-wrap: balance; }
 .cta-band p { color: var(--muted); margin-top: 10px; max-width: 44ch; }
 
@@ -376,8 +390,13 @@ footer { border-top: 1px solid var(--line); padding: 44px 0; }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 980px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 36px; padding-top: 110px; }
+  /* Niente centraggio verticale su mobile: il contenuto e' piu' alto del viewport
+     e, centrato, sbordava sotto la nav fissa coprendo il kicker. */
+  .hero { align-items: flex-start; }
+  .hero-inner { grid-template-columns: 1fr; gap: 36px; padding-top: 110px; padding-bottom: 78px; }
   .hero .term-side { order: 2; }
+  /* Piu' spazio sotto il terminale cosi' "scorri" non gli finisce sopra. */
+  .scroll-cue { bottom: 20px; }
   .term-body { min-height: 280px; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .about-photo { max-width: 360px; }
@@ -398,8 +417,19 @@ footer { border-top: 1px solid var(--line); padding: 44px 0; }
   .nav-links .nav-cta { display: none; }
   .nav-burger { display: flex; }
   .nav-links { gap: 12px; }
-  .wrap { padding: 0 22px; }
-  section.block { padding: 80px 0; }
+  /* Solo orizzontale: lo shorthand azzerava il padding-top della .hero-inner. */
+  .wrap { padding-left: 22px; padding-right: 22px; }
+  /* Meno vuoto verticale tra sezioni su mobile (prima ~160px tra una e l'altra).
+     Padding uguale sopra/sotto cosi' il separatore cade nel centro esatto del gap. */
+  section.block, section.block.tight { padding: 56px 0; }
+  /* Separatore di capitolo: hairline inset che sfuma ai lati, centrata nel gap
+     tra una sezione e la successiva. Marca visivamente l'inizio del capitolo. */
+  main > section.block:not(:first-child)::before {
+    content: ''; position: absolute; top: 0; left: 22px; right: 22px; height: 1px;
+    background: linear-gradient(90deg, transparent,
+      color-mix(in oklch, var(--text) 16%, transparent) 22%,
+      color-mix(in oklch, var(--text) 16%, transparent) 78%, transparent);
+  }
   .card { flex-basis: 100%; max-width: 100%; }
   .sec-head { align-items: flex-start; }
   .steps { grid-template-columns: 1fr; }
@@ -409,8 +439,20 @@ footer { border-top: 1px solid var(--line); padding: 44px 0; }
   .svc-grid { grid-template-columns: 1fr; }
   .card-media, .proj-grid.is-list .card-media { flex-basis: auto; height: 180px; }
   .hero-meta { gap: 18px 28px; }
+  /* Titoli di sezione: font responsivo grande quanto sta, e se serve va a capo. */
+  .sec-title { font-size: clamp(24px, 6.4vw, 30px); }
+  .sec-note { max-width: none; }
+  /* CTA a tutta larghezza: evita coppie di bottoni di larghezze diverse. */
+  .hero-cta .btn, .cta-band .inner .btn { width: 100%; justify-content: center; }
   .price { padding: 26px 22px; }
   .view-toggle { width: 100%; } .view-toggle button { flex: 1; justify-content: center; }
+  /* Opzioni configuratore: griglia 2 colonne uniforme invece di chip a larghezze diverse.
+     Selettore discendente per vincere sulla regola base .cfg-opts (display:flex). */
+  .cfg-form .cfg-opts { display: grid; grid-template-columns: 1fr 1fr; }
+  .cfg-form .cfg-opt { text-align: center; }
+  /* chi-sono: la descrizione va sotto, a riga intera, invece di stringersi a destra. */
+  .svc-list li { flex-wrap: wrap; }
+  .svc-list li .desc { flex-basis: 100%; margin-left: 0; padding-left: 26px; margin-top: 2px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
@@ -519,7 +561,9 @@ a.card { color: inherit; }
 .legal p, .legal li { color: var(--muted); font-size: 15px; line-height: 1.7; text-wrap: pretty; }
 .legal ul { margin: 10px 0 0 20px; display: grid; gap: 6px; }
 .legal .todo { font-family: var(--mono); font-size: 12.5px; color: var(--accent-2); background: color-mix(in oklch, var(--accent-2) 8%, transparent);
-  border: 1px dashed color-mix(in oklch, var(--accent-2) 40%, var(--line)); border-radius: 8px; padding: 3px 8px; }
+  border: 1px dashed color-mix(in oklch, var(--accent-2) 40%, var(--line)); border-radius: 8px; padding: 3px 8px;
+  /* Chiude bordo e sfondo su ogni riga quando lo span va a capo. */
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 
 /* ---------- RECENSIONI ---------- */
 .reviews-note { font-family: var(--mono); font-size: 12.5px; color: var(--accent-2);
