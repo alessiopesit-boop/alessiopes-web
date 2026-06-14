@@ -161,7 +161,6 @@ nav.scrolled { background: color-mix(in oklch, var(--bg) 72%, transparent); back
 /* ---------- TICKER ---------- */
 .ticker { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-2); overflow: hidden; padding: 18px 0; }
 .ticker-track { display: flex; gap: 56px; white-space: nowrap; width: max-content; animation: scrollx 30s linear infinite; }
-.ticker:hover .ticker-track { animation-play-state: paused; }
 .ticker-track span { font-family: var(--mono); font-size: 14px; color: var(--muted); display: inline-flex; align-items: center; gap: 56px; }
 .ticker-track span::after { content: '◆'; color: var(--accent); font-size: 8px; }
 @keyframes scrollx { to { transform: translateX(-50%); } }
