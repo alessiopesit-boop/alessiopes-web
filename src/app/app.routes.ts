@@ -11,11 +11,12 @@ export const routes: Routes = [
     title: 'Servizi e prezzi · Alessio Pes',
     loadComponent: () => import('./pages/servizi/servizi').then((m) => m.Servizi),
   },
-  {
-    path: 'progetti',
-    title: 'Progetti · Alessio Pes',
-    loadComponent: () => import('./pages/progetti/progetti').then((m) => m.Progetti),
-  },
+  // MVP: rotta /progetti nascosta finché non ci sono progetti reali (togli i commenti per ripristinare).
+  // {
+  //   path: 'progetti',
+  //   title: 'Progetti · Alessio Pes',
+  //   loadComponent: () => import('./pages/progetti/progetti').then((m) => m.Progetti),
+  // },
   {
     path: 'chi-sono',
     title: 'Chi sono · Alessio Pes',
