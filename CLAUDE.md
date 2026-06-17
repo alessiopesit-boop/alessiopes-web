@@ -58,3 +58,4 @@ npm run build    # build produzione + prerender
 
 - Recapiti reali: numero WhatsApp (`390000000000`) e URL dei progetti online.
 - Foto e screenshot dei progetti (oggi placeholder; storage immagini previsto col dominio).
+- **Progetti e recensioni nascosti per l'MVP** (non ancora reali): sezioni home "Lavori recenti"/"Dicono di me", voce nav/footer e rotta `/progetti` sono dietro `@if (false)` o commentate. Per ripristinare basta togliere il "nascondi" (`@if (false)` -> `@if (true)` e scommentare la rotta in `app.routes.ts`).
