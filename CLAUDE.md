@@ -54,6 +54,12 @@ npm start        # dev server (http://localhost:4200)
 npm run build    # build produzione + prerender
 ```
 
+## SEO
+
+- `SeoService` (`core/seo.service.ts`) imposta `description`, Open Graph, Twitter e `canonical` per pagina; la description di ogni pagina sta in `data.description` della rotta.
+- Tag fissi (og:image, og:site_name, JSON-LD `ProfessionalService`) in `index.html`. `robots.txt`, `sitemap.xml` e `og-image.png` (1200x630) in `public/`.
+- **Dominio cablato**: l'origine `https://alessiopes.it` è hardcoded in `seo.service.ts`, `index.html`, `sitemap.xml`, `robots.txt`. Se cambia il dominio, aggiornarli.
+
 ## Da fare / segnaposto
 
 - WhatsApp: numero reale impostato (`393897979420`). Email: per l'MVP si usa la personale (`alessio.pes.it@gmail.com`), da spostare su `ciao@alessiopes.it` quando il dominio ha la casella.
