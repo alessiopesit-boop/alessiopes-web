@@ -152,10 +152,13 @@
   <section class="block tight">
     <div class="wrap">
       <div class="about-grid">
+        <!-- MVP: foto nascosta finché non c'è una foto vera (la griglia passa a 1 colonna via :has). -->
+        @if (false) {
         <div class="about-photo reveal">
           <image-slot placeholder="↑ una tua foto (PNG/JPG)" />
           <div class="photo-cap mono"><span class="led"></span> Alessio Pes · sviluppatore</div>
         </div>
+        }
         <div class="reveal d2">
           <span class="kicker">Chi c'è dietro</span>
           <p class="about-lede" style="margin-top:18px;">Sono <span class="accent">Alessio</span>. Costruisco siti e software su misura per piccole attività, e li seguo dall'idea fino al <span class="accent">server online</span>.</p>

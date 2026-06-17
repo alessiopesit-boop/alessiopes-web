@@ -11,10 +11,13 @@
   <section class="block tight">
     <div class="wrap">
       <div class="about-grid">
+        <!-- MVP: foto nascosta finché non c'è una foto vera (la griglia passa a 1 colonna via :has). -->
+        @if (false) {
         <div class="about-photo reveal">
           <image-slot placeholder="↑ una tua foto (PNG/JPG)" />
           <div class="photo-cap mono"><span class="led"></span> Alessio Pes · sviluppatore</div>
         </div>
+        }
         <div class="reveal d2">
           <p class="about-lede">Seguo ogni progetto <span class="accent">dall'idea fino al server online</span>: scrivo il codice, lo metto online e mi assicuro che continui a funzionare. Tutto su misura, niente scorciatoie.</p>
           <p class="body">Lavoro con artigiani, professionisti e piccole attività che hanno bisogno di un sito, un'app o un gestionale fatto come si deve, senza giri di parole tecniche. A te interessa il risultato: farti trovare, lavorare meglio, fare bella figura online. A quello ci penso io.</p>

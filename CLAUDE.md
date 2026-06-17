@@ -56,6 +56,7 @@ npm run build    # build produzione + prerender
 
 ## Da fare / segnaposto
 
-- Recapiti reali: numero WhatsApp (`390000000000`) e URL dei progetti online.
-- Foto e screenshot dei progetti (oggi placeholder; storage immagini previsto col dominio).
+- WhatsApp: numero reale impostato (`393897979420`). Email: per l'MVP si usa la personale (`alessio.pes.it@gmail.com`), da spostare su `ciao@alessiopes.it` quando il dominio ha la casella.
+- Foto: nascosta per l'MVP (vedi sotto). Quando arriva una foto vera, riattivare lo slot in `home.html` e `chi-sono.html` (la griglia torna a 2 colonne da sola via `:has`).
+- Screenshot dei progetti (oggi placeholder; storage immagini previsto col dominio).
 - **Progetti e recensioni nascosti per l'MVP** (non ancora reali): sezioni home "Lavori recenti"/"Dicono di me", voce nav/footer e rotta `/progetti` sono dietro `@if (false)` o commentate. Per ripristinare basta togliere il "nascondi" (`@if (false)` -> `@if (true)` e scommentare la rotta in `app.routes.ts`).

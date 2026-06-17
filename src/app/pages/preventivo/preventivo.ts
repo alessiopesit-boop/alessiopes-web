@@ -2,8 +2,8 @@ import { Component, computed, signal } from '@angular/core';
 import { RevealDirective } from '../../core/reveal.directive';
 
 // ⚙️ DA SOSTITUIRE con i tuoi recapiti reali
-const WHATSAPP = '390000000000'; // numero WhatsApp (prefisso internazionale, senza +)
-const EMAIL = 'ciao@alessiopes.it';
+const WHATSAPP = '393897979420'; // numero WhatsApp (prefisso internazionale, senza +)
+const EMAIL = 'alessio.pes.it@gmail.com'; // MVP: email personale; passare a ciao@alessiopes.it col dominio
 
 type TypeVal = 'vetrina' | 'gestione' | 'ecommerce' | 'app';
 
