@@ -349,20 +349,36 @@ section.block.tight { padding: 80px 0; }
 .contact-fine { font-family: var(--mono); font-size: 12.5px; color: var(--faint); margin-top: 28px; }
 
 /* contact page form */
-.contact-cols { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: start; }
+.contact-cols { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
 .field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
 .field label { font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
 .field input, .field select, .field textarea { font-family: var(--sans); font-size: 15px; color: var(--text); background: var(--bg-2);
   border: 1px solid var(--line); border-radius: 10px; padding: 13px 15px; transition: border-color .2s; }
 .field textarea { resize: vertical; min-height: 120px; }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); }
-.contact-info { display: grid; gap: 14px; }
-.info-row { display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); }
+.contact-info { display: grid; gap: 0; }
+.info-row { display: flex; align-items: center; gap: 16px; padding: 20px 0; border-top: 1px solid var(--line); }
 .info-row:last-child { border-bottom: 1px solid var(--line); }
-.info-row .ic { color: var(--accent); font-family: var(--mono); flex: none; width: 30px; font-size: 21px; line-height: 1.2; }
-.info-row .k { font-family: var(--mono); font-size: 14px; color: var(--faint); }
-.info-row .v { font-size: 16px; color: var(--text); margin-top: 4px; }
-.info-row .vsub { font-family: var(--mono); font-size: 12.5px; color: var(--faint); margin-top: 5px; }
+.info-row .ic { color: var(--accent); font-family: var(--mono); flex: none; width: 22px; }
+.info-row .ic.svg { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid var(--line);
+  border-radius: 10px; background: var(--bg-2); color: var(--accent); transition: border-color .25s, color .25s, transform .25s; }
+.info-row .ic.svg svg { width: 17px; height: 17px; }
+.info-row .k { font-family: var(--mono); font-size: 12px; color: var(--faint); }
+.info-row .v { font-size: 15px; color: var(--text); margin-top: 4px; line-height: 1.5; text-wrap: pretty; }
+.info-row.info-link { color: inherit; cursor: pointer; }
+.info-row.info-link .v { color: var(--accent); display: inline-flex; align-items: center; gap: 8px; }
+.info-row.info-link .arrow { transition: transform .2s; }
+.info-row.info-link:hover .ic.svg { border-color: var(--accent); transform: translateY(-1px); }
+.info-row.info-link:hover .arrow { transform: translateX(4px); }
+.contact-kicker { display: flex; width: fit-content; margin-bottom: 22px; }
+
+/* Contatti: un'unica card terminale con i metodi dentro. */
+.contact-card { display: flex; flex-direction: column; }
+.contact-card .term-body.contact-term { min-height: 0; padding: 22px 22px 18px; line-height: 1.95; }
+.contact-foot { border-top: 1px solid var(--line-2); background: var(--bg-2); padding: 18px; display: flex; flex-direction: column; gap: 11px; }
+.contact-foot .btn { width: 100%; justify-content: center; }
+.contact-foot .contact-email { color: var(--muted); }
+.contact-foot .contact-email:hover { color: var(--text); }
 
 /* ---------- CTA BAND ---------- */
 .cta-band { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
