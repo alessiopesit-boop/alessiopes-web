@@ -668,12 +668,13 @@ a.card { color: inherit; }
 
 /* ---------- WHATSAPP FAB (mobile) ---------- */
 .wa-fab { display: none; position: fixed; right: 16px; bottom: 16px; z-index: 45;
-  width: 54px; height: 54px; border-radius: 50%; align-items: center; justify-content: center;
+  width: 54px; height: 54px; border-radius: 16px; align-items: center; justify-content: center; flex: none;
   background: oklch(0.72 0.16 152); color: oklch(0.16 0.03 152);
   box-shadow: 0 10px 30px -8px oklch(0.72 0.16 152 / 0.55); transition: transform .2s, box-shadow .25s;
   -webkit-tap-highlight-color: transparent; }
 .wa-fab:hover { transform: translateY(-2px); box-shadow: 0 16px 40px -8px oklch(0.72 0.16 152 / 0.6); }
-.wa-fab svg { width: 28px; height: 28px; }
+/* Nudge ottico: la coda del fumetto WhatsApp sbilancia in basso a sinistra. */
+.wa-fab svg { width: 26px; height: 26px; transform: translate(1px, 1px); }
 @media (max-width: 760px) { .wa-fab { display: flex; } }
 /* Nascosto mentre il banner cookie e' visibile, per non sovrapporsi. */
 body:has(.cookie) .wa-fab { display: none; }
