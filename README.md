@@ -38,6 +38,18 @@ Online su **[alessiopes.it](https://alessiopes.it)** (GitHub Pages + custom doma
 
 La **produzione si aggiorna solo a un rilascio** (release-please): i push su `main` servono per integrazione e test in locale, non fanno deploy. Il workflow builda con `--base-href=/` e copia `index.csr.html` come `404.html` (fallback per gli URL non prerenderizzati).
 
+## SEO e accessibilità
+
+La parte tecnica è già pronta (sito statico veloce, meta per pagina, Open Graph, sitemap, robots, JSON-LD). Per **non rovinarla** quando si aggiungono pagine o contenuti (blog/guide), valgono alcune regole fisse:
+
+- una sola `<h1>` per pagina e heading **senza salti** (`h1` -> `h2` -> `h3`);
+- `title` e meta `description` univoci per ogni rotta (una keyword principale a pagina);
+- ogni nuova rotta va aggiunta a `public/sitemap.xml`;
+- immagini in WebP con dimensioni esplicite (anti-CLS), `alt` e `loading="lazy"`;
+- testo con contrasto AA (>= 4.5:1).
+
+Checklist completa e dettagli per gli articoli blog in `CLAUDE.md`.
+
 ## Stato
 
 Online (MVP). Recapiti reali (WhatsApp, email sul dominio). Progetti, recensioni e foto restano nascosti finché non ci sono contenuti reali (dettagli in `CLAUDE.md`).
