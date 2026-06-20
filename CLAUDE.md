@@ -15,13 +15,14 @@ Sito personale di Alessio Pes (servizi web per PMI/P.IVA) realizzato in **Angula
 
 ## Struttura
 
-- `src/app/app.ts` - shell: `<app-nav>`, `<router-outlet>`, `<app-footer>`, `<app-cookie-banner>`, `<app-page-loader>`
-- `src/app/app.routes.ts` - route (le pagine non ancora portate puntano a `ComingSoon` via `data.soon`)
-- `src/app/core/` - `ThemeService`, `RevealDirective` (`.reveal` on-scroll)
+- `src/app/app.ts` / `app.html` - shell: `<app-nav>`, `<router-outlet>`, `<app-footer>`, `<app-cookie-banner>`, `<app-page-loader>` + il FAB WhatsApp (solo mobile)
+- `src/app/app.routes.ts` - route: ogni rotta ha `title` e `data.description` (usati dal `SeoService`). `/progetti` e' commentata per l'MVP.
+- `src/app/core/` - `ThemeService`, `SeoService` (meta/OG/canonical per pagina), `RevealDirective` (`.reveal` on-scroll)
 - `src/app/shared/` - `Nav` (+ hamburger mobile), `Footer`, `CookieBanner`, `PageLoader` (4 quadrati),
-  `ParticleNetwork` (direttiva su `canvas[appParticleNetwork]`), `Terminal` (direttiva `[appTerminal]`),
+  `ParticleNetwork` (direttiva su `canvas[appParticleNetwork]`, in pausa fuori schermo), `Terminal` (direttiva `[appTerminal]`),
   `ImageSlot` (selettore `image-slot`, placeholder statico, niente drag&drop in questo MVP)
-- `src/app/pages/` - `home`, `not-found`, `coming-soon` (le altre pagine arrivano nelle PR successive)
+- `src/app/pages/` - una cartella per pagina: `home`, `servizi`, `progetti`, `chi-sono`, `preventivo`, `google`, `faq`, `contatti`, `privacy`, `not-found`
+- `src/fonts/` - font self-hosted (JetBrains Mono, Space Grotesk; `@font-face` in `styles.css`)
 
 Gli effetti che toccano DOM/`window`/canvas girano solo lato browser (`afterNextRender`), per non rompere il prerender.
 
