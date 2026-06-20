@@ -1,10 +1,11 @@
 name: Deploy to GitHub Pages
 
+# Produzione (alessiopes.it) aggiornata SOLO a un rilascio (release-please),
+# non a ogni push su main. `workflow_dispatch` resta come deploy manuale di emergenza.
 on:
-  push:
-    branches: [main]
   release:
     types: [published]
+  workflow_dispatch:
 
 permissions:
   contents: read
