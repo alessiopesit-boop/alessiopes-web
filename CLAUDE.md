@@ -65,6 +65,18 @@ npm run build    # build produzione + prerender
 - Tag fissi (og:image, og:site_name, JSON-LD `ProfessionalService`) in `index.html`. `robots.txt`, `sitemap.xml` e `og-image.png` (1200x630) in `public/`.
 - **Dominio cablato**: l'origine `https://alessiopes.it` è hardcoded in `seo.service.ts`, `index.html`, `sitemap.xml`, `robots.txt`. Se cambia il dominio, aggiornarli.
 
+### Regole per ogni nuova pagina/contenuto (blog/guide compresi)
+
+Da rispettare sempre, per non rovinare la SEO e l'accessibilità:
+
+1. **Una sola `<h1>` per pagina**, poi heading **senza salti** (`h1` -> `h2` -> `h3`, mai `h2` -> `h4`). Lighthouse penalizza i salti.
+2. **`title` e `data.description` univoci** su ogni rotta (`app.routes.ts`): li legge il `SeoService`. Title ~50-60 caratteri, description ~150-160, con le parole che la gente cerca davvero (una keyword principale per pagina).
+3. **Aggiungi la nuova rotta a `public/sitemap.xml`** (e, se serve, a `robots.txt`).
+4. **Link interni** tra pagine correlate, con testo descrittivo (no "clicca qui").
+5. **Immagini**: `alt` sensato, formato **WebP**, **dimensioni esplicite** (`width`/`height` anti-CLS), `loading="lazy"` sotto la piega.
+6. **Contrasto testo >= 4.5:1** (i token `--text`/`--muted` ok; `--faint` è già al limite, non scendere oltre).
+7. **Per gli articoli blog**: URL pulito (`/blog/<slug>`), JSON-LD `BlogPosting` (data, autore), `canonical` corretto. Contenuto che risponde a una ricerca reale, non keyword stuffing.
+
 ## Da fare / segnaposto
 
 - WhatsApp: numero reale impostato (`393897979420`). Email: per l'MVP si usa la personale (`alessio.pes.it@gmail.com`), da spostare su `ciao@alessiopes.it` quando il dominio ha la casella.
