@@ -2,14 +2,14 @@
 
 Sito commerciale personale di Alessio Pes, sviluppatore web e software freelance.
 
-Realizzato in **Angular** (standalone components) con **prerendering statico (SSG)** per un buon SEO, servito come sito statico su GitHub Pages.
+Online su **[alessiopes.it](https://alessiopes.it)**. Realizzato in **Angular** (standalone components) con **prerendering statico (SSG)** per un buon SEO, servito come sito statico su GitHub Pages con dominio personalizzato.
 
 ## Pagine
 
 - `/` - Home
 - `/servizi` - Servizi e prezzi
 - `/preventivo` - Configuratore preventivo interattivo
-- `/progetti` - Portfolio progetti
+- `/progetti` - Portfolio progetti *(nascosto per l'MVP, in arrivo)*
 - `/chi-sono` - Bio
 - `/contatti` - Contatti (WhatsApp + email)
 - `/faq` - Domande frequenti
@@ -34,12 +34,10 @@ npm run build    # build di produzione + prerender in dist/alessiopes-web/browse
 
 ## Deploy
 
-GitHub Pages: https://alessiopesit-boop.github.io/alessiopes-web
+Online su **[alessiopes.it](https://alessiopes.it)** (GitHub Pages + custom domain, HTTPS via Let's Encrypt).
 
-Push su `main` → build Angular + deploy automatico. Release (release-please) → ri-deploy.
-Il workflow builda con `--base-href=/alessiopes-web/` e copia `index.csr.html` come `404.html`
-(fallback per gli URL non prerenderizzati). Con dominio personalizzato, riportare il base-href a `/`.
+La **produzione si aggiorna solo a un rilascio** (release-please): i push su `main` servono per integrazione e test in locale, non fanno deploy. Il workflow builda con `--base-href=/` e copia `index.csr.html` come `404.html` (fallback per gli URL non prerenderizzati).
 
 ## Stato
 
-Alpha: design portato in Angular. Contenuti reali, immagini e recapiti (WhatsApp, URL progetti) da inserire.
+Online (MVP). Recapiti reali (WhatsApp, email sul dominio). Progetti, recensioni e foto restano nascosti finché non ci sono contenuti reali (dettagli in `CLAUDE.md`).
