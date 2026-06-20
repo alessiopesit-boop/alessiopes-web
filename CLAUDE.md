@@ -27,12 +27,12 @@ Gli effetti che toccano DOM/`window`/canvas girano solo lato browser (`afterNext
 
 ## CI/CD
 
-**Push su `main`** - build Angular + deploy automatico su GitHub Pages (`alessiopesit-boop.github.io/alessiopes-web`).
-Il workflow `deploy.yml`: `npm ci` -> `npm run build -- --base-href=/alessiopes-web/` ->
-copia `index.csr.html` in `404.html` (fallback per URL non prerenderizzati) -> upload di `dist/alessiopes-web/browser`.
+Niente ambiente di staging: si testa **in locale** (`npm start`). La **produzione** (`alessiopes.it`) si aggiorna **solo a un rilascio**.
 
-**Release pubblicata** (da release-please) - ri-deploy sullo stesso URL.
-Quando si compra il dominio: configurare il custom domain in GitHub Pages e riportare `--base-href=/`.
+**Push su `main`** - nessun deploy (solo integrazione + test locale).
+
+**Release pubblicata** (da release-please) - build + deploy su GitHub Pages (custom domain `alessiopes.it`). C'è anche `workflow_dispatch` per un deploy manuale d'emergenza.
+Il workflow `deploy.yml`: `npm ci` -> `npm run build -- --base-href=/` -> copia `index.csr.html` in `404.html` -> `.nojekyll` -> upload di `dist/alessiopes-web/browser`. Il custom domain + HTTPS sono impostati in *Settings > Pages*; `public/CNAME` contiene `alessiopes.it`.
 
 ### Dominio ed email (acquisto)
 
