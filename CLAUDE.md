@@ -34,6 +34,10 @@ copia `index.csr.html` in `404.html` (fallback per URL non prerenderizzati) -> u
 **Release pubblicata** (da release-please) - ri-deploy sullo stesso URL.
 Quando si compra il dominio: configurare il custom domain in GitHub Pages e riportare `--base-href=/`.
 
+### Dominio ed email (acquisto)
+
+Dominio `alessiopes.it` registrato su **Tophost**, pacchetto *Topname* (rinnovo **~6€/anno**). Include: dominio `.it`, 1GB di hosting (non usato: il sito sta su GitHub Pages) e **1 casella email** (`ciao@alessiopes.it`).
+
 ### Secrets GitHub da configurare
 
 | Secret | Descrizione |

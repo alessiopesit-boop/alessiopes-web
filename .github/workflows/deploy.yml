@@ -25,9 +25,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      # Project site servito da /alessiopes-web/. Cambiare in "/" quando si
-      # configura il dominio personalizzato in GitHub Pages.
-      - run: npm run build -- --base-href=/alessiopes-web/
+      # Dominio personalizzato (alessiopes.it) servito dalla root.
+      - run: npm run build -- --base-href=/
       # Fallback 404 per GitHub Pages: lo shell CSR avvia Angular e mostra la
       # pagina "non trovata" per qualsiasi URL non prerenderizzato.
       - run: cp dist/alessiopes-web/browser/index.csr.html dist/alessiopes-web/browser/404.html
