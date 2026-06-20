@@ -37,6 +37,7 @@ export class ParticleNetwork {
   private raf = 0;
   private ready = false;
   private reduce = false;
+  private visible = true;
   private readonly mouse = { x: -9999, y: -9999, active: false };
 
   private col: Palette = {
@@ -82,6 +83,19 @@ export class ParticleNetwork {
         this.resize();
         this.step();
       });
+
+      // Mette in pausa l'animazione quando l'hero esce dallo schermo (risparmio CPU/batteria).
+      const io = new IntersectionObserver((entries) => {
+        const vis = entries[0]?.isIntersecting ?? true;
+        if (vis === this.visible) return;
+        this.visible = vis;
+        if (vis && !this.reduce && !this.raf) this.step();
+        else if (!vis && this.raf) {
+          cancelAnimationFrame(this.raf);
+          this.raf = 0;
+        }
+      });
+      io.observe(this.canvas);
     });
   }
 
@@ -194,6 +208,7 @@ export class ParticleNetwork {
       ctx.fill();
     }
 
-    if (!this.reduce) this.raf = requestAnimationFrame(() => this.step());
+    if (!this.reduce && this.visible) this.raf = requestAnimationFrame(() => this.step());
+    else this.raf = 0;
   }
 }
