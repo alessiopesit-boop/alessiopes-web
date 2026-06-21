@@ -18,7 +18,7 @@
             <div class="cfg-q mono"><span class="qn">01</span> Cosa ti serve?</div>
             <div class="cfg-opts">
               @for (t of types; track t.val; let i = $index) {
-                <button type="button" class="cfg-opt" [class.on]="typeIdx() === i" (click)="selectType(i)">{{ t.short }}<span class="px">{{ t.px }}</span></button>
+                <button type="button" class="cfg-opt" [class.on]="typeIdx() === i" (click)="selectType(i)">{{ t.short }}<span class="px">{{ pxOf(t) }}</span></button>
               }
             </div>
           </div>

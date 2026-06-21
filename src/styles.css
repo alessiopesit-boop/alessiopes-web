@@ -485,7 +485,7 @@ footer { border-top: 1px solid var(--line); padding: 44px 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
-  .ticker-track, .scroll-cue .bar, .status.live .led, .price .badge .led, .photo-cap .led { animation: none; }
+  .ticker-track, .scroll-cue .bar, .status.live .led, .price .badge .led, .photo-cap .led, .launch-note .promo-deadline .led { animation: none; }
   .card, .card-media { transition: none; }
 }
 
@@ -494,11 +494,19 @@ footer { border-top: 1px solid var(--line); padding: 44px 0; }
    configuratore, cookie banner
    ============================================================ */
 
-/* prezzo di lancio onesto (sostituisce il countdown) */
+/* prezzo di lancio onesto + countdown promo */
 .launch-note { margin-top: 16px; border: 1px solid color-mix(in oklch, var(--accent-2) 45%, var(--line)); border-radius: 12px;
   padding: 14px 16px; background: color-mix(in oklch, var(--accent-2) 8%, transparent); }
 .launch-note .lh { font-family: var(--mono); font-size: 12px; color: var(--accent-2); display: flex; align-items: center; gap: 8px; }
 .launch-note p { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.55; text-wrap: pretty; }
+.launch-note .promo-deadline { display: flex; align-items: center; gap: 8px; margin-top: 12px; padding-top: 12px;
+  border-top: 1px solid color-mix(in oklch, var(--accent-2) 25%, transparent); font-size: 12px; color: var(--text); }
+.launch-note .promo-deadline b { color: var(--accent-2); }
+.launch-note .promo-deadline .led { width: 7px; height: 7px; border-radius: 50%; flex: none; background: var(--accent-2);
+  box-shadow: 0 0 8px var(--accent-2); animation: pulse 1.8s infinite; }
+
+/* titolo blocco "prezzi trasparenti" */
+.price-trans-title { font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; letter-spacing: -0.02em; }
 
 /* costi chiari per piano */
 .cost-lines { list-style: none; margin-top: 18px; display: grid; gap: 0; border-top: 1px solid var(--line-2); }

@@ -52,7 +52,11 @@
           <h3>Sito vetrina</h3>
           <span class="for mono">per chi vuole esserci ed essere trovato</span>
           <p>Un sito professionale che presenta la tua attività, i tuoi servizi e ti fa contattare. Perfetto per artigiani, studi e negozi di zona.</p>
-          <span class="from mono">da <b>590€</b><s>890€</s></span>
+          @if (promo.active()) {
+            <span class="from mono">da <b>590€</b><s>890€</s></span>
+          } @else {
+            <span class="from mono">da <b>890€</b></span>
+          }
           <span class="go mono">Scopri di più <span class="arrow">→</span></span>
         </a>
 
@@ -61,7 +65,7 @@
           <h3>Sito + portale di gestione</h3>
           <span class="for mono">per chi vuole gestire tutto da solo</span>
           <p>Sito su misura con un'area riservata: prenotazioni, blog, foto e contenuti che aggiorni tu, senza dover chiamare nessuno.</p>
-          <span class="from mono">da <b>1.800€</b></span>
+          <span class="from mono">da <b>1.900€</b></span>
           <span class="go mono">Scopri di più <span class="arrow">→</span></span>
         </a>
 
@@ -70,7 +74,7 @@
           <h3>Negozio online</h3>
           <span class="for mono">per chi vuole vendere i suoi prodotti</span>
           <p>Un e-commerce davvero tuo, non una bancarella su un marketplace che si tiene una fetta di ogni ordine. Carrello, pagamenti e ordini, su misura.</p>
-          <span class="from mono">da <b>2.900€</b></span>
+          <span class="from mono">da <b>3.200€</b></span>
           <span class="go mono">Scopri di più <span class="arrow">→</span></span>
         </a>
 
