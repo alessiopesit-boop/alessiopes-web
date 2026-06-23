@@ -26,6 +26,14 @@ Sito personale di Alessio Pes (servizi web per PMI/P.IVA) realizzato in **Angula
 
 Gli effetti che toccano DOM/`window`/canvas girano solo lato browser (`afterNextRender`), per non rompere il prerender.
 
+## Logo e icone
+
+Logo "concept B" (terminale, font JetBrains Mono, accento cyan = token `--accent-2`):
+- **Compact `>_`**: tile quadrata in `nav` (classe `.logo .mark` + `.gt` per il `>`). È anche la **favicon** (`public/favicon.svg`, tracciati vettoriali, niente dipendenza da font) e le icone PWA/Apple `public/icon-180|192|512.png`.
+- **Extended `> alessiopes.it`** animato (cursore lampeggiante): nel **footer** (classi `.logo-term`/`.gt`/`.wm`/`.dot`/`.caret`, keyframe `blink`, disattivato con `prefers-reduced-motion`).
+- **Rigenerare i PNG**: `npm i sharp --no-save && node scripts/gen-icons.mjs` (sharp non resta nei deps; i PNG generati vanno committati). Per cambiare il logo, aggiorna sia `favicon.svg` sia l'SVG dentro `scripts/gen-icons.mjs`.
+- **Social card** `public/og-image.png` (1200x630): rigenerabile con `npm i @resvg/resvg-js wawoff2 --no-save && node scripts/gen-og.mjs` (decomprime i font `.woff2` del sito in TTF e renderizza l'SVG col brand). Aggiornala se cambi logo o tagline.
+
 ## CI/CD
 
 Niente ambiente di staging: si testa **in locale** (`npm start`). La **produzione** (`alessiopes.it`) si aggiorna **solo a un rilascio**.
