@@ -74,8 +74,9 @@ nav.scrolled { background: color-mix(in oklch, var(--bg) 72%, transparent); back
 .logo { font-family: var(--mono); font-weight: 700; font-size: 16px; display: flex; align-items: center; gap: 11px; letter-spacing: -0.02em; white-space: nowrap; }
 /* Logo: tile terminale ">_" (concept B compact) */
 .logo .mark { width: 30px; height: 30px; border-radius: 8px; background: var(--bg-2); border: 1px solid var(--line);
-  color: var(--text); display: grid; place-items: center; font-weight: 700; font-size: 15px; letter-spacing: -0.04em; flex: none; }
-.logo .mark .gt { color: var(--accent-2); }
+  color: var(--text); display: flex; align-items: center; justify-content: center; line-height: 1;
+  font-weight: 700; font-size: 15px; letter-spacing: -0.04em; flex: none; }
+.logo .mark .gt { color: var(--accent-2); margin-right: 1px; }
 .logo .dot { color: var(--accent); }
 
 /* Footer: wordmark terminale animato "> alessiopes.it" (concept B extended) */
