@@ -230,7 +230,7 @@ section.block.tight { padding: 80px 0; }
 .price { background: var(--bg-2); border: 1px solid var(--line); border-radius: 18px; padding: 36px; position: relative; overflow: hidden;
   display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: start; }
 .price.featured { border-color: color-mix(in oklch, var(--accent) 60%, var(--line)); box-shadow: 0 0 0 1px var(--accent-soft); }
-.price .badge { position: absolute; top: 26px; right: 36px; font-family: var(--mono); font-size: 11.5px; color: var(--accent-2);
+.price .badge { position: absolute; top: 26px; right: 36px; z-index: 2; background: var(--bg-2); font-family: var(--mono); font-size: 11.5px; color: var(--accent-2);
   border: 1px solid color-mix(in oklch, var(--accent-2) 50%, var(--line)); border-radius: 100px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 8px; }
 .price .badge .led { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 8px var(--accent-2); animation: pulse 1.8s infinite; }
 @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
@@ -480,8 +480,11 @@ footer { border-top: 1px solid var(--line); padding: 44px 0; }
   .svc-grid { grid-template-columns: 1fr; }
   .card-media, .proj-grid.is-list .card-media { flex-basis: auto; height: 180px; }
   .hero-meta { gap: 18px 28px; }
-  /* Titoli di sezione: font responsivo grande quanto sta, e se serve va a capo. */
-  .sec-title { font-size: clamp(24px, 6.4vw, 30px); }
+  /* Titoli di sezione: font responsivo grande quanto sta, e se serve va a capo.
+     Il numero e' grande quanto il titolo e resta allineato alla PRIMA riga
+     (baseline), non centrato verticalmente sul blocco quando il titolo va a capo. */
+  .sec-title { font-size: clamp(20px, 5.8vw, 30px); align-items: baseline; gap: 9px; }
+  .sec-title .num { font-size: 1em; font-weight: 700; }
   .sec-note { max-width: none; }
   /* CTA a tutta larghezza: evita coppie di bottoni di larghezze diverse. */
   .hero-cta .btn, .cta-band .inner .btn { width: 100%; justify-content: center; }
@@ -575,6 +578,10 @@ a.card { color: inherit; }
 .cfg-hint { font-family: var(--mono); font-size: 11.5px; color: var(--faint); margin-top: 10px; }
 
 .cfg-out { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 30px; position: sticky; top: 92px; }
+.cfg-out-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.cfg-reset { font-family: var(--mono); font-size: 12px; color: var(--muted); background: var(--bg-2); border: 1px solid var(--line);
+  border-radius: 8px; padding: 6px 11px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: border-color .2s, color .2s; flex: none; }
+.cfg-reset:hover { border-color: var(--accent); color: var(--accent); }
 .cfg-out .lbl { font-family: var(--mono); font-size: 12px; color: var(--faint); }
 .cfg-total { font-family: var(--mono); font-size: clamp(34px, 5vw, 46px); font-weight: 800; letter-spacing: -0.03em; color: var(--text); margin-top: 6px; line-height: 1.05; }
 .cfg-total .cur { color: var(--accent); }

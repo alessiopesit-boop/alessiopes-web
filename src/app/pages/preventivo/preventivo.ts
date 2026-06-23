@@ -263,6 +263,17 @@ export class Preventivo {
   onNote(e: Event): void {
     this.note.set((e.target as HTMLTextAreaElement).value);
   }
+  // Azzera il configuratore e riporta tutte le scelte ai valori di partenza.
+  reset(): void {
+    this.typeIdx.set(0);
+    this.pages.set(5);
+    this.addonSel.set(new Set());
+    this.googleIdx.set(0);
+    this.maintIdx.set(1);
+    this.startIdx.set(0);
+    this.whenIdx.set(0);
+    this.note.set('');
+  }
 
   private fmt(n: number): string {
     return n.toLocaleString('it-IT');

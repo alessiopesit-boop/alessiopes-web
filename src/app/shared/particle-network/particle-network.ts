@@ -64,17 +64,22 @@ export class ParticleNetwork {
       this.ready = true;
 
       const hero = this.canvas.parentElement as HTMLElement;
-      hero.addEventListener('pointermove', (e: PointerEvent) => {
-        const r = hero.getBoundingClientRect();
-        this.mouse.x = e.clientX - r.left;
-        this.mouse.y = e.clientY - r.top;
-        this.mouse.active = true;
-      });
-      hero.addEventListener('pointerleave', () => {
-        this.mouse.active = false;
-        this.mouse.x = -9999;
-        this.mouse.y = -9999;
-      });
+      // Interazione col puntatore solo con mouse/trackpad: su touch i puntini ondeggiano
+      // e basta (niente reattivita' al tocco, che su mobile si nota appena e da' fastidio).
+      const finePointer = window.matchMedia('(pointer: fine)').matches;
+      if (finePointer) {
+        hero.addEventListener('pointermove', (e: PointerEvent) => {
+          const r = hero.getBoundingClientRect();
+          this.mouse.x = e.clientX - r.left;
+          this.mouse.y = e.clientY - r.top;
+          this.mouse.active = true;
+        });
+        hero.addEventListener('pointerleave', () => {
+          this.mouse.active = false;
+          this.mouse.x = -9999;
+          this.mouse.y = -9999;
+        });
+      }
 
       this.resize();
       this.step();
