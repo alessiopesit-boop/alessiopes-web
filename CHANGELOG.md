@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.0.0...v1.1.0) (2026-06-23)
+
+
+### Features
+
+* **logo:** nuovo logo terminale (favicon, nav e footer animato) ([#27](https://github.com/alessiopesit-boop/alessiopes-web/issues/27)) ([4117910](https://github.com/alessiopesit-boop/alessiopes-web/commit/411791081f8a6fd1c932aa2a76a91a6c2d440b4e))
+* **servizi:** promo di lancio a tempo e listino prezzi aggiornato ([#26](https://github.com/alessiopesit-boop/alessiopes-web/issues/26)) ([6270116](https://github.com/alessiopesit-boop/alessiopes-web/commit/62701162d089b6b3bb5b504336dca938b3e89b06))
+
+
+### Bug Fixes
+
+* **a11y:** contrasto testo e ordine heading (WCAG AA) + regole SEO ([#24](https://github.com/alessiopesit-boop/alessiopes-web/issues/24)) ([a826fd7](https://github.com/alessiopesit-boop/alessiopes-web/commit/a826fd766acc0a1db66299d8abfaa55dd688c9c2))
+* **ui:** bottone azzera nel preventivo e fix vari mobile/design ([#28](https://github.com/alessiopesit-boop/alessiopes-web/issues/28)) ([e25a8b1](https://github.com/alessiopesit-boop/alessiopes-web/commit/e25a8b199171d648113ab0e3fa952803bb7e4c04))
+
 ## 1.0.0 (2026-06-20)
 
 
