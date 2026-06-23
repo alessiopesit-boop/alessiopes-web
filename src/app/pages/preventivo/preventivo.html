@@ -90,7 +90,10 @@
 
         <!-- OUTPUT -->
         <aside class="cfg-out reveal d2">
-          <span class="lbl mono">Stima una tantum</span>
+          <div class="cfg-out-head">
+            <span class="lbl mono">Stima una tantum</span>
+            <button type="button" class="cfg-reset mono" (click)="reset()" title="Azzera e ricomincia"><span aria-hidden="true">↺</span> Ricomincia</button>
+          </div>
           <div class="cfg-total mono"><span class="cur">~</span>{{ totalText() }}<span class="cur">€</span></div>
           <div class="mono" style="font-size:11px;color:var(--accent-2);margin-top:4px;">prezzo finale · nessuna IVA da aggiungere</div>
           <ul class="cfg-recap">
