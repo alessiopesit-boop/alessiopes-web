@@ -1,5 +1,7 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, afterNextRender, computed, inject, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { RevealDirective } from '../../core/reveal.directive';
+import { PromoService } from '../../core/promo.service';
 
 // Recapiti reali usati per i link WhatsApp/email del configuratore.
 const WHATSAPP = '393897979420'; // numero WhatsApp (prefisso internazionale, senza +)
@@ -55,8 +57,8 @@ const typeAnnualLabel: Record<TypeVal, string> = {
 export class Preventivo {
   readonly types: TypeOpt[] = [
     { val: 'vetrina', base: 590, label: 'Sito vetrina', short: 'Sito vetrina', px: 'da 590€' },
-    { val: 'gestione', base: 1800, label: 'Sito + portale di gestione', short: 'Sito + gestione', px: 'da 1.800€' },
-    { val: 'ecommerce', base: 2900, label: 'E-commerce su misura', short: 'E-commerce', px: 'da 2.900€' },
+    { val: 'gestione', base: 1900, label: 'Sito + portale di gestione', short: 'Sito + gestione', px: 'da 1.900€' },
+    { val: 'ecommerce', base: 3200, label: 'E-commerce su misura', short: 'E-commerce', px: 'da 3.200€' },
     { val: 'app', base: 3900, label: 'App o software su misura', short: 'App / software', px: 'da 3.900€' },
   ];
   readonly addons: AddonOpt[] = [
@@ -103,6 +105,20 @@ export class Preventivo {
     { label: 'Sto solo valutando', short: 'Sto solo valutando' },
   ];
 
+  readonly promo = inject(PromoService);
+  private readonly route = inject(ActivatedRoute);
+  // Prezzo pieno del sito vetrina fuori promo (la base nei `types` e' quella di lancio).
+  private static readonly VETRINA_FULL = 890;
+
+  constructor() {
+    // Preseleziona il pacchetto se arrivo da /servizi con ?tipo=... (solo lato browser, no mismatch SSG).
+    afterNextRender(() => {
+      const tipo = this.route.snapshot.queryParamMap.get('tipo');
+      const i = this.types.findIndex((t) => t.val === tipo);
+      if (i >= 0) this.typeIdx.set(i);
+    });
+  }
+
   // selezioni
   readonly typeIdx = signal(0);
   readonly pages = signal(5);
@@ -116,6 +132,15 @@ export class Preventivo {
   // derivati
   readonly type = computed(() => this.types[this.typeIdx()]);
   readonly isVetrina = computed(() => this.type().val === 'vetrina');
+  // Base effettiva: il vetrina usa il prezzo di lancio finche' la promo e' attiva, poi quello pieno.
+  private readonly effectiveBase = computed(() =>
+    this.isVetrina() && !this.promo.active() ? Preventivo.VETRINA_FULL : this.type().base,
+  );
+  // Etichetta prezzo per i bottoni: il vetrina segue la promo.
+  pxOf(t: TypeOpt): string {
+    if (t.val === 'vetrina' && !this.promo.active()) return 'da ' + Preventivo.VETRINA_FULL + '€';
+    return t.px;
+  }
   readonly pagesLabel = computed(() => {
     const n = this.pages();
     return n + (n === 1 ? ' pagina' : ' pagine');
@@ -130,7 +155,7 @@ export class Preventivo {
   private readonly wantMaint = computed(() => this.maintOpts[this.maintIdx()].maint);
 
   readonly oneTime = computed(() =>
-    this.round10(this.type().base + this.pageExtra() + this.addonTotal() + this.google().setup),
+    this.round10(this.effectiveBase() + this.pageExtra() + this.addonTotal() + this.google().setup),
   );
   private readonly annual = computed(() => recurringAnnual[this.type().val]);
   private readonly monthly = computed(

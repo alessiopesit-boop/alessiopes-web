@@ -43,7 +43,9 @@
         <!-- VETRINA -->
         <article class="price featured reveal" id="vetrina">
           <div>
-            <span class="badge mono"><span class="led"></span>Prezzo di lancio</span>
+            @if (promo.active()) {
+              <span class="badge mono"><span class="led"></span>Prezzo di lancio</span>
+            }
             <span class="ix mono">/01 · Sito vetrina</span>
             <h3>Sito vetrina su misura</h3>
             <p class="case"><b>Sei un idraulico, un'estetista o uno studio.</b> Le persone ti cercano su Google ma non ti trovano, o trovano solo la pagina Facebook. Ti serve un sito che dica chi sei, cosa fai e come contattarti, e che ti faccia sembrare professionale come sei davvero.</p>
@@ -58,22 +60,35 @@
           <aside class="price-side">
             <span class="label mono">Chiavi in mano · una tantum</span>
             <div class="price-amount">
-              <span class="now mono">590€</span>
-              <span class="was mono">890€</span>
+              @if (promo.active()) {
+                <span class="now mono">590€</span>
+                <span class="was mono">890€</span>
+              } @else {
+                <span class="now mono">890€</span>
+              }
             </div>
             <!-- Regime ORDINARIO? sostituisci la riga sotto con: prezzi + IVA 22% -->
             <div class="mono" style="font-size:11px;color:var(--accent-2);margin-top:6px;">prezzo finale · nessuna IVA da aggiungere</div>
-            <div class="launch-note">
-              <span class="lh mono"><span style="font-size:10px;">●</span> Perché costa meno</span>
-              <p>Sto avviando l'attività: i primi clienti pagano un prezzo agevolato. In cambio ti chiedo una recensione onesta e il permesso di mostrare il lavoro qui nel portfolio.</p>
-            </div>
+            @if (promo.active()) {
+              <div class="launch-note">
+                <span class="lh mono"><span style="font-size:10px;">●</span> Perché questo prezzo</span>
+                <p>Sto inaugurando la mia attività di sviluppo freelance. Per i primi <b>5 clienti</b> azzero il mio margine in cambio di una recensione onesta e del permesso di mostrare il lavoro qui nel portfolio. È un'occasione a tempo per avere un sito professionale a un prezzo che dopo il lancio non rifarò.</p>
+                <p class="promo-deadline mono">
+                  <span class="led"></span> Promo di lancio valida fino al {{ promo.endLabel }}@if (promo.daysLeft()) {<b> · ancora {{ promo.daysLeft() }} {{ promo.daysLeft() === 1 ? 'giorno' : 'giorni' }}</b>}
+                </p>
+              </div>
+            }
             <ul class="cost-lines">
               <li><span class="k">Tuo, dal 2° anno</span><span class="v">dominio + hosting <b>~90€/anno</b></span></li>
-              <li><span class="k">Manutenzione</span><span class="v">3 mesi inclusi, poi <b>da 15€/mese</b></span></li>
+              @if (promo.active()) {
+                <li><span class="k">Manutenzione</span><span class="v"><b>6 mesi inclusi</b> (promo lancio), poi da 15€/mese</span></li>
+              } @else {
+                <li><span class="k">Manutenzione</span><span class="v">3 mesi inclusi, poi <b>da 15€/mese</b></span></li>
+              }
               <li><span class="k">Modifiche extra</span><span class="v">a pacchetto, su preventivo</span></li>
               <li><span class="k">Consegna</span><span class="v">1-2 settimane</span></li>
             </ul>
-            <a routerLink="/preventivo" class="btn btn-primary" style="width:100%;justify-content:center;">Lo voglio <span class="arrow">→</span></a>
+            <a routerLink="/preventivo" [queryParams]="{ tipo: 'vetrina' }" class="btn btn-primary" style="width:100%;justify-content:center;">Lo voglio <span class="arrow">→</span></a>
           </aside>
         </article>
 
@@ -95,7 +110,7 @@
             <span class="label mono">Chiavi in mano · a partire da</span>
             <div class="price-amount">
               <span class="from-lbl mono">da</span>
-              <span class="now mono">1.800€</span>
+              <span class="now mono">1.900€</span>
             </div>
             <div class="mono" style="font-size:11px;color:var(--accent-2);margin-top:6px;">prezzo finale · nessuna IVA da aggiungere</div>
             <ul class="cost-lines">
@@ -105,7 +120,7 @@
               <li><span class="k">Consegna</span><span class="v">3-5 settimane</span></li>
             </ul>
             <p class="contact-fine mono" style="text-align:left;margin-top:14px;">Il prezzo dipende dalle funzioni del pannello. Il canone annuo dal 2° anno cresce con il traffico e le prestazioni.</p>
-            <a routerLink="/preventivo" class="btn btn-ghost" style="width:100%;justify-content:center;">Calcola il preventivo <span class="arrow">→</span></a>
+            <a routerLink="/preventivo" [queryParams]="{ tipo: 'gestione' }" class="btn btn-ghost" style="width:100%;justify-content:center;">Calcola il preventivo <span class="arrow">→</span></a>
           </aside>
         </article>
 
@@ -127,7 +142,7 @@
             <span class="label mono">Chiavi in mano · a partire da</span>
             <div class="price-amount">
               <span class="from-lbl mono">da</span>
-              <span class="now mono">2.900€</span>
+              <span class="now mono">3.200€</span>
             </div>
             <div class="mono" style="font-size:11px;color:var(--accent-2);margin-top:6px;">prezzo finale · nessuna IVA da aggiungere</div>
             <ul class="cost-lines">
@@ -137,7 +152,7 @@
               <li><span class="k">Consegna</span><span class="v">4-6 settimane</span></li>
             </ul>
             <p class="contact-fine mono" style="text-align:left;margin-top:14px;">Il prezzo cresce col numero di prodotti e funzioni di vendita. Il canone annuo dal 2° anno varia col traffico: più persone comprano, più serve il server.</p>
-            <a routerLink="/preventivo" class="btn btn-ghost" style="width:100%;justify-content:center;">Calcola il preventivo <span class="arrow">→</span></a>
+            <a routerLink="/preventivo" [queryParams]="{ tipo: 'ecommerce' }" class="btn btn-ghost" style="width:100%;justify-content:center;">Calcola il preventivo <span class="arrow">→</span></a>
           </aside>
         </article>
 
@@ -169,12 +184,31 @@
               <li><span class="k">Tempi</span><span class="v">li definiamo insieme</span></li>
             </ul>
             <p class="contact-fine mono" style="text-align:left;margin-top:14px;">Funzioni, tempi e prezzo li definiamo insieme prima di partire. Il canone annuo dal 2° anno varia con l'uso.</p>
-            <a routerLink="/preventivo" class="btn btn-ghost" style="width:100%;justify-content:center;">Raccontami l'idea <span class="arrow">→</span></a>
+            <a routerLink="/preventivo" [queryParams]="{ tipo: 'app' }" class="btn btn-ghost" style="width:100%;justify-content:center;">Raccontami l'idea <span class="arrow">→</span></a>
           </aside>
         </article>
 
       </div>
-      <p class="contact-fine mono reveal" style="text-align:left;margin-top:28px;">* Prezzi indicativi e finali: in <b>regime forfettario non applico IVA</b>, quindi quello che vedi è quello che paghi, niente da aggiungere. La manutenzione è sempre facoltativa: copre aggiornamenti, backup, sicurezza e piccole modifiche. Ogni attività è diversa, quindi il preventivo definitivo lo concordiamo insieme prima di iniziare, senza impegno.</p>
+      <div class="reveal" style="margin-top:38px;">
+        <h3 class="price-trans-title">Prezzi trasparenti, senza sorprese</h3>
+        <div class="why-grid" style="margin-top:18px;">
+          <div class="why">
+            <span class="g mono">IVA · 0%</span>
+            <h3>Regime forfettario</h3>
+            <p>Opero in regime forfettario: non applico IVA. La cifra che vedi è esattamente quella che paghi, niente da aggiungere alla consegna. Per privati, artigiani e piccole associazioni significa costare subito il 22% in meno di un'agenzia tradizionale.</p>
+          </div>
+          <div class="why">
+            <span class="g mono">facoltativa</span>
+            <h3>Manutenzione flessibile</h3>
+            <p>Aggiornamenti, backup, sicurezza e piccole modifiche sono sempre un servizio facoltativo: decidi tu se e quando attivarlo. Nessun contratto capestro che ti obbliga a restare.</p>
+          </div>
+          <div class="why">
+            <span class="g mono">su misura</span>
+            <h3>Soluzioni su misura</h3>
+            <p>I prezzi qui sopra sono una base di partenza realistica per orientarti sul budget. Il preventivo definitivo lo concordiamo insieme prima di iniziare, gratis e senza impegno.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

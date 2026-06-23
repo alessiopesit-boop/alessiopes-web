@@ -17,7 +17,7 @@ Sito personale di Alessio Pes (servizi web per PMI/P.IVA) realizzato in **Angula
 
 - `src/app/app.ts` / `app.html` - shell: `<app-nav>`, `<router-outlet>`, `<app-footer>`, `<app-cookie-banner>`, `<app-page-loader>` + il FAB WhatsApp (solo mobile)
 - `src/app/app.routes.ts` - route: ogni rotta ha `title` e `data.description` (usati dal `SeoService`). `/progetti` e' commentata per l'MVP.
-- `src/app/core/` - `ThemeService`, `SeoService` (meta/OG/canonical per pagina), `RevealDirective` (`.reveal` on-scroll)
+- `src/app/core/` - `ThemeService`, `SeoService` (meta/OG/canonical per pagina), `RevealDirective` (`.reveal` on-scroll), `PromoService` (promo di lancio)
 - `src/app/shared/` - `Nav` (+ hamburger mobile), `Footer`, `CookieBanner`, `PageLoader` (4 quadrati),
   `ParticleNetwork` (direttiva su `canvas[appParticleNetwork]`, in pausa fuori schermo), `Terminal` (direttiva `[appTerminal]`),
   `ImageSlot` (selettore `image-slot`, placeholder statico, niente drag&drop in questo MVP)
@@ -76,6 +76,14 @@ Da rispettare sempre, per non rovinare la SEO e l'accessibilità:
 5. **Immagini**: `alt` sensato, formato **WebP**, **dimensioni esplicite** (`width`/`height` anti-CLS), `loading="lazy"` sotto la piega.
 6. **Contrasto testo >= 4.5:1** (i token `--text`/`--muted` ok; `--faint` è già al limite, non scendere oltre).
 7. **Per gli articoli blog**: URL pulito (`/blog/<slug>`), JSON-LD `BlogPosting` (data, autore), `canonical` corretto. Contenuto che risponde a una ricerca reale, non keyword stuffing.
+
+## Prezzi e promo di lancio
+
+- **Listino pieno**: vetrina 890€, sito+portale da 1.900€, e-commerce da 3.200€, app/software da 3.900€. I prezzi vivono in tre punti: `pages/servizi/servizi.html` (listino), `pages/home/home.html` (card teaser) e `pages/preventivo/preventivo.ts` (`types`). Se cambi un prezzo, allineali tutti e tre.
+- **Promo di lancio** (`core/promo.service.ts`): per i primi clienti il sito vetrina è a 590€ invece di 890€. La promo è governata da una sola data `END_DATE`: oltre quella, badge, prezzo barrato, box "Perché questo prezzo" e countdown spariscono da soli e i prezzi tornano pieni (vetrina 890€) ovunque (servizi, home, preventivo). Per chiudere o spostare la promo basta cambiare `END_DATE`.
+- Il countdown ("ancora N giorni") è calcolato **solo lato browser** (`afterNextRender`), così non resta congelato al momento della build (SSG). La promo include 6 mesi di manutenzione anziché 3.
+- **Niente PR per chiudere la promo**: alla scadenza sparisce da sola. Resta solo del **dead code** da ripulire con comodo (nessuna fretta, non si vede): i blocchi `@if (promo.active()) { ... } @else { ... }` in `servizi.html`/`home.html`, `pxOf()`/`effectiveBase` in `preventivo.ts` e l'intero `PromoService`. Quando decidi che la promo non torna, togli i rami `@else` (tieni i prezzi pieni), il `PromoService` e questa sezione.
+- **Footer legale**: `P.IVA in apertura`. In `shared/footer/footer.html` c'è la dicitura del regime forfettario pronta (commentata): quando la P.IVA è attiva, inserire il numero e mostrare la riga. **Formula da confermare col commercialista.**
 
 ## Da fare / segnaposto
 
