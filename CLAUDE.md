@@ -34,6 +34,10 @@ Logo "concept B" (terminale, font JetBrains Mono, accento cyan = token `--accent
 - **Rigenerare i PNG**: `npm i sharp --no-save && node scripts/gen-icons.mjs` (sharp non resta nei deps; i PNG generati vanno committati). Per cambiare il logo, aggiorna sia `favicon.svg` sia l'SVG dentro `scripts/gen-icons.mjs`.
 - **Social card** `public/og-image.png` (1200x630): rigenerabile con `npm i @resvg/resvg-js wawoff2 --no-save && node scripts/gen-og.mjs` (decomprime i font `.woff2` del sito in TTF e renderizza l'SVG col brand). Aggiornala se cambi logo o tagline.
 
+## Numeri e indici (convenzione design)
+
+Le famiglie di "numeretti" hanno un senso: contatori di sezione `01` (accent, senza slash), indici card `/01 · …` (con slash, è la vibe "terminale", voluta come elemento che spezza), step/ordinali `01`. Le icone-simbolo delle garanzie (€ ↺ ⌘) restano icone, non numeri.
+
 ## CI/CD
 
 Niente ambiente di staging: si testa **in locale** (`npm start`). La **produzione** (`alessiopes.it`) si aggiorna **solo a un rilascio**.
