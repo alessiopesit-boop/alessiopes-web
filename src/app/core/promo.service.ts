@@ -13,7 +13,7 @@ import { Injectable, afterNextRender, signal } from '@angular/core';
 @Injectable({ providedIn: 'root' })
 export class PromoService {
   /** Fine promo lancio (incluso). Cambia SOLO questa riga per spostare/chiudere la promo. */
-  private static readonly END_DATE = new Date('2026-08-31T23:59:59');
+  private static readonly END_DATE = new Date('2026-09-30T23:59:59');
 
   /** Promo attiva. Default true (prerender mostra i prezzi promo); il browser la spegne se scaduta. */
   readonly active = signal(true);

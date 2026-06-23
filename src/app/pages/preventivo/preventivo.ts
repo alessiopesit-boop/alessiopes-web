@@ -1,4 +1,5 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, afterNextRender, computed, inject, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { RevealDirective } from '../../core/reveal.directive';
 import { PromoService } from '../../core/promo.service';
 
@@ -105,8 +106,18 @@ export class Preventivo {
   ];
 
   readonly promo = inject(PromoService);
+  private readonly route = inject(ActivatedRoute);
   // Prezzo pieno del sito vetrina fuori promo (la base nei `types` e' quella di lancio).
   private static readonly VETRINA_FULL = 890;
+
+  constructor() {
+    // Preseleziona il pacchetto se arrivo da /servizi con ?tipo=... (solo lato browser, no mismatch SSG).
+    afterNextRender(() => {
+      const tipo = this.route.snapshot.queryParamMap.get('tipo');
+      const i = this.types.findIndex((t) => t.val === tipo);
+      if (i >= 0) this.typeIdx.set(i);
+    });
+  }
 
   // selezioni
   readonly typeIdx = signal(0);

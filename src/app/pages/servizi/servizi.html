@@ -88,7 +88,7 @@
               <li><span class="k">Modifiche extra</span><span class="v">a pacchetto, su preventivo</span></li>
               <li><span class="k">Consegna</span><span class="v">1-2 settimane</span></li>
             </ul>
-            <a routerLink="/preventivo" class="btn btn-primary" style="width:100%;justify-content:center;">Lo voglio <span class="arrow">→</span></a>
+            <a routerLink="/preventivo" [queryParams]="{ tipo: 'vetrina' }" class="btn btn-primary" style="width:100%;justify-content:center;">Lo voglio <span class="arrow">→</span></a>
           </aside>
         </article>
 
@@ -120,7 +120,7 @@
               <li><span class="k">Consegna</span><span class="v">3-5 settimane</span></li>
             </ul>
             <p class="contact-fine mono" style="text-align:left;margin-top:14px;">Il prezzo dipende dalle funzioni del pannello. Il canone annuo dal 2° anno cresce con il traffico e le prestazioni.</p>
-            <a routerLink="/preventivo" class="btn btn-ghost" style="width:100%;justify-content:center;">Calcola il preventivo <span class="arrow">→</span></a>
+            <a routerLink="/preventivo" [queryParams]="{ tipo: 'gestione' }" class="btn btn-ghost" style="width:100%;justify-content:center;">Calcola il preventivo <span class="arrow">→</span></a>
           </aside>
         </article>
 
@@ -152,7 +152,7 @@
               <li><span class="k">Consegna</span><span class="v">4-6 settimane</span></li>
             </ul>
             <p class="contact-fine mono" style="text-align:left;margin-top:14px;">Il prezzo cresce col numero di prodotti e funzioni di vendita. Il canone annuo dal 2° anno varia col traffico: più persone comprano, più serve il server.</p>
-            <a routerLink="/preventivo" class="btn btn-ghost" style="width:100%;justify-content:center;">Calcola il preventivo <span class="arrow">→</span></a>
+            <a routerLink="/preventivo" [queryParams]="{ tipo: 'ecommerce' }" class="btn btn-ghost" style="width:100%;justify-content:center;">Calcola il preventivo <span class="arrow">→</span></a>
           </aside>
         </article>
 
@@ -184,7 +184,7 @@
               <li><span class="k">Tempi</span><span class="v">li definiamo insieme</span></li>
             </ul>
             <p class="contact-fine mono" style="text-align:left;margin-top:14px;">Funzioni, tempi e prezzo li definiamo insieme prima di partire. Il canone annuo dal 2° anno varia con l'uso.</p>
-            <a routerLink="/preventivo" class="btn btn-ghost" style="width:100%;justify-content:center;">Raccontami l'idea <span class="arrow">→</span></a>
+            <a routerLink="/preventivo" [queryParams]="{ tipo: 'app' }" class="btn btn-ghost" style="width:100%;justify-content:center;">Raccontami l'idea <span class="arrow">→</span></a>
           </aside>
         </article>
 
