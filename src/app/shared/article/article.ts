@@ -67,7 +67,14 @@ export class ArticleComponent {
           if (h.tagName === 'H3') li.className = 'sub';
           const a = document.createElement('a');
           a.href = '#' + h.id;
-          a.textContent = label;
+          const num = (h.querySelector('.num')?.textContent || '').trim();
+          if (num) {
+            const ns = document.createElement('span');
+            ns.className = 'toc-num';
+            ns.textContent = num;
+            a.appendChild(ns);
+          }
+          a.appendChild(document.createTextNode(label));
           a.addEventListener('click', (e) => {
             e.preventDefault();
             document.getElementById(h.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
