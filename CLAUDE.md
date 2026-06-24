@@ -16,7 +16,7 @@ Sito personale di Alessio Pes (servizi web per PMI/P.IVA) realizzato in **Angula
 ## Struttura
 
 - `src/app/app.ts` / `app.html` - shell: `<app-nav>`, `<router-outlet>`, `<app-footer>`, `<app-cookie-banner>`, `<app-page-loader>` + il FAB WhatsApp (solo mobile)
-- `src/app/app.routes.ts` - route: ogni rotta ha `title` e `data.description` (usati dal `SeoService`). `/progetti` e' commentata per l'MVP.
+- `src/app/app.routes.ts` - route: ogni rotta ha `title` e `data.description` (usati dal `SeoService`).
 - `src/app/core/` - `ThemeService`, `SeoService` (meta/OG/canonical per pagina), `RevealDirective` (`.reveal` on-scroll), `PromoService` (promo di lancio)
 - `src/app/shared/` - `Nav` (+ hamburger mobile), `Footer`, `CookieBanner`, `PageLoader` (4 quadrati),
   `ParticleNetwork` (direttiva su `canvas[appParticleNetwork]`, in pausa fuori schermo), `Terminal` (direttiva `[appTerminal]`),
@@ -114,5 +114,5 @@ Da rispettare sempre, per non rovinare la SEO e l'accessibilità:
 
 - WhatsApp: numero reale impostato (`393897979420`). Email: per l'MVP si usa la personale (`alessio.pes.it@gmail.com`), da spostare su `ciao@alessiopes.it` quando il dominio ha la casella.
 - Foto: nascosta per l'MVP (vedi sotto). Quando arriva una foto vera, riattivare lo slot in `home.html` e `chi-sono.html` (la griglia torna a 2 colonne da sola via `:has`).
-- Screenshot dei progetti (oggi placeholder; storage immagini previsto col dominio).
-- **Progetti e recensioni nascosti per l'MVP** (non ancora reali): sezioni home "Lavori recenti"/"Dicono di me", voce nav/footer e rotta `/progetti` sono dietro `@if (false)` o commentate. Per ripristinare basta togliere il "nascondi" (`@if (false)` -> `@if (true)` e scommentare la rotta in `app.routes.ts`).
+- **Progetti**: ATTIVI. Pagina `/progetti` + sezione home "Lavori recenti" + voce nav/footer mostrano 2 progetti reali (Suea Fai/krating-daeng e Guess the Char), con screenshot WebP in `public/projects/` (catturati dai siti live con Edge headless, convertiti con sharp). Per aggiungerne altri: una card in `progetti.html` (e, se vuoi, in `home.html`) + immagine in `public/projects/`.
+- **Recensioni** ancora nascoste per l'MVP (`@if (false)` in `home.html`, sezione "Dicono di me"): sono finte, riattivare con recensioni vere.

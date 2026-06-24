@@ -19,12 +19,15 @@ export const routes: Routes = [
     },
     loadComponent: () => import('./pages/servizi/servizi').then((m) => m.Servizi),
   },
-  // MVP: rotta /progetti nascosta finché non ci sono progetti reali (togli i commenti per ripristinare).
-  // {
-  //   path: 'progetti',
-  //   title: 'Progetti · Alessio Pes',
-  //   loadComponent: () => import('./pages/progetti/progetti').then((m) => m.Progetti),
-  // },
+  {
+    path: 'progetti',
+    title: 'Progetti · Alessio Pes',
+    data: {
+      description:
+        'Progetti che ho costruito da zero e messo online: una demo e-commerce e una web app in Angular. Esempi reali di come lavoro, visitabili davvero.',
+    },
+    loadComponent: () => import('./pages/progetti/progetti').then((m) => m.Progetti),
+  },
   {
     path: 'chi-sono',
     title: 'Chi sono · Alessio Pes',

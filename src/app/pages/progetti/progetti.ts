@@ -1,6 +1,5 @@
 import { Component, afterNextRender, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ImageSlot } from '../../shared/image-slot/image-slot';
 import { RevealDirective } from '../../core/reveal.directive';
 
 type View = 'grid' | 'list';
@@ -8,7 +7,7 @@ const STORAGE_KEY = 'ap-proj-view';
 
 @Component({
   selector: 'app-progetti',
-  imports: [RouterLink, ImageSlot, RevealDirective],
+  imports: [RouterLink, RevealDirective],
   templateUrl: './progetti.html',
 })
 export class Progetti {

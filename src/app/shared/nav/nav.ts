@@ -30,8 +30,7 @@ export class Nav {
 
   readonly links: NavItem[] = [
     { path: '/servizi', label: 'Servizi e prezzi' },
-    // MVP: voce 'Progetti' nascosta finché non ci sono progetti reali (riattiva togliendo il commento).
-    // { path: '/progetti', label: 'Progetti' },
+    { path: '/progetti', label: 'Progetti' },
     { path: '/chi-sono', label: 'Chi sono' },
     { path: '/faq', label: 'FAQ' },
     { path: '/contatti', label: 'Contatti' },
