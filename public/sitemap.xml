@@ -26,6 +26,36 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://alessiopes.it/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://alessiopes.it/blog/quanto-costa-un-sito-web</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://alessiopes.it/blog/wordpress-o-sito-su-misura</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://alessiopes.it/blog/sito-web-o-pagina-facebook</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://alessiopes.it/blog/farsi-trovare-su-google</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://alessiopes.it/blog/sito-vetrina-cos-e-a-chi-serve</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://alessiopes.it/chi-sono</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

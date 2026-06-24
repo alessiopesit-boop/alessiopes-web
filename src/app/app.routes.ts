@@ -1,4 +1,11 @@
 import { Routes } from '@angular/router';
+import { ARTICLE_BY_SLUG } from './core/blog.data';
+
+const QUANTO_COSTA = ARTICLE_BY_SLUG['quanto-costa-un-sito-web'];
+const WP_SU_MISURA = ARTICLE_BY_SLUG['wordpress-o-sito-su-misura'];
+const SITO_O_FB = ARTICLE_BY_SLUG['sito-web-o-pagina-facebook'];
+const TROVARE_GOOGLE = ARTICLE_BY_SLUG['farsi-trovare-su-google'];
+const SITO_VETRINA = ARTICLE_BY_SLUG['sito-vetrina-cos-e-a-chi-serve'];
 
 export const routes: Routes = [
   {
@@ -27,6 +34,60 @@ export const routes: Routes = [
         'Progetti che ho costruito da zero e messo online: una demo e-commerce e una web app in Angular. Esempi reali di come lavoro, visitabili davvero.',
     },
     loadComponent: () => import('./pages/progetti/progetti').then((m) => m.Progetti),
+  },
+  {
+    path: 'blog',
+    title: 'Guide e articoli · Alessio Pes',
+    data: {
+      description:
+        'Guide pratiche su siti web, costi e farsi trovare su Google, in parole semplici per chi ha una piccola attività o P.IVA. Niente fuffa, solo cose utili.',
+    },
+    loadComponent: () => import('./pages/blog/blog').then((m) => m.Blog),
+  },
+  {
+    path: 'blog/quanto-costa-un-sito-web',
+    title: QUANTO_COSTA.title + ' · Alessio Pes',
+    data: { description: QUANTO_COSTA.description, article: QUANTO_COSTA },
+    loadComponent: () =>
+      import('./pages/blog/quanto-costa-un-sito-web/quanto-costa-un-sito-web').then(
+        (m) => m.QuantoCostaUnSitoWeb,
+      ),
+  },
+  {
+    path: 'blog/wordpress-o-sito-su-misura',
+    title: WP_SU_MISURA.title + ' · Alessio Pes',
+    data: { description: WP_SU_MISURA.description, article: WP_SU_MISURA },
+    loadComponent: () =>
+      import('./pages/blog/wordpress-o-sito-su-misura/wordpress-o-sito-su-misura').then(
+        (m) => m.WordpressOSitoSuMisura,
+      ),
+  },
+  {
+    path: 'blog/sito-web-o-pagina-facebook',
+    title: SITO_O_FB.title + ' · Alessio Pes',
+    data: { description: SITO_O_FB.description, article: SITO_O_FB },
+    loadComponent: () =>
+      import('./pages/blog/sito-web-o-pagina-facebook/sito-web-o-pagina-facebook').then(
+        (m) => m.SitoWebOPaginaFacebook,
+      ),
+  },
+  {
+    path: 'blog/farsi-trovare-su-google',
+    title: TROVARE_GOOGLE.title + ' · Alessio Pes',
+    data: { description: TROVARE_GOOGLE.description, article: TROVARE_GOOGLE },
+    loadComponent: () =>
+      import('./pages/blog/farsi-trovare-su-google/farsi-trovare-su-google').then(
+        (m) => m.FarsiTrovareSuGoogle,
+      ),
+  },
+  {
+    path: 'blog/sito-vetrina-cos-e-a-chi-serve',
+    title: SITO_VETRINA.title + ' · Alessio Pes',
+    data: { description: SITO_VETRINA.description, article: SITO_VETRINA },
+    loadComponent: () =>
+      import('./pages/blog/sito-vetrina-cos-e-a-chi-serve/sito-vetrina-cos-e-a-chi-serve').then(
+        (m) => m.SitoVetrinaCosEAChiServe,
+      ),
   },
   {
     path: 'chi-sono',

@@ -1,0 +1,79 @@
+<!-- barra di avanzamento lettura (si muove da sola lato browser) -->
+<div class="read-progress" aria-hidden="true"></div>
+
+<header class="art-head">
+  <div class="glow"></div>
+  <div class="wrap inner">
+    <span class="art-cat">{{ article.category }}</span>
+    <h1 class="art-h1">{{ article.h1 }}</h1>
+    <p class="art-dek">{{ article.dek }}</p>
+    <div class="art-meta">
+      <span class="au"><span class="av mono"><span class="gt">&gt;</span>_</span> Alessio Pes</span>
+      <span class="dot"></span>
+      <time class="mi" [attr.datetime]="article.datePublished">{{ article.dateLabel }}</time>
+      <span class="dot"></span>
+      <span class="mi" data-reading-time>{{ article.readingMin }} min di lettura</span>
+    </div>
+  </div>
+</header>
+
+<div class="art-layout wrap">
+  <aside class="toc" aria-label="Indice dei contenuti">
+    <div class="toc-title mono">In questa guida</div>
+    <ul data-toc></ul>
+    <div class="toc-cta">
+      <p>Vuoi una cifra sul tuo caso, non in generale?</p>
+      <a routerLink="/preventivo" class="btn btn-primary">Calcola il preventivo <span class="arrow">→</span></a>
+    </div>
+  </aside>
+
+  <article class="prose">
+    <ng-content></ng-content>
+
+    <div class="author-box">
+      <div class="av-lg mono"><span class="gt">&gt;</span>_</div>
+      <div>
+        <div class="ab-name">Alessio Pes</div>
+        <div class="ab-role mono">Sviluppatore · siti e software su misura</div>
+        <p>Costruisco siti, gestionali e app per piccole attività e P.IVA. Una persona sola, dall'idea al server online: parli sempre con me, niente call center e niente WordPress.</p>
+        <div class="ab-links">
+          <a routerLink="/chi-sono">Chi sono <span class="arrow">→</span></a>
+          <a href="https://wa.me/393897979420" target="_blank" rel="noopener">Scrivimi su WhatsApp <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+@if (related.length) {
+  <section class="block tight">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 class="sec-title"><span class="num mono">→</span>Continua a leggere</h2>
+          <p class="sec-note" style="margin-top:10px;max-width:none;">// Altre guide per chi ha una piccola attività.</p>
+        </div>
+      </div>
+      <div class="related">
+        @for (r of related; track r.slug) {
+          <a class="rel-card" [routerLink]="['/blog', r.slug]">
+            <span class="rc-cat mono">{{ r.category }}</span>
+            <h3>{{ r.crumb }}</h3>
+            <p>{{ r.dek }}</p>
+            <span class="rc-go mono">Leggi la guida <span class="arrow">→</span></span>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+}
+
+<section class="cta-band">
+  <div class="wrap inner">
+    <div>
+      <h3>Pronto a sapere quanto costa il tuo sito?</h3>
+      <p>Raccontami la tua attività: ti rispondo con un'idea concreta, tempi e prezzo. Senza impegno.</p>
+    </div>
+    <a routerLink="/preventivo" class="btn btn-primary">Calcola il preventivo <span class="arrow">→</span></a>
+  </div>
+</section>

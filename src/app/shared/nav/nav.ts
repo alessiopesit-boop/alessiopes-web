@@ -31,6 +31,7 @@ export class Nav {
   readonly links: NavItem[] = [
     { path: '/servizi', label: 'Servizi e prezzi' },
     { path: '/progetti', label: 'Progetti' },
+    { path: '/blog', label: 'Guide' },
     { path: '/chi-sono', label: 'Chi sono' },
     { path: '/faq', label: 'FAQ' },
     { path: '/contatti', label: 'Contatti' },

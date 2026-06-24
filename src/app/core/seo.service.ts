@@ -2,6 +2,7 @@ import { DOCUMENT, Injectable, inject } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import { filter } from 'rxjs/operators';
+import type { Article } from './blog.data';
 
 /** Dominio di produzione: usato per canonical e og:url assoluti. */
 const ORIGIN = 'https://alessiopes.it';
@@ -50,5 +51,77 @@ export class SeoService {
       this.doc.head.appendChild(canonical);
     }
     canonical.setAttribute('href', url);
+
+    this.applyArticle((snapshot.data['article'] as Article | undefined) ?? null, url);
+  }
+
+  /** Meta e JSON-LD specifici degli articoli (og:type=article + dati strutturati). */
+  private applyArticle(article: Article | null, url: string): void {
+    this.meta.updateTag({ property: 'og:type', content: article ? 'article' : 'website' });
+
+    const artTags = ['article:published_time', 'article:modified_time', 'article:author', 'article:section'];
+    if (article) {
+      this.meta.updateTag({ property: 'article:published_time', content: article.datePublished });
+      this.meta.updateTag({ property: 'article:modified_time', content: article.dateModified });
+      this.meta.updateTag({ property: 'article:author', content: 'Alessio Pes' });
+      this.meta.updateTag({ property: 'article:section', content: article.category });
+    } else {
+      artTags.forEach((p) => this.meta.removeTag(`property='${p}'`));
+    }
+
+    let script = this.doc.getElementById('ld-article');
+    if (!article) {
+      script?.remove();
+      return;
+    }
+    if (!script) {
+      script = this.doc.createElement('script');
+      script.setAttribute('type', 'application/ld+json');
+      script.id = 'ld-article';
+      this.doc.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(this.articleGraph(article, url));
+  }
+
+  private articleGraph(a: Article, url: string): unknown {
+    const graph: unknown[] = [
+      {
+        '@type': 'Article',
+        headline: a.title,
+        description: a.description,
+        datePublished: a.datePublished,
+        dateModified: a.dateModified,
+        inLanguage: 'it-IT',
+        articleSection: a.category,
+        keywords: a.keywords,
+        author: {
+          '@type': 'Person',
+          name: 'Alessio Pes',
+          jobTitle: 'Sviluppatore web e software su misura',
+          url: ORIGIN + '/chi-sono',
+        },
+        publisher: { '@type': 'Person', name: 'Alessio Pes', url: ORIGIN + '/' },
+        mainEntityOfPage: url,
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: ORIGIN + '/' },
+          { '@type': 'ListItem', position: 2, name: 'Guide', item: ORIGIN + '/blog' },
+          { '@type': 'ListItem', position: 3, name: a.crumb, item: url },
+        ],
+      },
+    ];
+    if (a.faq?.length) {
+      graph.push({
+        '@type': 'FAQPage',
+        mainEntity: a.faq.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      });
+    }
+    return { '@context': 'https://schema.org', '@graph': graph };
   }
 }
