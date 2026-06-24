@@ -193,7 +193,8 @@ section.block.tight { padding: 80px 0; }
 .sec-title { font-family: var(--mono); font-weight: 800; font-size: clamp(26px, 3.4vw, 40px); letter-spacing: -0.02em;
   display: flex; align-items: center; gap: 12px; }
 .sec-title .num { color: var(--accent); font-size: 0.72em; font-weight: 500; line-height: 1; flex: none; }
-.sec-note { font-family: var(--mono); font-size: 13px; color: var(--faint); max-width: 32ch; }
+/* Commenti "// ..." di sezione: una riga su desktop, a capo solo se non ci stanno (mobile). */
+.sec-note { font-family: var(--mono); font-size: 13px; color: var(--faint); }
 
 /* ---------- PAGE HEADER (pagine interne) ---------- */
 .page-head { position: relative; padding: 150px 0 56px; overflow: hidden; border-bottom: 1px solid var(--line); }
