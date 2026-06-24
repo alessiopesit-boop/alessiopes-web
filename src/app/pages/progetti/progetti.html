@@ -3,7 +3,7 @@
   <div class="wrap inner">
     <span class="kicker">Progetti</span>
     <h1>Cose che ho già <span class="brace">messo online</span>.</h1>
-    <p>Siti per clienti reali, app pubblicate sugli store e progetti che sto costruendo. Ogni cosa qui è fatta su misura, da zero, e quelle online le puoi visitare davvero.</p>
+    <p>Progetti che ho costruito da zero, online e visitabili davvero: una demo e-commerce e una web app. Sono lavori miei che mostrano come costruisco le cose, niente template.</p>
   </div>
 </header>
 
@@ -29,90 +29,33 @@
 
       <div class="proj-grid reveal" [class.is-list]="view() === 'list'">
 
-        <!-- ⚙️ Sostituisci href="#" con l'URL reale di ogni sito/app online -->
-        <a class="card" href="#" target="_blank" rel="noopener">
+        <a class="card" href="https://alessiopesit-boop.github.io/krating-daeng/" target="_blank" rel="noopener">
           <div class="card-media">
             <div class="media-status"><span class="status live"><span class="led"></span>Online</span></div>
-            <image-slot placeholder="↑ screenshot del sito" />
+            <img src="/projects/krating-daeng.webp" width="1000" height="625" loading="lazy" alt="Schermata dell'e-commerce Suea Fai: hero rosso con la bottiglia del tonico energetico in vetro." />
           </div>
           <div class="card-content">
-            <div class="card-top"><span class="card-idx mono">/01</span><span class="ptype">Sito vetrina · cliente P.IVA</span></div>
-            <h3>Impresa termoidraulica</h3>
-            <p>Sito professionale per un'impresa di termoidraulica: servizi, contatti rapidi e presenza online per farsi trovare dai clienti della zona.</p>
-            <div class="tags"><span class="tag">Sito vetrina</span><span class="tag">Mobile</span><span class="tag">SEO locale</span></div>
-            <span class="card-link ext mono">Visita il sito <span class="arrow">↗</span></span>
+            <div class="card-top"><span class="card-idx mono">/01</span><span class="ptype">E-commerce demo · progetto personale</span></div>
+            <h3>Suea Fai · e-commerce</h3>
+            <p>E-commerce single-page per un brand (fittizio) di tonico energetico: catalogo, schede prodotto, carrello e checkout simulato, bilingue. Costruito in Angular, senza backend.</p>
+            <div class="tags"><span class="tag">Angular</span><span class="tag">E-commerce</span><span class="tag">Bilingue</span></div>
+            <span class="card-link ext mono">Visita la demo <span class="arrow">↗</span></span>
           </div>
         </a>
 
-        <a class="card" href="#" target="_blank" rel="noopener">
+        <a class="card" href="https://alessiopesit-boop.github.io/guess-the-char/" target="_blank" rel="noopener">
           <div class="card-media">
-            <div class="media-status"><span class="status live"><span class="led"></span>Su Google Play</span></div>
-            <image-slot placeholder="↑ screenshot Play Store" />
+            <div class="media-status"><span class="status live"><span class="led"></span>Online</span></div>
+            <img src="/projects/guess-the-char.webp" width="1000" height="625" loading="lazy" alt="Schermata della web app Guess the Char: griglia di caratteri di diverse scritture del mondo." />
           </div>
           <div class="card-content">
-            <div class="card-top"><span class="card-idx mono">/02</span><span class="ptype">App mobile · pubblicata</span></div>
-            <h3>Glifo: quiz di scrittura</h3>
-            <p>Gioco a quiz in cui indovini il glifo: dato un simbolo, riconosci la scrittura corretta. Pubblicata e scaricabile dal Play Store.</p>
-            <div class="tags"><span class="tag">App Android</span><span class="tag">Gioco</span><span class="tag">Play Store</span></div>
-            <span class="card-link ext mono">Apri su Google Play <span class="arrow">↗</span></span>
+            <div class="card-top"><span class="card-idx mono">/02</span><span class="ptype">Web app · PWA · progetto personale</span></div>
+            <h3>Guess the Char</h3>
+            <p>Quiz per riconoscere i sistemi di scrittura del mondo (hiragana, hangul, arabo…): quattro modalità di gioco, classifiche e sfide. Web app installabile, costruita in Angular.</p>
+            <div class="tags"><span class="tag">Angular</span><span class="tag">PWA</span><span class="tag">Gioco</span></div>
+            <span class="card-link ext mono">Apri la web app <span class="arrow">↗</span></span>
           </div>
         </a>
-
-        <a class="card" href="#" target="_blank" rel="noopener">
-          <div class="card-media">
-            <div class="media-status"><span class="status live"><span class="led"></span>In uso</span></div>
-            <image-slot placeholder="↑ screenshot app" />
-          </div>
-          <div class="card-content">
-            <div class="card-top"><span class="card-idx mono">/03</span><span class="ptype">App + portale · progetto completo</span></div>
-            <h3>Segnalazioni cittadine</h3>
-            <p>Piattaforma per segnalare problemi locali (buche, disservizi, sicurezza) con mappa, categorie e un pannello che gestisce tutte le segnalazioni.</p>
-            <div class="tags"><span class="tag">App + portale</span><span class="tag">Mappe</span><span class="tag">Area gestione</span></div>
-            <span class="card-link ext mono">Guarda il progetto <span class="arrow">↗</span></span>
-          </div>
-        </a>
-
-        <article class="card">
-          <div class="card-media">
-            <div class="media-status"><span class="status dev"><span class="led"></span>In sviluppo</span></div>
-            <image-slot placeholder="↑ anteprima" />
-          </div>
-          <div class="card-content">
-            <div class="card-top"><span class="card-idx mono">/04</span><span class="ptype">Web app · dati e mappe</span></div>
-            <h3>Mappa siti nucleari</h3>
-            <p>Mappa interattiva dei siti nucleari nei dintorni, con schede informative, distanze e dati per ciascun impianto.</p>
-            <div class="tags"><span class="tag">Web app</span><span class="tag">Mappe</span><span class="tag">Dataset</span></div>
-            <span class="card-link mono" style="color:var(--faint);">Presto online</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-media">
-            <div class="media-status"><span class="status dev"><span class="led"></span>In sviluppo</span></div>
-            <image-slot placeholder="↑ anteprima" />
-          </div>
-          <div class="card-content">
-            <div class="card-top"><span class="card-idx mono">/05</span><span class="ptype">App mobile · gioco di carte</span></div>
-            <h3>Balance: companion TCG</h3>
-            <p>App di supporto per il gioco di carte Balance: gestione mazzi, regole e strumenti per i giocatori durante le partite.</p>
-            <div class="tags"><span class="tag">App Android</span><span class="tag">Offline-first</span></div>
-            <span class="card-link mono" style="color:var(--faint);">Presto online</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-media">
-            <div class="media-status"><span class="status dev"><span class="led"></span>In sviluppo</span></div>
-            <image-slot placeholder="↑ anteprima" />
-          </div>
-          <div class="card-content">
-            <div class="card-top"><span class="card-idx mono">/06</span><span class="ptype">App · dati in tempo reale</span></div>
-            <h3>Risparmio energetico smart</h3>
-            <p>Suggerisce quando consumare corrente in base a produzione solare e prezzo del mercato elettrico nel momento, per spendere meno.</p>
-            <div class="tags"><span class="tag">App</span><span class="tag">Dati energia</span><span class="tag">Tempo reale</span></div>
-            <span class="card-link mono" style="color:var(--faint);">Presto online</span>
-          </div>
-        </article>
 
       </div>
     </div>
