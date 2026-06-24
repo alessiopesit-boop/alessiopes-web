@@ -794,9 +794,14 @@ body:has(.cookie) .wa-fab { display: none; }
 .art-table .hl { color: var(--accent-2); font-weight: 700; font-family: var(--mono); }
 
 /* citazione */
-.pullquote { margin: 28px 0; padding: 4px 0 4px 22px; border-left: 3px solid var(--accent); }
-.pullquote p { font-family: var(--mono); font-size: clamp(18px, 2.2vw, 22px); font-weight: 500; color: var(--text); letter-spacing: -.01em; line-height: 1.5; margin: 0; }
-.pullquote cite { display: block; margin-top: 10px; font-style: normal; font-size: 13px; color: var(--faint); }
+.pullquote { position: relative; margin: 36px 0; padding: 30px 32px 28px 34px; border: 1px solid var(--line);
+  border-radius: 16px; background: color-mix(in oklch, var(--accent) 5%, var(--bg-2)); overflow: hidden; }
+.pullquote::before { content: '\201C'; position: absolute; top: 2px; left: 16px; font-family: Georgia, 'Times New Roman', serif;
+  font-size: 84px; line-height: 1; color: color-mix(in oklch, var(--accent) 22%, transparent); pointer-events: none; }
+.pullquote p { position: relative; font-family: var(--sans); font-size: clamp(18px, 2vw, 22px); font-weight: 500; font-style: italic;
+  color: var(--text); line-height: 1.55; margin: 0; text-wrap: pretty; }
+.pullquote cite { display: block; margin-top: 16px; font-style: normal; font-family: var(--mono); font-size: 12.5px; color: var(--faint); }
+.pullquote cite::before { content: '— '; color: var(--accent); }
 
 /* step numerati */
 .art-steps { list-style: none; counter-reset: step; margin: 24px 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
