@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.3.0...v1.3.1) (2026-06-24)
+
+
+### Bug Fixes
+
+* **ui:** commenti di sezione "// ..." su una riga (a capo solo su mobile) ([#35](https://github.com/alessiopesit-boop/alessiopes-web/issues/35)) ([bf992fe](https://github.com/alessiopesit-boop/alessiopes-web/commit/bf992fe02254607af1923ab91d9485189b04a5ee))
+
 ## [1.3.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.2.0...v1.3.0) (2026-06-24)
 
 
