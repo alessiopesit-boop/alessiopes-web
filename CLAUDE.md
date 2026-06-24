@@ -63,6 +63,14 @@ Dominio `alessiopes.it` registrato su **Tophost**, pacchetto *Topname* (rinnovo 
 2. Settings > Pages > Source: **GitHub Actions**
 3. Aggiungere il secret `RELEASE_PLEASE_TOKEN`
 
+### Monitoraggio uptime
+
+**UptimeRobot** (piano free) controlla che il sito sia online: 2 monitor su `https://alessiopes.it`, ogni 5 minuti, con alert via email.
+- **HTTP(s)**: il sito risponde.
+- **Keyword** "Alessio Pes": la pagina contiene ancora il testo atteso (becca il caso "risponde 200 ma è rotta/vuota").
+
+Niente status page pubblica (inutile per un sito-vetrina). Config fuori dal repo, sul cruscotto UptimeRobot.
+
 ## Comandi locali
 
 ```bash
