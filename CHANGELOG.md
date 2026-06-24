@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.1.0...v1.2.0) (2026-06-24)
+
+
+### Features
+
+* **analytics:** Cloudflare Web Analytics cookieless + privacy aggiornata ([#29](https://github.com/alessiopesit-boop/alessiopes-web/issues/29)) ([bf439d1](https://github.com/alessiopesit-boop/alessiopes-web/commit/bf439d1d0e29618e45ab9f2e62aa08d416b12997))
+
 ## [1.1.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.0.0...v1.1.0) (2026-06-23)
 
 
