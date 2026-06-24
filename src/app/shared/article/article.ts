@@ -46,9 +46,13 @@ export class ArticleComponent {
       if (tocList && headings.length) {
         const used = new Set<string>();
         headings.forEach((h) => {
+          // Etichetta senza il numerino di sezione (lo span .num).
+          const labelEl = h.cloneNode(true) as HTMLElement;
+          labelEl.querySelector('.num')?.remove();
+          const label = (labelEl.textContent || '').trim();
           if (!h.id) {
-            let base =
-              (h.textContent || '')
+            const base =
+              label
                 .toLowerCase()
                 .replace(/[^a-z0-9\s-]/g, '')
                 .trim()
@@ -63,7 +67,7 @@ export class ArticleComponent {
           if (h.tagName === 'H3') li.className = 'sub';
           const a = document.createElement('a');
           a.href = '#' + h.id;
-          a.textContent = h.textContent;
+          a.textContent = label;
           a.addEventListener('click', (e) => {
             e.preventDefault();
             document.getElementById(h.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -78,9 +82,9 @@ export class ArticleComponent {
       const bar = root.querySelector('.read-progress') as HTMLElement | null;
       if (bar) {
         const onScroll = () => {
-          const h = document.documentElement;
-          const max = h.scrollHeight - h.clientHeight;
-          bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+          const max = document.documentElement.scrollHeight - window.innerHeight;
+          const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+          bar.style.width = Math.max(0, Math.min(100, pct)) + '%';
         };
         onScroll();
         window.addEventListener('scroll', onScroll, { passive: true });
