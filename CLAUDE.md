@@ -77,6 +77,11 @@ npm run build    # build produzione + prerender
 - Tag fissi (og:image, og:site_name, JSON-LD `ProfessionalService`) in `index.html`. `robots.txt`, `sitemap.xml` e `og-image.png` (1200x630) in `public/`.
 - **Dominio cablato**: l'origine `https://alessiopes.it` è hardcoded in `seo.service.ts`, `index.html`, `sitemap.xml`, `robots.txt`. Se cambia il dominio, aggiornarli.
 
+### Analytics
+
+- **Cloudflare Web Analytics** (cookieless, niente profilazione): beacon `static.cloudflareinsights.com/beacon.min.js` con `data-cf-beacon` token, in fondo al `<body>` di `index.html`. Modalità JS-beacon (nessun proxy/cambio DNS: il sito resta su GitHub Pages). I dati compaiono nella dashboard Cloudflare solo dopo che la versione col beacon è online.
+- Essendo senza cookie e senza profilazione, non è dietro consenso: è solo **dichiarato** nella pagina `/privacy` (sezione 3) e accennato nel `CookieBanner`. Se in futuro aggiungi strumenti con cookie/profilazione (es. Google Analytics, pixel), allora servirà il gating dietro consenso.
+
 ### Regole per ogni nuova pagina/contenuto (blog/guide compresi)
 
 Da rispettare sempre, per non rovinare la SEO e l'accessibilità:

@@ -75,7 +75,7 @@ export const routes: Routes = [
     title: 'Privacy & cookie · Alessio Pes',
     data: {
       description:
-        'Informativa privacy e cookie del sito di Alessio Pes: quali dati tratto, come e i tuoi diritti. Solo cookie tecnici, nessun tracciamento.',
+        'Informativa privacy e cookie del sito di Alessio Pes: quali dati tratto, come e i tuoi diritti. Solo cookie tecnici e statistiche anonime, nessuna profilazione.',
     },
     loadComponent: () => import('./pages/privacy/privacy').then((m) => m.Privacy),
   },
