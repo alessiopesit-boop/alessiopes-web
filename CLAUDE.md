@@ -100,7 +100,18 @@ Da rispettare sempre, per non rovinare la SEO e l'accessibilità:
 4. **Link interni** tra pagine correlate, con testo descrittivo (no "clicca qui").
 5. **Immagini**: `alt` sensato, formato **WebP**, **dimensioni esplicite** (`width`/`height` anti-CLS), `loading="lazy"` sotto la piega.
 6. **Contrasto testo >= 4.5:1** (i token `--text`/`--muted` ok; `--faint` è già al limite, non scendere oltre).
-7. **Per gli articoli blog**: URL pulito (`/blog/<slug>`), JSON-LD `BlogPosting` (data, autore), `canonical` corretto. Contenuto che risponde a una ricerca reale, non keyword stuffing.
+7. **Per gli articoli blog**: URL pulito (`/blog/<slug>`), JSON-LD `Article`+`Breadcrumb`(+`FAQPage`), `canonical` corretto. Contenuto che risponde a una ricerca reale, non keyword stuffing.
+
+## Blog / Guide
+
+**Scopo**: ogni articolo/guida serve a fare **SEO e portare traffico organico** verso i servizi. Strategia: **evergreen ad alta intenzione** (cosa cercano davvero le piccole attività: "quanto costa un sito", "WordPress o su misura", "sito o pagina Facebook", "farsi trovare su Google"), **non** contenuti trending/news (traffico che non converte e decade). L'**anno nel titolo** (es. "...nel 2026") si usa **solo** dove l'anno conta davvero (guide-prezzo) ed è un **refresh manuale annuale** (aggiorni numeri + `dateModified`), mai automatico (su SSG sarebbe congelato o ingannevole). Ogni articolo deve avere **link interni** alle pagine che convertono (`/preventivo`, `/servizi`, `/google`).
+
+**Come funziona**:
+- Registro unico in `core/blog.data.ts` (`ARTICLES`): slug, title, h1, dek, description, categoria, date, FAQ, ecc. Alimenta indice, rotte, "correlate", JSON-LD e sitemap.
+- `shared/article/` (`<app-article slug="...">`): layout condiviso (header, **indice/TOC auto**, **tempo di lettura** e **barra di lettura** lato browser, box autore, correlate, CTA). Ogni articolo proietta dentro la `.prose` **solo i blocchi che gli servono** (vedi [[blog-template]]): `lead`, `takeaways`, `callout tip|warn|note`, `art-table`, `pullquote`, `art-steps`, `inline-cta`, `faq art-faq`. Stili in `styles.css` (sezione BLOG / GUIDE).
+- SEO articolo: il `SeoService` legge `data.article` dalla rotta e genera og:type=article, `article:*` e il JSON-LD `Article`+`BreadcrumbList`(+`FAQPage`). Le FAQ visibili devono combaciare 1:1 con quelle nel registro.
+
+**Aggiungere un articolo**: 1) voce in `ARTICLES`; 2) componente in `pages/blog/<slug>/` con `<app-article slug="...">` e la prose; 3) rotta in `app.routes.ts` (`data: { description, article }`); 4) URL in `public/sitemap.xml`.
 
 ## Prezzi e promo di lancio
 

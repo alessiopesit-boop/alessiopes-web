@@ -1,0 +1,30 @@
+<header class="page-head">
+  <div class="glow"></div>
+  <div class="wrap inner">
+    <span class="kicker">Guide</span>
+    <h1>Guide e <span class="brace">articoli</span>.</h1>
+    <p>Consigli pratici su siti web, costi e farsi trovare online, scritti in parole semplici per chi ha una piccola attività. Niente fuffa: solo quello che serve a decidere bene.</p>
+  </div>
+</header>
+
+<main>
+  <section class="block tight">
+    <div class="wrap">
+      <div class="blog-list reveal">
+        @for (a of articles; track a.slug) {
+          <a class="blog-card" [routerLink]="['/blog', a.slug]">
+            <span class="bc-cat mono">{{ a.category }}</span>
+            <h2>{{ a.crumb }}</h2>
+            <p>{{ a.dek }}</p>
+            <div class="bc-meta mono">
+              <time [attr.datetime]="a.datePublished">{{ a.dateLabel }}</time>
+              <span class="dot"></span>
+              <span>{{ a.readingMin }} min</span>
+              <span class="bc-go">Leggi <span class="arrow">→</span></span>
+            </div>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+</main>

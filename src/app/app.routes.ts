@@ -1,4 +1,7 @@
 import { Routes } from '@angular/router';
+import { ARTICLE_BY_SLUG } from './core/blog.data';
+
+const QUANTO_COSTA = ARTICLE_BY_SLUG['quanto-costa-un-sito-web'];
 
 export const routes: Routes = [
   {
@@ -27,6 +30,24 @@ export const routes: Routes = [
         'Progetti che ho costruito da zero e messo online: una demo e-commerce e una web app in Angular. Esempi reali di come lavoro, visitabili davvero.',
     },
     loadComponent: () => import('./pages/progetti/progetti').then((m) => m.Progetti),
+  },
+  {
+    path: 'blog',
+    title: 'Guide e articoli · Alessio Pes',
+    data: {
+      description:
+        'Guide pratiche su siti web, costi e farsi trovare su Google, in parole semplici per chi ha una piccola attività o P.IVA. Niente fuffa, solo cose utili.',
+    },
+    loadComponent: () => import('./pages/blog/blog').then((m) => m.Blog),
+  },
+  {
+    path: 'blog/quanto-costa-un-sito-web',
+    title: QUANTO_COSTA.title + ' · Alessio Pes',
+    data: { description: QUANTO_COSTA.description, article: QUANTO_COSTA },
+    loadComponent: () =>
+      import('./pages/blog/quanto-costa-un-sito-web/quanto-costa-un-sito-web').then(
+        (m) => m.QuantoCostaUnSitoWeb,
+      ),
   },
   {
     path: 'chi-sono',
