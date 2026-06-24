@@ -794,7 +794,7 @@ body:has(.cookie) .wa-fab { display: none; }
 .art-table .hl { color: var(--accent-2); font-weight: 700; font-family: var(--mono); }
 
 /* citazione */
-.pullquote { position: relative; margin: 36px 0; padding: 30px 32px 28px 34px; border: 1px solid var(--line);
+.pullquote { position: relative; margin: 36px 0; padding: 48px 32px 28px 34px; border: 1px solid var(--line);
   border-radius: 16px; background: color-mix(in oklch, var(--accent) 5%, var(--bg-2)); overflow: hidden; }
 .pullquote::before { content: '\201C'; position: absolute; top: 2px; left: 16px; font-family: Georgia, 'Times New Roman', serif;
   font-size: 84px; line-height: 1; color: color-mix(in oklch, var(--accent) 22%, transparent); pointer-events: none; }
