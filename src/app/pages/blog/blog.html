@@ -10,7 +10,23 @@
 <main>
   <section class="block tight">
     <div class="wrap">
-      <div class="blog-list reveal">
+      <div class="sec-head reveal">
+        <div>
+          <h2 class="sec-title"><span class="num mono">→</span>Tutte le guide</h2>
+          <p class="sec-note" style="margin-top:10px;">// Scritte per chi ha una piccola attività.</p>
+        </div>
+        <div class="view-toggle" role="tablist" aria-label="Modalità vista guide">
+          <button type="button" [class.active]="view() === 'grid'" [attr.aria-pressed]="view() === 'grid'" (click)="setView('grid')">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="1.5" width="5" height="5" rx="1"/><rect x="9.5" y="1.5" width="5" height="5" rx="1"/><rect x="1.5" y="9.5" width="5" height="5" rx="1"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/></svg>
+            Griglia
+          </button>
+          <button type="button" [class.active]="view() === 'list'" [attr.aria-pressed]="view() === 'list'" (click)="setView('list')">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="2" width="4" height="4" rx="1"/><line x1="8" y1="4" x2="14.5" y2="4"/><rect x="1.5" y="10" width="4" height="4" rx="1"/><line x1="8" y1="12" x2="14.5" y2="12"/></svg>
+            Elenco
+          </button>
+        </div>
+      </div>
+      <div class="blog-list reveal" [class.is-list]="view() === 'list'">
         @for (a of articles; track a.slug) {
           <a class="blog-card" [routerLink]="['/blog', a.slug]">
             <span class="bc-cat mono">{{ a.category }}</span>
