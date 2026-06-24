@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.2.0...v1.3.0) (2026-06-24)
+
+
+### Features
+
+* **blog:** sezione Guide con sistema articoli e prima guida SEO ([#34](https://github.com/alessiopesit-boop/alessiopes-web/issues/34)) ([ad0e448](https://github.com/alessiopesit-boop/alessiopes-web/commit/ad0e448e013a19eda1e04645f2d3efc94662fe27))
+* **progetti:** sezione progetti reali (Suea Fai e Guess the Char) ([#32](https://github.com/alessiopesit-boop/alessiopes-web/issues/32)) ([504afe7](https://github.com/alessiopesit-boop/alessiopes-web/commit/504afe74fbd2bacaa69833521ef0d71b07c68060))
+
 ## [1.2.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.1.0...v1.2.0) (2026-06-24)
 
 
