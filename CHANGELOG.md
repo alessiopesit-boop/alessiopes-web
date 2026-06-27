@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.3.1...v1.3.2) (2026-06-27)
+
+
+### Bug Fixes
+
+* rilievi accessibilita', CLS e layout mobile dall'audit Lighthouse ([#39](https://github.com/alessiopesit-boop/alessiopes-web/issues/39)) ([6a593ff](https://github.com/alessiopesit-boop/alessiopes-web/commit/6a593ff99b79a473c892c150f06a5803ea8761d3))
+
 ## [1.3.1](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.3.0...v1.3.1) (2026-06-24)
 
 
