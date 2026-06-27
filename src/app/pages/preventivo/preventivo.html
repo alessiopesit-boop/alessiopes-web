@@ -27,7 +27,7 @@
             <div class="cfg-group">
               <div class="cfg-q mono"><span class="qn">02</span> Quante pagine, all'incirca?</div>
               <div class="cfg-slider">
-                <input type="range" min="3" max="12" step="1" [value]="pages()" (input)="onPages($event)" />
+                <input type="range" min="3" max="12" step="1" aria-label="Numero di pagine del sito" [value]="pages()" (input)="onPages($event)" />
                 <span class="val mono">{{ pagesLabel() }}</span>
               </div>
               <div class="cfg-hint mono">Fino a 5 pagine sono incluse nel prezzo base.</div>
@@ -82,7 +82,7 @@
 
           <div class="cfg-group">
             <div class="cfg-q mono"><span class="qn">08</span> Vuoi aggiungere due righe? <span style="color:var(--faint);font-size:12px;">(facoltativo)</span></div>
-            <textarea maxlength="500" rows="4" [value]="note()" (input)="onNote($event)" placeholder="Raccontami in breve la tua attività, cosa ti piace, esempi di siti che ti piacciono..." style="width:100%;font-family:var(--sans);font-size:15px;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 15px;resize:vertical;"></textarea>
+            <textarea maxlength="500" rows="4" aria-label="Due righe sulla tua attività (facoltativo)" [value]="note()" (input)="onNote($event)" placeholder="Raccontami in breve la tua attività, cosa ti piace, esempi di siti che ti piacciono..." style="width:100%;font-family:var(--sans);font-size:15px;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 15px;resize:vertical;"></textarea>
             <div class="cfg-hint mono" style="display:flex;justify-content:space-between;gap:12px;"><span>Niente dati sensibili: è solo una bozza per orientarci.</span><span>{{ noteLeft() }} caratteri</span></div>
           </div>
 
