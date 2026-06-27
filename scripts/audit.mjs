@@ -12,7 +12,8 @@
 
 import { createServer } from 'node:http';
 import { readFile, readdir } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { existsSync, readdirSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join, extname, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
@@ -107,6 +108,26 @@ function fmt(n) {
   return String(Math.round(n)).padStart(3);
 }
 
+// Su Windows chrome-launcher non riesce sempre a rimuovere il proprio profilo
+// temporaneo (EPERM): senza pulizia le cartelle `lighthouse.*` in TEMP si
+// accumulano fino a riempire il disco. Le spazziamo via a fine run (best-effort).
+function cleanupChromeTmp() {
+  try {
+    const tmp = tmpdir();
+    for (const name of readdirSync(tmp)) {
+      if (name.startsWith('lighthouse.')) {
+        try {
+          rmSync(join(tmp, name), { recursive: true, force: true });
+        } catch {
+          /* in uso o gia' rimosso */
+        }
+      }
+    }
+  } catch {
+    /* ignore */
+  }
+}
+
 async function run() {
   if (!noBuild) build();
   if (!existsSync(DIST)) {
@@ -192,6 +213,7 @@ async function run() {
     /* ignore */
   }
   server.close();
+  cleanupChromeTmp();
 
   console.log('\n  Rotta                                  Perf  A11y  BP  SEO   LCP    CLS    TBT');
   console.log('  ' + '-'.repeat(82));
