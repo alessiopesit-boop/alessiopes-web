@@ -22,7 +22,7 @@ Sito personale di Alessio Pes (servizi web per PMI/P.IVA) realizzato in **Angula
   `ParticleNetwork` (direttiva su `canvas[appParticleNetwork]`, in pausa fuori schermo), `Terminal` (direttiva `[appTerminal]`),
   `ImageSlot` (selettore `image-slot`, placeholder statico, niente drag&drop in questo MVP)
 - `src/app/pages/` - una cartella per pagina: `home`, `servizi`, `progetti`, `chi-sono`, `preventivo`, `google`, `faq`, `contatti`, `privacy`, `not-found`
-- `src/fonts/` - font self-hosted (JetBrains Mono, Space Grotesk; `@font-face` in `styles.css`)
+- `src/fonts/` - font self-hosted (JetBrains Mono, Space Grotesk; `@font-face` in `styles.css`). Usano `font-display: optional` (non `swap`) per evitare il layout shift / CLS: su rete lenta il font puo' non comparire alla prima visita (poi e' in cache), ma non c'e' mai ricomposizione del testo. Non rimetterli a `swap`.
 
 Gli effetti che toccano DOM/`window`/canvas girano solo lato browser (`afterNextRender`), per non rompere il prerender.
 

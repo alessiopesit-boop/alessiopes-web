@@ -4,14 +4,14 @@
    ============================================================ */
 
 /* ---------- FONT self-hosted (subset latin, niente Google Fonts esterno) ---------- */
-@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('./fonts/jetbrainsmono-400.woff2') format('woff2'); }
-@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('./fonts/jetbrainsmono-500.woff2') format('woff2'); }
-@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 700; font-display: swap; src: url('./fonts/jetbrainsmono-700.woff2') format('woff2'); }
-@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 800; font-display: swap; src: url('./fonts/jetbrainsmono-800.woff2') format('woff2'); }
-@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 400; font-display: swap; src: url('./fonts/spacegrotesk-400.woff2') format('woff2'); }
-@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500; font-display: swap; src: url('./fonts/spacegrotesk-500.woff2') format('woff2'); }
-@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 600; font-display: swap; src: url('./fonts/spacegrotesk-600.woff2') format('woff2'); }
-@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 700; font-display: swap; src: url('./fonts/spacegrotesk-700.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 400; font-display: optional; src: url('./fonts/jetbrainsmono-400.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 500; font-display: optional; src: url('./fonts/jetbrainsmono-500.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 700; font-display: optional; src: url('./fonts/jetbrainsmono-700.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 800; font-display: optional; src: url('./fonts/jetbrainsmono-800.woff2') format('woff2'); }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 400; font-display: optional; src: url('./fonts/spacegrotesk-400.woff2') format('woff2'); }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500; font-display: optional; src: url('./fonts/spacegrotesk-500.woff2') format('woff2'); }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 600; font-display: optional; src: url('./fonts/spacegrotesk-600.woff2') format('woff2'); }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 700; font-display: optional; src: url('./fonts/spacegrotesk-700.woff2') format('woff2'); }
 
 :root {
   /* DARK (default) */
@@ -476,7 +476,6 @@ footer { border-top: 1px solid var(--line); padding: 44px 0; }
   .card { flex-basis: 100%; max-width: 100%; }
   .sec-head { align-items: flex-start; }
   .steps { grid-template-columns: 1fr; }
-  .blog-list { grid-template-columns: 1fr; }
   /* Le card sono comunque a tutta larghezza: griglia ed elenco rendono uguale,
      quindi il toggle vista su mobile non serve. */
   .view-toggle { display: none; }
@@ -607,7 +606,9 @@ a.card { color: inherit; }
 .cookie.show { display: block; animation: ckin .4s cubic-bezier(.2,.7,.2,1); }
 @keyframes ckin { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 .cookie p { font-size: 13px; color: var(--muted); line-height: 1.6; }
-.cookie p a { color: var(--accent); }
+/* Sottolineato: il link non deve distinguersi solo per colore (a11y, contrasto
+   col testo attorno < 3:1). */
+.cookie p a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 .cookie-actions { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
 .cookie-actions .btn { padding: 10px 18px; font-size: 13px; }
 
@@ -721,6 +722,9 @@ body:has(.cookie) .wa-fab { display: none; }
 /* indice /blog */
 .blog-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .blog-list.is-list { display: flex; flex-direction: column; }
+/* Mobile: una guida per riga. (Va dopo la base: a parità di specificità con
+   .blog-list vince l'ultima regola nel sorgente, non il media query.) */
+@media (max-width: 760px) { .blog-list { grid-template-columns: 1fr; } }
 .blog-card { display: block; background: var(--bg-2); border: 1px solid var(--line); border-radius: 16px;
   padding: 28px 30px; transition: border-color .25s, transform .25s; }
 .blog-card:hover { border-color: color-mix(in oklch, var(--accent) 55%, var(--line)); transform: translateY(-3px); }
