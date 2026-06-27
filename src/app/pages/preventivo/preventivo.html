@@ -35,7 +35,7 @@
           }
 
           <div class="cfg-group">
-            <div class="cfg-q mono"><span class="qn">03</span> Funzioni extra <span style="color:var(--faint);font-size:12px;">(facoltative)</span></div>
+            <div class="cfg-q mono"><span class="qn">03</span> Funzioni extra <span style="color:var(--faint);font-size:12.5px;">(facoltative)</span></div>
             <div class="cfg-opts">
               @for (a of addons; track a.val; let i = $index) {
                 <button type="button" class="cfg-opt" [class.on]="isAddonOn(i)" (click)="toggleAddon(i)">{{ a.short }}<span class="px">{{ a.px }}</span></button>
@@ -81,7 +81,7 @@
           </div>
 
           <div class="cfg-group">
-            <div class="cfg-q mono"><span class="qn">08</span> Vuoi aggiungere due righe? <span style="color:var(--faint);font-size:12px;">(facoltativo)</span></div>
+            <div class="cfg-q mono"><span class="qn">08</span> Vuoi aggiungere due righe? <span style="color:var(--faint);font-size:12.5px;">(facoltativo)</span></div>
             <textarea maxlength="500" rows="4" aria-label="Due righe sulla tua attività (facoltativo)" [value]="note()" (input)="onNote($event)" placeholder="Raccontami in breve la tua attività, cosa ti piace, esempi di siti che ti piacciono..." style="width:100%;font-family:var(--sans);font-size:15px;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 15px;resize:vertical;"></textarea>
             <div class="cfg-hint mono" style="display:flex;justify-content:space-between;gap:12px;"><span>Niente dati sensibili: è solo una bozza per orientarci.</span><span>{{ noteLeft() }} caratteri</span></div>
           </div>
@@ -95,7 +95,7 @@
             <button type="button" class="cfg-reset mono" (click)="reset()" title="Azzera e ricomincia"><span aria-hidden="true">↺</span> Ricomincia</button>
           </div>
           <div class="cfg-total mono"><span class="cur">~</span>{{ totalText() }}<span class="cur">€</span></div>
-          <div class="mono" style="font-size:11px;color:var(--accent-2);margin-top:4px;">prezzo finale · nessuna IVA da aggiungere</div>
+          <div class="mono" style="font-size:12.5px;color:var(--accent-2);margin-top:4px;">prezzo finale · nessuna IVA da aggiungere</div>
           <ul class="cfg-recap">
             @for (r of recap(); track r[0]) {
               <li><span>{{ r[0] }}</span><b>{{ r[1] }}</b></li>

@@ -109,6 +109,7 @@ Da rispettare sempre, per non rovinare la SEO e l'accessibilità:
 4. **Link interni** tra pagine correlate, con testo descrittivo (no "clicca qui").
 5. **Immagini**: `alt` sensato, formato **WebP**, **dimensioni esplicite** (`width`/`height` anti-CLS), `loading="lazy"` sotto la piega.
 6. **Contrasto testo >= 4.5:1** (i token `--text`/`--muted` ok; `--faint` è già al limite, non scendere oltre).
+6b. **Leggibilità**: niente testo sotto **12.5px** (pavimento dei label mono in `styles.css`). Sotto i 12px Lighthouse mobile segnala "font troppo piccolo"; restano sotto solo i glifi decorativi (es. il `◆` del ticker), non il testo.
 7. **Per gli articoli blog**: URL pulito (`/blog/<slug>`), JSON-LD `Article`+`Breadcrumb`(+`FAQPage`), `canonical` corretto. Contenuto che risponde a una ricerca reale, non keyword stuffing.
 
 ## Blog / Guide
