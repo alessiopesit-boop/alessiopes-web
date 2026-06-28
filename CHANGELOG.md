@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.3.2...v1.3.3) (2026-06-28)
+
+
+### Bug Fixes
+
+* **ui:** testi piu' leggibili, niente font sotto 12.5px ([#41](https://github.com/alessiopesit-boop/alessiopes-web/issues/41)) ([a3fb444](https://github.com/alessiopesit-boop/alessiopes-web/commit/a3fb444b2fdc342c89e1298442c0c1c545690fc0))
+
 ## [1.3.2](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.3.1...v1.3.2) (2026-06-27)
 
 
