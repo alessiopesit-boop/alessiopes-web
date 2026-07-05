@@ -35,7 +35,11 @@ export class SeoService {
 
     const pageTitle = snapshot.title ?? this.title.getTitle();
     const desc = (snapshot.data['description'] as string) || DEFAULT_DESC;
-    const url = ORIGIN + this.router.url.split('#')[0].split('?')[0];
+    // GitHub Pages serve ogni rotta come directory (/privacy -> /privacy/index.html) e fa un
+    // 301 verso lo slash finale: la forma canonica ha quindi lo slash, così sitemap, canonical
+    // e og:url combaciano con la URL che risponde 200 (niente "pagina con reindirizzamento").
+    const path = this.router.url.split('#')[0].split('?')[0];
+    const url = ORIGIN + (path.endsWith('/') ? path : path + '/');
 
     this.meta.updateTag({ name: 'description', content: desc });
     this.meta.updateTag({ property: 'og:title', content: pageTitle });
@@ -98,7 +102,7 @@ export class SeoService {
           '@type': 'Person',
           name: 'Alessio Pes',
           jobTitle: 'Sviluppatore web e software su misura',
-          url: ORIGIN + '/chi-sono',
+          url: ORIGIN + '/chi-sono/',
         },
         publisher: { '@type': 'Person', name: 'Alessio Pes', url: ORIGIN + '/' },
         mainEntityOfPage: url,
@@ -107,7 +111,7 @@ export class SeoService {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: ORIGIN + '/' },
-          { '@type': 'ListItem', position: 2, name: 'Guide', item: ORIGIN + '/blog' },
+          { '@type': 'ListItem', position: 2, name: 'Guide', item: ORIGIN + '/blog/' },
           { '@type': 'ListItem', position: 3, name: a.crumb, item: url },
         ],
       },
