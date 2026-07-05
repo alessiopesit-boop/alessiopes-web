@@ -93,6 +93,7 @@ npm run audit    # Lighthouse su TUTTE le pagine prerenderizzate (vedi sotto)
 - `SeoService` (`core/seo.service.ts`) imposta `description`, Open Graph, Twitter e `canonical` per pagina; la description di ogni pagina sta in `data.description` della rotta.
 - Tag fissi (og:image, og:site_name, JSON-LD `ProfessionalService`) in `index.html`. `robots.txt`, `sitemap.xml` e `og-image.png` (1200x630) in `public/`.
 - **Dominio cablato**: l'origine `https://alessiopes.it` è hardcoded in `seo.service.ts`, `index.html`, `sitemap.xml`, `robots.txt`. Se cambia il dominio, aggiornarli.
+- **Slash finale = forma canonica**: GitHub Pages serve ogni rotta come directory (`/privacy` -> `/privacy/index.html`) e fa un **301 verso lo slash finale**. Perciò `canonical`, `og:url` (`seo.service.ts`), le `<loc>` in `sitemap.xml` e le URL interne nel JSON-LD (breadcrumb, author) devono avere lo **slash finale** (tranne la root `/`), così combaciano con la URL che risponde 200 ed evitano il report "Pagina con reindirizzamento" in Search Console.
 
 ### Analytics
 
