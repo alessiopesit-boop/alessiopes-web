@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.4](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.3.3...v1.3.4) (2026-07-05)
+
+
+### Bug Fixes
+
+* **seo:** slash finale canonico per evitare i redirect in Search Console ([#43](https://github.com/alessiopesit-boop/alessiopes-web/issues/43)) ([095929c](https://github.com/alessiopesit-boop/alessiopes-web/commit/095929ce7453d3cc55b1b44a7c74256943018ab9))
+
 ## [1.3.3](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.3.2...v1.3.3) (2026-06-28)
 
 
