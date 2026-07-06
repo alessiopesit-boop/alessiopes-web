@@ -3,7 +3,7 @@
   <div class="wrap inner">
     <span class="kicker">Progetti</span>
     <h1>Cose che ho già <span class="brace">messo online</span>.</h1>
-    <p>Progetti che ho costruito da zero, online e visitabili davvero: una demo e-commerce e una web app. Sono lavori miei che mostrano come costruisco le cose, niente template.</p>
+    <p>Il primo sito che ho messo online per un cliente vero, più due progetti costruiti da zero per mostrare come lavoro. Tutto online e visitabile davvero, niente template.</p>
   </div>
 </header>
 
@@ -13,7 +13,7 @@
       <div class="sec-head reveal">
         <div>
           <h2 class="sec-title"><span class="num mono">01</span>Tutti i lavori</h2>
-          <p class="sec-note" style="margin-top:10px;">// Online e in sviluppo.</p>
+          <p class="sec-note" style="margin-top:10px;">// Lavoro cliente e progetti personali.</p>
         </div>
         <div class="view-toggle" role="tablist" aria-label="Modalità vista progetti">
           <button type="button" [class.active]="view() === 'grid'" [attr.aria-pressed]="view() === 'grid'" (click)="setView('grid')">
@@ -29,13 +29,27 @@
 
       <div class="proj-grid reveal" [class.is-list]="view() === 'list'">
 
+        <a class="card" href="https://generalservices2013.it" target="_blank" rel="noopener">
+          <div class="card-media">
+            <div class="media-status"><span class="status live"><span class="led"></span>Online</span></div>
+            <img src="/projects/general-services-2013.webp" width="1000" height="625" loading="lazy" alt="Schermata del sito vetrina di General Services 2013, termoidraulico: servizi e contatti in evidenza." />
+          </div>
+          <div class="card-content">
+            <div class="card-top"><span class="card-idx mono">/01</span><span class="ptype">Sito vetrina · cliente</span></div>
+            <h3>General Services 2013</h3>
+            <p>Sito vetrina per un termoidraulico: servizi, zona di intervento e contatti in evidenza, pensato per farsi trovare su Google in zona. Costruito in Angular con prerendering statico.</p>
+            <div class="tags"><span class="tag">Angular</span><span class="tag">Sito vetrina</span><span class="tag">SEO locale</span></div>
+            <span class="card-link ext mono">Visita il sito <span class="arrow">↗</span></span>
+          </div>
+        </a>
+
         <a class="card" href="https://alessiopesit-boop.github.io/krating-daeng/" target="_blank" rel="noopener">
           <div class="card-media">
             <div class="media-status"><span class="status live"><span class="led"></span>Online</span></div>
             <img src="/projects/krating-daeng.webp" width="1000" height="625" loading="lazy" alt="Schermata dell'e-commerce Suea Fai: hero rosso con la bottiglia del tonico energetico in vetro." />
           </div>
           <div class="card-content">
-            <div class="card-top"><span class="card-idx mono">/01</span><span class="ptype">E-commerce demo · progetto personale</span></div>
+            <div class="card-top"><span class="card-idx mono">/02</span><span class="ptype">E-commerce demo · progetto personale</span></div>
             <h3>Suea Fai · e-commerce</h3>
             <p>E-commerce single-page per un brand (fittizio) di tonico energetico: catalogo, schede prodotto, carrello e checkout simulato, bilingue. Costruito in Angular, senza backend.</p>
             <div class="tags"><span class="tag">Angular</span><span class="tag">E-commerce</span><span class="tag">Bilingue</span></div>
@@ -49,7 +63,7 @@
             <img src="/projects/guess-the-char.webp" width="1000" height="625" loading="lazy" alt="Schermata della web app Guess the Char: griglia di caratteri di diverse scritture del mondo." />
           </div>
           <div class="card-content">
-            <div class="card-top"><span class="card-idx mono">/02</span><span class="ptype">Web app · PWA · progetto personale</span></div>
+            <div class="card-top"><span class="card-idx mono">/03</span><span class="ptype">Web app · PWA · progetto personale</span></div>
             <h3>Guess the Char</h3>
             <p>Quiz per riconoscere i sistemi di scrittura del mondo (hiragana, hangul, arabo…): quattro modalità di gioco, classifiche e sfide. Web app installabile, costruita in Angular.</p>
             <div class="tags"><span class="tag">Angular</span><span class="tag">PWA</span><span class="tag">Gioco</span></div>
