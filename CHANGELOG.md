@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.3.4...v1.4.0) (2026-07-06)
+
+
+### Features
+
+* **progetti:** aggiungi il primo sito cliente General Services 2013 ([#47](https://github.com/alessiopesit-boop/alessiopes-web/issues/47)) ([fa4d2aa](https://github.com/alessiopesit-boop/alessiopes-web/commit/fa4d2aac9f134c33cc543eda541ed95f54b356b6))
+
 ## [1.3.4](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.3.3...v1.3.4) (2026-07-05)
 
 
