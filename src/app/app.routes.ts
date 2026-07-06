@@ -31,7 +31,7 @@ export const routes: Routes = [
     title: 'Progetti · Alessio Pes',
     data: {
       description:
-        'Progetti che ho costruito da zero e messo online: una demo e-commerce e una web app in Angular. Esempi reali di come lavoro, visitabili davvero.',
+        'Il mio primo sito per un cliente (vetrina per un termoidraulico) più due progetti personali in Angular. Esempi reali di come lavoro, online e visitabili.',
     },
     loadComponent: () => import('./pages/progetti/progetti').then((m) => m.Progetti),
   },
