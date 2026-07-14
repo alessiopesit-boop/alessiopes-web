@@ -122,6 +122,8 @@ Da rispettare sempre, per non rovinare la SEO e l'accessibilità:
 - `shared/article/` (`<app-article slug="...">`): layout condiviso (header, **indice/TOC auto**, **tempo di lettura** e **barra di lettura** lato browser, box autore, correlate, CTA). Ogni articolo proietta dentro la `.prose` **solo i blocchi che gli servono** (vedi [[blog-template]]): `lead`, `takeaways`, `callout tip|warn|note`, `art-table`, `pullquote`, `art-steps`, `inline-cta`, `faq art-faq`. Stili in `styles.css` (sezione BLOG / GUIDE). I numeri delle sezioni (`h2 > .num`) seguono la convenzione home (vedi "Numeri e indici"): su mobile grandi quanto il titolo, sulla prima riga. Su mobile l'indice "In questa guida" diventa un box in cima e tra le sezioni compaiono separatori hairline come nel resto del sito.
 - SEO articolo: il `SeoService` legge `data.article` dalla rotta e genera og:type=article, `article:*` e il JSON-LD `Article`+`BreadcrumbList`(+`FAQPage`). Le FAQ visibili devono combaciare 1:1 con quelle nel registro.
 
+**Prezzi negli articoli**: gli articoli **non** citano il listino personale esatto (890€, 1.290€, ecc.) e **mai** la promo di lancio. Usano **fasce arrotondate / ordini di grandezza** (es. "da circa 1.000€") robusti ai ritocchi, e rimandano a `/servizi` (listino, fonte unica) e `/preventivo` (stima live). Così un cambio di listino **non tocca mai il blog**. I costi generici e stabili (es. dominio+hosting ~90€/anno, budget Ads ~10-15€/giorno) possono restare come numeri.
+
 **Aggiungere un articolo**: 1) voce in `ARTICLES`; 2) componente in `pages/blog/<slug>/` con `<app-article slug="...">` e la prose; 3) rotta in `app.routes.ts` (`data: { description, article }`); 4) URL in `public/sitemap.xml`.
 
 ## Prezzi e promo di lancio
