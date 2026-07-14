@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.4.0...v1.5.0) (2026-07-14)
+
+
+### Features
+
+* **prezzi:** aggiorna il listino 2026 e sdoppia software e app mobile ([#49](https://github.com/alessiopesit-boop/alessiopes-web/issues/49)) ([cdeb3a0](https://github.com/alessiopesit-boop/alessiopes-web/commit/cdeb3a0e40c17248f13ffc621795f7ca18ae6922))
+
 ## [1.4.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.3.4...v1.4.0) (2026-07-06)
 
 
