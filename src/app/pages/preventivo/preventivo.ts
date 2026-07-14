@@ -59,8 +59,8 @@ export class Preventivo {
   readonly types: TypeOpt[] = [
     { val: 'vetrina', base: 890, label: 'Sito vetrina', short: 'Sito vetrina', px: 'da 890€' },
     { val: 'gestione', base: 2400, label: 'Sito + portale di gestione', short: 'Sito + gestione', px: 'da 2.400€' },
-    { val: 'ecommerce', base: 3900, label: 'E-commerce su misura', short: 'E-commerce', px: 'da 3.900€' },
-    { val: 'software', base: 3900, label: 'Software o gestionale su misura', short: 'Software / gestionale', px: 'da 3.900€' },
+    { val: 'ecommerce', base: 2900, label: 'E-commerce su misura', short: 'E-commerce', px: 'da 2.900€' },
+    { val: 'software', base: 4900, label: 'Software o gestionale su misura', short: 'Software / gestionale', px: 'da 4.900€' },
     { val: 'app', base: 6900, label: 'App mobile su misura', short: 'App mobile', px: 'da 6.900€' },
   ];
   readonly addons: AddonOpt[] = [
