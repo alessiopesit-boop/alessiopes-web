@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.5.1...v1.6.0) (2026-07-14)
+
+
+### Features
+
+* **preventivo:** includi la provenienza UTM nei link WhatsApp/email ([#53](https://github.com/alessiopesit-boop/alessiopes-web/issues/53)) ([9ded8d8](https://github.com/alessiopesit-boop/alessiopes-web/commit/9ded8d829b932355da145beb885f69f3ffa8a5d6))
+
 ## [1.5.1](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.5.0...v1.5.1) (2026-07-14)
 
 
