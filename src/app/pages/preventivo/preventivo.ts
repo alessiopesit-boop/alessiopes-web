@@ -7,7 +7,7 @@ import { PromoService } from '../../core/promo.service';
 const WHATSAPP = '393897979420'; // numero WhatsApp (prefisso internazionale, senza +)
 const EMAIL = 'ciao@alessiopes.it';
 
-type TypeVal = 'vetrina' | 'gestione' | 'ecommerce' | 'app';
+type TypeVal = 'vetrina' | 'gestione' | 'ecommerce' | 'software' | 'app';
 
 interface TypeOpt {
   val: TypeVal;
@@ -40,12 +40,13 @@ interface SimpleOpt {
   short: string;
 }
 
-const recurringAnnual: Record<TypeVal, number> = { vetrina: 90, gestione: 180, ecommerce: 240, app: 240 };
-const maintMonthly: Record<TypeVal, number> = { vetrina: 15, gestione: 39, ecommerce: 49, app: 79 };
+const recurringAnnual: Record<TypeVal, number> = { vetrina: 90, gestione: 180, ecommerce: 240, software: 240, app: 240 };
+const maintMonthly: Record<TypeVal, number> = { vetrina: 15, gestione: 39, ecommerce: 49, software: 79, app: 99 };
 const typeAnnualLabel: Record<TypeVal, string> = {
   vetrina: 'dominio + hosting',
   gestione: 'server + hosting',
   ecommerce: 'server + hosting',
+  software: 'server + servizi',
   app: 'server + servizi',
 };
 
@@ -56,10 +57,11 @@ const typeAnnualLabel: Record<TypeVal, string> = {
 })
 export class Preventivo {
   readonly types: TypeOpt[] = [
-    { val: 'vetrina', base: 590, label: 'Sito vetrina', short: 'Sito vetrina', px: 'da 590€' },
-    { val: 'gestione', base: 1900, label: 'Sito + portale di gestione', short: 'Sito + gestione', px: 'da 1.900€' },
-    { val: 'ecommerce', base: 3200, label: 'E-commerce su misura', short: 'E-commerce', px: 'da 3.200€' },
-    { val: 'app', base: 3900, label: 'App o software su misura', short: 'App / software', px: 'da 3.900€' },
+    { val: 'vetrina', base: 890, label: 'Sito vetrina', short: 'Sito vetrina', px: 'da 890€' },
+    { val: 'gestione', base: 2400, label: 'Sito + portale di gestione', short: 'Sito + gestione', px: 'da 2.400€' },
+    { val: 'ecommerce', base: 3900, label: 'E-commerce su misura', short: 'E-commerce', px: 'da 3.900€' },
+    { val: 'software', base: 3900, label: 'Software o gestionale su misura', short: 'Software / gestionale', px: 'da 3.900€' },
+    { val: 'app', base: 6900, label: 'App mobile su misura', short: 'App mobile', px: 'da 6.900€' },
   ];
   readonly addons: AddonOpt[] = [
     { val: 'Prenotazioni online', price: 400, short: 'Prenotazioni online', px: '+400€' },
@@ -72,21 +74,21 @@ export class Preventivo {
   ];
   readonly googleOpts: GoogleOpt[] = [
     { setup: 0, mo: 0, label: 'No, per ora solo il sito', short: 'No, per ora', px: '' },
-    { setup: 150, mo: 0, label: 'Profilo Google + Maps', short: 'Profilo Google', px: '+150€' },
+    { setup: 150, mo: 99, label: 'Profilo Google + Maps', short: 'Profilo Google', px: '+150€ · da 99€/mese' },
     {
       setup: 250,
-      mo: 150,
+      mo: 350,
       label: 'Google Ads',
       short: 'Google Ads',
-      px: '+250€ · 150€/mese',
+      px: '+250€ · 350€/mese',
       budget: '~300-500€/mese a Google (≈10-15€/giorno), lo decidi tu',
     },
     {
       setup: 200,
-      mo: 120,
+      mo: 300,
       label: 'Local Services Ads',
       short: 'Local Services Ads',
-      px: '+200€ · 120€/mese',
+      px: '+200€ · 300€/mese',
       budget: 'paghi per contatto ~15-30€ (molti con tetto ~300€/mese)',
     },
   ];
@@ -108,7 +110,7 @@ export class Preventivo {
   readonly promo = inject(PromoService);
   private readonly route = inject(ActivatedRoute);
   // Prezzo pieno del sito vetrina fuori promo (la base nei `types` e' quella di lancio).
-  private static readonly VETRINA_FULL = 890;
+  private static readonly VETRINA_FULL = 1290;
 
   constructor() {
     // Preseleziona il pacchetto se arrivo da /servizi con ?tipo=... (solo lato browser, no mismatch SSG).
@@ -138,7 +140,7 @@ export class Preventivo {
   );
   // Etichetta prezzo per i bottoni: il vetrina segue la promo.
   pxOf(t: TypeOpt): string {
-    if (t.val === 'vetrina' && !this.promo.active()) return 'da ' + Preventivo.VETRINA_FULL + '€';
+    if (t.val === 'vetrina' && !this.promo.active()) return 'da ' + this.fmt(Preventivo.VETRINA_FULL) + '€';
     return t.px;
   }
   readonly pagesLabel = computed(() => {
