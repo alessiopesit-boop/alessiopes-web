@@ -13,7 +13,7 @@ export const routes: Routes = [
     title: 'Alessio Pes · Siti web e software su misura per la tua attività',
     data: {
       description:
-        'Realizzo siti web, gestionali e app su misura per piccole attività e P.IVA. Tutto custom, niente WordPress: dal primo incontro al sito online, sempre io.',
+        'Siti web, gestionali e app su misura per attività e aziende: veloci, sicuri e davvero tuoi, senza WordPress. Sviluppo e infrastruttura seguiti da una persona sola: io.',
     },
     loadComponent: () => import('./pages/home/home').then((m) => m.Home),
   },
@@ -40,7 +40,7 @@ export const routes: Routes = [
     title: 'Guide e articoli · Alessio Pes',
     data: {
       description:
-        'Guide pratiche su siti web, costi e farsi trovare su Google, in parole semplici per chi ha una piccola attività o P.IVA. Niente fuffa, solo cose utili.',
+        'Guide pratiche su siti web, costi e farsi trovare su Google, in parole semplici per chi ha un\'attività o una P.IVA. Niente fuffa, solo cose utili.',
     },
     loadComponent: () => import('./pages/blog/blog').then((m) => m.Blog),
   },
@@ -94,7 +94,7 @@ export const routes: Routes = [
     title: 'Chi sono · Alessio Pes',
     data: {
       description:
-        'Sono Alessio Pes: sviluppatore che costruisce siti e software su misura per piccole attività, seguendo ogni progetto dall\'idea fino al server online.',
+        'Sono Alessio Pes: sviluppatore full-stack che costruisce siti, gestionali e app su misura per attività e aziende, seguendo ogni progetto dallo sviluppo fino all\'infrastruttura online.',
     },
     loadComponent: () => import('./pages/chi-sono/chi-sono').then((m) => m.ChiSono),
   },
