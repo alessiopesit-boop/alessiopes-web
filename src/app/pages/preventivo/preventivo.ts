@@ -115,9 +115,13 @@ export class Preventivo {
   constructor() {
     // Preseleziona il pacchetto se arrivo da /servizi con ?tipo=... (solo lato browser, no mismatch SSG).
     afterNextRender(() => {
-      const tipo = this.route.snapshot.queryParamMap.get('tipo');
-      const i = this.types.findIndex((t) => t.val === tipo);
+      const q = this.route.snapshot.queryParamMap;
+      const i = this.types.findIndex((t) => t.val === q.get('tipo'));
       if (i >= 0) this.typeIdx.set(i);
+      // Provenienza da campagne (UTM): la infilo nel messaggio precompilato per il tracking manuale.
+      // Cookieless: leggo solo i query param dell'URL, nessun cookie/tag.
+      const parts = [q.get('utm_source'), q.get('utm_medium'), q.get('utm_campaign')].filter(Boolean);
+      if (parts.length) this.adSource.set(parts.join(' / '));
     });
   }
 
@@ -130,6 +134,8 @@ export class Preventivo {
   readonly startIdx = signal(0);
   readonly whenIdx = signal(0);
   readonly note = signal('');
+  // Provenienza campagna (es. "google / cpc"), popolata dagli UTM lato browser. Vuota = traffico organico.
+  private readonly adSource = signal('');
 
   // derivati
   readonly type = computed(() => this.types[this.typeIdx()]);
@@ -209,7 +215,7 @@ export class Preventivo {
     return parts.join('<br>');
   });
 
-  private readonly message = computed(() => {
+  private buildMessage(channel: 'WhatsApp' | 'Email'): string {
     const lines: string[] = [];
     lines.push('Ciao Alessio! Ho usato il configuratore sul sito:');
     lines.push('');
@@ -229,18 +235,29 @@ export class Preventivo {
     }
     lines.push('');
     lines.push('Vorrei un preventivo preciso. Grazie!');
+    // Marker di provenienza (canale + campagna UTM): solo se arrivo da una campagna, altrimenti messaggio pulito.
+    const src = this.adSource();
+    if (src) {
+      lines.push('');
+      lines.push('(Da: ' + channel + ' · ' + src + ')');
+    }
     return lines.join('\n');
-  });
+  }
 
-  readonly waHref = computed(() => 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(this.message()));
+  private subject(): string {
+    const src = this.adSource();
+    return 'Richiesta preventivo dal sito' + (src ? ' (' + src + ')' : '');
+  }
+
+  readonly waHref = computed(() => 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(this.buildMessage('WhatsApp')));
   readonly mailHref = computed(
     () =>
       'mailto:' +
       EMAIL +
       '?subject=' +
-      encodeURIComponent('Richiesta preventivo dal sito') +
+      encodeURIComponent(this.subject()) +
       '&body=' +
-      encodeURIComponent(this.message()),
+      encodeURIComponent(this.buildMessage('Email')),
   );
 
   readonly totalText = computed(() => this.fmt(this.oneTime()));
