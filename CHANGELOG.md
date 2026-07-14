@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.5.0...v1.5.1) (2026-07-14)
+
+
+### Bug Fixes
+
+* **blog:** disaccoppia i prezzi degli articoli dal listino ([#51](https://github.com/alessiopesit-boop/alessiopes-web/issues/51)) ([5474f6b](https://github.com/alessiopesit-boop/alessiopes-web/commit/5474f6ba1267940fda95a2bf5064a7d6bd4a8275))
+
 ## [1.5.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.4.0...v1.5.0) (2026-07-14)
 
 
