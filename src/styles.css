@@ -493,7 +493,10 @@ footer { border-top: 1px solid var(--line); padding: 44px 0; }
   .sec-note { max-width: none; }
   /* CTA a tutta larghezza: evita coppie di bottoni di larghezze diverse. */
   .hero-cta .btn, .cta-band .inner .btn { width: 100%; justify-content: center; }
-  .price { padding: 26px 22px; }
+  .price { padding: 24px 18px; }
+  /* Pannello prezzi: meno padding orizzontale su mobile, cosi' le righe chiave/valore
+     (cost-lines) hanno piu' larghezza e il testo wrappa meno. */
+  .price-side { padding: 22px 18px; }
   /* Opzioni configuratore: griglia 2 colonne uniforme invece di chip a larghezze diverse.
      Selettore discendente per vincere sulla regola base .cfg-opts (display:flex). */
   .cfg-form .cfg-opts { display: grid; grid-template-columns: 1fr 1fr; }

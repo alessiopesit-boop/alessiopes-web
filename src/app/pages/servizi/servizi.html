@@ -3,7 +3,7 @@
   <div class="wrap inner">
     <span class="kicker">Servizi e prezzi</span>
     <h1>Soluzioni su misura, <span class="brace">costi chiari</span>.</h1>
-    <p>Quattro soluzioni più la visibilità su Google. Tutto chiavi in mano: ti dico cosa è incluso, quanto resta a carico tuo ogni anno e quanto costa la manutenzione. I prezzi sono indicativi: il preventivo definitivo lo costruisco sul tuo caso. Quello che non cambia mai: è tutto su misura, niente WordPress.</p>
+    <p>Cinque soluzioni più la visibilità su Google. Tutto chiavi in mano: ti dico cosa è incluso, quanto resta a carico tuo ogni anno e quanto costa la manutenzione. I prezzi sono indicativi: il preventivo definitivo lo costruisco sul tuo caso. Quello che non cambia mai: è tutto su misura, niente WordPress.</p>
     <div class="hero-cta" style="margin-top:28px;">
       <a routerLink="/preventivo" class="btn btn-primary">Calcola il tuo preventivo <span class="arrow">→</span></a>
     </div>
@@ -58,13 +58,14 @@
             </ul>
           </div>
           <aside class="price-side">
-            <span class="label mono">Chiavi in mano · una tantum</span>
+            <span class="label mono">Chiavi in mano</span>
             <div class="price-amount">
+              <span class="from-lbl mono">da</span>
               @if (promo.active()) {
-                <span class="now mono">590€</span>
-                <span class="was mono">890€</span>
-              } @else {
                 <span class="now mono">890€</span>
+                <span class="was mono">1.290€</span>
+              } @else {
+                <span class="now mono">1.290€</span>
               }
             </div>
             <!-- Regime ORDINARIO? sostituisci la riga sotto con: prezzi + IVA 22% -->
@@ -72,7 +73,7 @@
             @if (promo.active()) {
               <div class="launch-note">
                 <span class="lh mono"><span style="font-size:10px;">●</span> Perché questo prezzo</span>
-                <p>Sto inaugurando la mia attività di sviluppo freelance. Per i primi <b>5 clienti</b> azzero il mio margine in cambio di una recensione onesta e del permesso di mostrare il lavoro qui nel portfolio. È un'occasione a tempo per avere un sito professionale a un prezzo che dopo il lancio non rifarò.</p>
+                <p>Sto inaugurando la mia attività di sviluppo freelance. Per i primi <b>5 clienti</b> riduco al minimo il mio margine in cambio di una recensione onesta e del permesso di mostrare il lavoro qui nel portfolio. È un'occasione a tempo per avere un sito professionale a un prezzo che dopo il lancio non rifarò.</p>
                 <p class="promo-deadline mono">
                   <span class="led"></span> Promo di lancio valida fino al {{ promo.endLabel }}@if (promo.daysLeft()) {<b> · ancora {{ promo.daysLeft() }} {{ promo.daysLeft() === 1 ? 'giorno' : 'giorni' }}</b>}
                 </p>
@@ -107,10 +108,10 @@
             </ul>
           </div>
           <aside class="price-side">
-            <span class="label mono">Chiavi in mano · a partire da</span>
+            <span class="label mono">Chiavi in mano</span>
             <div class="price-amount">
               <span class="from-lbl mono">da</span>
-              <span class="now mono">1.900€</span>
+              <span class="now mono">2.400€</span>
             </div>
             <div class="mono" style="font-size:12.5px;color:var(--accent-2);margin-top:6px;">prezzo finale · nessuna IVA da aggiungere</div>
             <ul class="cost-lines">
@@ -129,58 +130,90 @@
           <div>
             <span class="ix mono">/03 · Negozio online</span>
             <h3>E-commerce su misura</h3>
-            <p class="case"><b>Hai una bottega, produci vino, olio o cosmetici, o vendi i tuoi prodotti.</b> Vuoi un negozio online davvero tuo, non una bancarella su un marketplace che si tiene una fetta di ogni ordine e i dati dei tuoi clienti. Ti serve un sito veloce, con carrello e pagamenti, che gestisci da solo.</p>
+            <p class="case"><b>Hai una bottega, produci vino, olio o cosmetici, o vendi i tuoi prodotti.</b> Vuoi un negozio online davvero tuo, non una bancarella su un marketplace che si tiene una fetta di ogni ordine e i dati dei tuoi clienti. Lo realizzo in due modi, a seconda di cosa hai già.</p>
             <ul class="feat">
-              <li>Catalogo prodotti con foto, varianti e categorie</li>
+              <li><span><b>Headless</b> - hai già Shopify, WooCommerce o PrestaShop? Tengo il tuo gestionale e rifaccio solo la vetrina: più veloce, moderna e su misura. Meno lavoro, meno spesa.</span></li>
+              <li><span><b>Su misura completo</b> - parti da zero: catalogo, carrello, pagamenti e pannello tuoi, costruiti attorno a come vendi.</span></li>
               <li>Carrello e pagamenti sicuri (carta, PayPal e altri)</li>
-              <li>Pannello per gestire prodotti, ordini e spedizioni</li>
               <li>Account clienti, codici sconto, email automatiche</li>
               <li>Veloce e ottimizzato anche con tanti prodotti</li>
             </ul>
           </div>
           <aside class="price-side">
-            <span class="label mono">Chiavi in mano · a partire da</span>
+            <span class="label mono">Chiavi in mano</span>
             <div class="price-amount">
               <span class="from-lbl mono">da</span>
-              <span class="now mono">3.200€</span>
+              <span class="now mono">2.900€</span>
             </div>
             <div class="mono" style="font-size:12.5px;color:var(--accent-2);margin-top:6px;">prezzo finale · nessuna IVA da aggiungere</div>
             <ul class="cost-lines">
+              <li><span class="k">Headless</span><span class="v">sul tuo gestionale · <b>da 2.900€</b></span></li>
+              <li><span class="k">Su misura completo</span><span class="v"><b>da 3.900€</b></span></li>
               <li><span class="k">Tuo, ogni anno</span><span class="v">server + hosting <b>da ~240€/anno</b></span></li>
               <li><span class="k">Manutenzione</span><span class="v">3 mesi inclusi, poi <b>da 49€/mese</b></span></li>
-              <li><span class="k">Nuove funzioni</span><span class="v">sempre a preventivo</span></li>
-              <li><span class="k">Consegna</span><span class="v">4-6 settimane</span></li>
+              <li><span class="k">Consegna</span><span class="v">3-6 settimane</span></li>
             </ul>
             <p class="contact-fine mono" style="text-align:left;margin-top:14px;">Il prezzo cresce col numero di prodotti e funzioni di vendita. Il canone annuo dal 2° anno varia col traffico: più persone comprano, più serve il server.</p>
             <a routerLink="/preventivo" [queryParams]="{ tipo: 'ecommerce' }" class="btn btn-ghost" style="width:100%;justify-content:center;">Calcola il preventivo <span class="arrow">→</span></a>
           </aside>
         </article>
 
-        <!-- APP -->
+        <!-- SOFTWARE / GESTIONALE -->
+        <article class="price reveal" id="software">
+          <div>
+            <span class="ix mono">/04 · Software e gestionali su misura</span>
+            <h3>Software o gestionale su misura</h3>
+            <p class="case"><b>Oggi gestisci il lavoro a mano tra fogli Excel, telefonate e fogli di carta.</b> Ti serve un gestionale costruito sul tuo processo: clienti, appuntamenti, magazzino, dati, tutto in un posto solo e accessibile da qualsiasi dispositivo, senza rincorrere i fogli.</p>
+            <ul class="feat">
+              <li>Software gestionale web, accessibile da browser</li>
+              <li>Progettato sul tuo processo, non su uno standard generico</li>
+              <li>Backend e database tuoi, con i dati al sicuro</li>
+              <li>Account e ruoli diversi (titolare, collaboratori, clienti)</li>
+              <li>Messa online del server e configurazione</li>
+            </ul>
+          </div>
+          <aside class="price-side">
+            <span class="label mono">Su misura</span>
+            <div class="price-amount">
+              <span class="from-lbl mono">da</span>
+              <span class="now mono">4.900€</span>
+            </div>
+            <div class="mono" style="font-size:12.5px;color:var(--accent-2);margin-top:6px;">prezzo finale · nessuna IVA da aggiungere</div>
+            <ul class="cost-lines">
+              <li><span class="k">Tuo, ogni anno</span><span class="v">server + servizi <b>da ~240€/anno</b></span></li>
+              <li><span class="k">Manutenzione</span><span class="v">3 mesi inclusi, poi <b>da 79€/mese</b></span></li>
+              <li><span class="k">Tempi</span><span class="v">li definiamo insieme</span></li>
+            </ul>
+            <p class="contact-fine mono" style="text-align:left;margin-top:14px;">Funzioni, tempi e prezzo li definiamo insieme prima di partire. Il canone annuo dal 2° anno varia con l'uso.</p>
+            <a routerLink="/preventivo" [queryParams]="{ tipo: 'software' }" class="btn btn-ghost" style="width:100%;justify-content:center;">Raccontami l'idea <span class="arrow">→</span></a>
+          </aside>
+        </article>
+
+        <!-- APP MOBILE -->
         <article class="price reveal" id="app">
           <div>
-            <span class="ix mono">/04 · App e software su misura</span>
-            <h3>App o software gestionale</h3>
-            <p class="case"><b>Hai un'idea per un'app, o un lavoro che oggi gestisci a mano tra fogli Excel e telefonate.</b> Vuoi un'app mobile per i tuoi clienti, o un gestionale che faccia girare la tua attività: clienti, appuntamenti, magazzino, dati. Qualcosa costruito esattamente attorno a come lavori.</p>
+            <span class="ix mono">/05 · App mobile</span>
+            <h3>App mobile su misura</h3>
+            <p class="case"><b>Hai un'idea per un'app: per i tuoi clienti, per fidelizzarli o per offrire un servizio nuovo.</b> Vuoi un'app vera, pubblicata sugli store e collegata a un server tuo, costruita attorno alla tua idea e non adattata da un template generico.</p>
             <ul class="feat">
-              <li>App mobile (Android) oppure software gestionale web</li>
-              <li>Progettato sul tuo processo, non su uno standard generico</li>
+              <li>App mobile Android (ed eventualmente iOS)</li>
+              <li>Progettata sulla tua idea, non su uno standard generico</li>
               <li>Backend e database tuoi, con i dati al sicuro</li>
               <li>Account e ruoli diversi (titolare, collaboratori, clienti)</li>
               <li>Pubblicazione sugli store e messa online del server</li>
             </ul>
           </div>
           <aside class="price-side">
-            <span class="label mono">Su misura · a partire da</span>
+            <span class="label mono">Su misura</span>
             <div class="price-amount">
               <span class="from-lbl mono">da</span>
-              <span class="now mono">3.900€</span>
+              <span class="now mono">6.900€</span>
             </div>
             <div class="mono" style="font-size:12.5px;color:var(--accent-2);margin-top:6px;">prezzo finale · nessuna IVA da aggiungere</div>
             <ul class="cost-lines">
               <li><span class="k">Tuo, ogni anno</span><span class="v">server + servizi <b>da ~240€/anno</b></span></li>
               <li><span class="k">Pubblicazione store</span><span class="v">Google Play 25€ una tantum</span></li>
-              <li><span class="k">Manutenzione</span><span class="v">3 mesi inclusi, poi <b>da 79€/mese</b></span></li>
+              <li><span class="k">Manutenzione</span><span class="v">3 mesi inclusi, poi <b>da 99€/mese</b></span></li>
               <li><span class="k">Tempi</span><span class="v">li definiamo insieme</span></li>
             </ul>
             <p class="contact-fine mono" style="text-align:left;margin-top:14px;">Funzioni, tempi e prezzo li definiamo insieme prima di partire. Il canone annuo dal 2° anno varia con l'uso.</p>
@@ -226,21 +259,21 @@
         <a class="mkt-card" routerLink="/google" fragment="profilo">
           <span class="ix mono">/01</span>
           <h3>Profilo Google + Maps</h3>
-          <p>La scheda che appare a destra quando ti cercano: orari, foto, recensioni e indicazioni. Comparire su Maps e nelle ricerche locali è il primo passo, spesso il più importante.</p>
-          <div class="mkt-price"><span class="ot mono">150€</span><span class="lbl mono">una tantum</span></div>
-          <span class="lbl mono">nessun costo mensile</span>
+          <p>La scheda che appare a destra quando ti cercano: orari, foto, recensioni e indicazioni. La creo e la ottimizzo una volta; se vuoi la tengo poi aggiornata io (foto, post, risposte alle recensioni) con una gestione mensile.</p>
+          <div class="mkt-price"><span class="ot mono">150€</span><span class="lbl mono">creazione</span><span class="mo mono">+ da <b>99€</b>/mese gestione</span></div>
+          <span class="lbl mono">gestione mensile facoltativa</span>
         </a>
         <a class="mkt-card" routerLink="/google" fragment="ads">
           <span class="ix mono">/02</span>
           <h3>Google Ads</h3>
           <p>I tuoi annunci in cima a Google quando qualcuno cerca esattamente quello che offri. Imposto le campagne, scelgo le parole giuste e le ottimizzo nel tempo.</p>
-          <div class="mkt-price"><span class="ot mono">250€</span><span class="lbl mono">setup</span><span class="mo mono">+ <b>150€</b>/mese gestione</span></div>
+          <div class="mkt-price"><span class="ot mono">250€</span><span class="lbl mono">setup</span><span class="mo mono">+ <b>350€</b>/mese gestione</span></div>
         </a>
         <a class="mkt-card" routerLink="/google" fragment="lsa">
           <span class="ix mono">/03</span>
           <h3>Local Services Ads</h3>
           <p>Gli annunci "Garantito da Google" pensati per artigiani e servizi locali: compari in alto con recensioni e paghi solo per il contatto reale, non per il clic.</p>
-          <div class="mkt-price"><span class="ot mono">200€</span><span class="lbl mono">setup</span><span class="mo mono">+ <b>120€</b>/mese gestione</span></div>
+          <div class="mkt-price"><span class="ot mono">200€</span><span class="lbl mono">setup</span><span class="mo mono">+ <b>300€</b>/mese gestione</span></div>
         </a>
       </div>
       <div class="reveal" style="margin-top:26px;display:flex;flex-wrap:wrap;gap:18px;">
