@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.6.0...v1.7.0) (2026-07-15)
+
+
+### Features
+
+* **copy:** riposiziona il sito verso attività e aziende ([#55](https://github.com/alessiopesit-boop/alessiopes-web/issues/55)) ([1a47073](https://github.com/alessiopesit-boop/alessiopes-web/commit/1a4707388b7ab4a14f6cc988802b5c9bc2fc8d74))
+
 ## [1.6.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.5.1...v1.6.0) (2026-07-14)
 
 
