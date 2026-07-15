@@ -126,6 +126,16 @@ Da rispettare sempre, per non rovinare la SEO e l'accessibilità:
 
 **Aggiungere un articolo**: 1) voce in `ARTICLES`; 2) componente in `pages/blog/<slug>/` con `<app-article slug="...">` e la prose; 3) rotta in `app.routes.ts` (`data: { description, article }`); 4) URL in `public/sitemap.xml`.
 
+## Posizionamento e tono (copy)
+
+Deciso il 2026-07-14. Il sito serve **due imbuti**: il micro-locale arriva via SEO/SEM, il cliente strutturato (cinema, e-commerce PMI) arriva via **outreach** e giudica home/servizi/chi-sono come prova di credibilità. Il copy non deve mettere un **soffitto** che spaventi i clienti grossi.
+
+- **Target**: "attività e aziende", non "piccole attività / P.IVA" (che restava cablato in hero, footer, description SEO, JSON-LD, `seo.service.ts` `DEFAULT_DESC`, bio autore blog).
+- **Vendi il beneficio, non la tecnica**: "niente WordPress" resta ma come vantaggio (veloce, sicuro, tuo). Arma differenziante da tenere in evidenza: sviluppo full-stack + **infrastruttura** (server, deploy) + **integrazione col gestionale/CRM** del cliente (card "Cresce con te" in `servizi.html`).
+- **Prezzo sul valore**, non "costo meno di un'agenzia": tolta l'ancora "22% in meno di un'agenzia". La trasparenza (forfettario, prezzo bloccato) resta.
+- **Paletti di onestà (MAI violare)**: niente statistiche inventate ("converte il doppio", "+50% utenti"), niente "100/100 PageSpeed" come promessa (la performance non è garantita, vedi `npm run audit`), niente "impossibile da hackerare" (i prodotti dinamici hanno DB/server veri), niente "hosting gratis" (il server lo gestisci e lo fatturi nel canone), niente strumenti che non usi (Strapi/Sanity/CMS headless). Si alza il tetto con **competenza reale + demo**, non gonfiando un curriculum (è davvero all'inizio, 1 cliente).
+- **Eccezione blog**: resta tarato su "piccola attività" di proposito (intento di ricerca SEO locale). Non allargarlo.
+
 ## Prezzi e promo di lancio
 
 - **Listino pieno** (5 soluzioni): vetrina da 1.290€, sito+portale da 2.400€, e-commerce da 2.900€ (headless, sul gestionale del cliente) / da 3.900€ (su misura completo), software/gestionale web da 4.900€, app mobile da 6.900€. L'e-commerce headless e su misura completo convivono nella stessa card `/03` (headline "da 2.900€"); la distinzione è nel copy e nelle cost-lines. I prezzi delle soluzioni vivono in tre punti: `pages/servizi/servizi.html` (listino), `pages/home/home.html` (card teaser) e `pages/preventivo/preventivo.ts` (`types`). Se cambi un prezzo, allineali tutti e tre. NB: la home teaser resta a **4 card** (griglia a 4 colonne): la card /04 "App e software" copre sia software che app mobile e mostra il floor da 3.900€ (link a `#software`); lo sdoppio software vs app mobile è solo nel listino `servizi` (`#software` e `#app`) e nel configuratore.

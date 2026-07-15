@@ -270,7 +270,12 @@ section.block.tight { padding: 80px 0; }
    inline che, vincendo sulle media query, schiacciavano le card su mobile. */
 @media (min-width: 761px) {
   .why-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .why-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
   .trust-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+}
+/* Griglia a 4 card (servizi "Perche' su misura"): 4 in riga solo da desktop pieno. */
+@media (min-width: 981px) {
+  .why-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
 }
 .vs-line { font-family: var(--mono); font-size: 13.5px; color: var(--muted); margin-top: 26px; border-left: 2px solid var(--accent); padding: 6px 0 6px 18px; }
 .vs-line b { color: var(--text); }
