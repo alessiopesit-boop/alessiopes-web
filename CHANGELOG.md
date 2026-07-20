@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.7.0...v1.8.0) (2026-07-20)
+
+
+### Features
+
+* **home:** collega il recensore a General Services e linka la recensione ([#59](https://github.com/alessiopesit-boop/alessiopes-web/issues/59)) ([f71115f](https://github.com/alessiopesit-boop/alessiopes-web/commit/f71115f080e5fd7e73bd3177e7d85d000233fedc))
+* **home:** mostra la prima recensione reale (Trustpilot) ([#57](https://github.com/alessiopesit-boop/alessiopes-web/issues/57)) ([541364f](https://github.com/alessiopesit-boop/alessiopes-web/commit/541364f910a6c8f5d9387720df170bfbd0db8e66))
+
 ## [1.7.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.6.0...v1.7.0) (2026-07-15)
 
 
