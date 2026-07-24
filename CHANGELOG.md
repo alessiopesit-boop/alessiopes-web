@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.9.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.8.0...v1.9.0) (2026-07-24)
+
+
+### Features
+
+* **blog:** nuovo articolo Quanto costa un e-commerce ([#61](https://github.com/alessiopesit-boop/alessiopes-web/issues/61)) ([1e5e14b](https://github.com/alessiopesit-boop/alessiopes-web/commit/1e5e14b1cb695a02535bfbf205e98d780437da63))
+
+
+### Bug Fixes
+
+* **seo:** accorcia title e meta della home, keyword su misura nell'H1 ([#60](https://github.com/alessiopesit-boop/alessiopes-web/issues/60)) ([3e0f797](https://github.com/alessiopesit-boop/alessiopes-web/commit/3e0f797ba3391386ab2a456e056d689d7b92527c))
+
 ## [1.8.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.7.0...v1.8.0) (2026-07-20)
 
 
