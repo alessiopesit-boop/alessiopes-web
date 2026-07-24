@@ -10,10 +10,10 @@ const SITO_VETRINA = ARTICLE_BY_SLUG['sito-vetrina-cos-e-a-chi-serve'];
 export const routes: Routes = [
   {
     path: '',
-    title: 'Alessio Pes · Siti web e software su misura per la tua attività',
+    title: 'Alessio Pes · Siti web e software su misura per attività',
     data: {
       description:
-        'Siti web, gestionali e app su misura per attività e aziende: veloci, sicuri e davvero tuoi, senza WordPress. Sviluppo e infrastruttura seguiti da una persona sola: io.',
+        'Siti web, gestionali e app su misura per attività e aziende: veloci, sicuri e davvero tuoi, senza WordPress. Sviluppo e infrastruttura, sempre io.',
     },
     loadComponent: () => import('./pages/home/home').then((m) => m.Home),
   },

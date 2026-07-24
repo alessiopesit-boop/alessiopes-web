@@ -7,7 +7,7 @@ import type { Article } from './blog.data';
 /** Dominio di produzione: usato per canonical e og:url assoluti. */
 const ORIGIN = 'https://alessiopes.it';
 const DEFAULT_DESC =
-  'Siti web, gestionali e app su misura per attività e aziende: veloci, sicuri e davvero tuoi, senza WordPress. Sviluppo e infrastruttura seguiti da una persona sola: io.';
+  'Siti web, gestionali e app su misura per attività e aziende: veloci, sicuri e davvero tuoi, senza WordPress. Sviluppo e infrastruttura, sempre io.';
 
 /**
  * Aggiorna description, Open Graph, Twitter card e link canonical a ogni
