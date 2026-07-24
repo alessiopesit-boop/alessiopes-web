@@ -42,6 +42,35 @@ export interface Article {
 
 export const ARTICLES: Article[] = [
   {
+    slug: 'quanto-costa-un-ecommerce',
+    title: 'Quanto costa un e-commerce nel 2026? Prezzi reali',
+    h1: 'Quanto costa un e-commerce nel 2026? La guida ai prezzi reali',
+    dek: 'Aprire un negozio online: cifre vere per un e-commerce sul tuo gestionale o su misura, cosa fa salire il conto, i costi che restano ogni anno e dove si perdono (o si guadagnano) le vendite.',
+    description:
+      'Quanto costa un e-commerce nel 2026? Prezzi reali per aprire un negozio online su misura o sul tuo gestionale, i costi annui e il budget marketing spiegati chiari.',
+    category: 'Guida · Prezzi',
+    crumb: 'Quanto costa un e-commerce',
+    datePublished: '2026-07-24',
+    dateModified: '2026-07-24',
+    dateLabel: '24 luglio 2026',
+    readingMin: 5,
+    keywords: 'quanto costa un e-commerce, prezzo negozio online, aprire un e-commerce, costo shop online',
+    faq: [
+      {
+        q: 'Meglio una piattaforma pronta (Shopify) o un e-commerce su misura?',
+        a: "Una piattaforma pronta parte in fretta, ma ha un canone che cresce con app e commissioni e resta \"in affitto\". Un e-commerce su misura costa di più all'inizio ma è tuo, più veloce e senza canoni a sorpresa: si può anche costruire sopra la piattaforma o il gestionale che già usi, così non rifai il magazzino. Conviene quando fai volumi o vuoi qualcosa di diverso dal negozio standard.",
+      },
+      {
+        q: 'Ho già un gestionale: posso venderci online sopra?',
+        a: 'Sì, ed è spesso la scelta migliore: si costruisce il negozio sopra il gestionale che già usi (headless), così prodotti, prezzi e magazzino li gestisci come sempre da un unico posto, senza doppio lavoro né migrazioni.',
+      },
+      {
+        q: 'Quanto costa mantenere un e-commerce ogni anno?',
+        a: "Più di una vetrina: serve un server vero (qualche centinaio di euro l'anno) perché il negozio deve reggere traffico, pagamenti e ordini insieme. A parte c'è il budget pubblicitario, che va a Google o Meta e decidi tu: un negozio senza visite non vende.",
+      },
+    ],
+  },
+  {
     slug: 'quanto-costa-un-sito-web',
     title: 'Quanto costa un sito web nel 2026? Guida ai prezzi reali',
     h1: 'Quanto costa un sito web nel 2026? La guida ai prezzi reali',
