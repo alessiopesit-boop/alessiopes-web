@@ -6,6 +6,7 @@ const WP_SU_MISURA = ARTICLE_BY_SLUG['wordpress-o-sito-su-misura'];
 const SITO_O_FB = ARTICLE_BY_SLUG['sito-web-o-pagina-facebook'];
 const TROVARE_GOOGLE = ARTICLE_BY_SLUG['farsi-trovare-su-google'];
 const SITO_VETRINA = ARTICLE_BY_SLUG['sito-vetrina-cos-e-a-chi-serve'];
+const COSTO_ECOMMERCE = ARTICLE_BY_SLUG['quanto-costa-un-ecommerce'];
 
 export const routes: Routes = [
   {
@@ -43,6 +44,15 @@ export const routes: Routes = [
         'Guide pratiche su siti web, costi e farsi trovare su Google, in parole semplici per chi ha un\'attività o una P.IVA. Niente fuffa, solo cose utili.',
     },
     loadComponent: () => import('./pages/blog/blog').then((m) => m.Blog),
+  },
+  {
+    path: 'blog/quanto-costa-un-ecommerce',
+    title: COSTO_ECOMMERCE.title + ' · Alessio Pes',
+    data: { description: COSTO_ECOMMERCE.description, article: COSTO_ECOMMERCE },
+    loadComponent: () =>
+      import('./pages/blog/quanto-costa-un-ecommerce/quanto-costa-un-ecommerce').then(
+        (m) => m.QuantoCostaUnEcommerce,
+      ),
   },
   {
     path: 'blog/quanto-costa-un-sito-web',
