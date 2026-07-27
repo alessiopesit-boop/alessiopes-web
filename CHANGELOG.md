@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.1](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.9.0...v1.9.1) (2026-07-27)
+
+
+### Bug Fixes
+
+* **ui:** anchor in-page non piu nascosti sotto la nav fissa ([#63](https://github.com/alessiopesit-boop/alessiopes-web/issues/63)) ([8949e43](https://github.com/alessiopesit-boop/alessiopes-web/commit/8949e43b850ef0e1863537f2d8226e92b0bda5fc))
+
 ## [1.9.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.8.0...v1.9.0) (2026-07-24)
 
 
