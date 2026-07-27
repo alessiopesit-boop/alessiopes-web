@@ -52,7 +52,9 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+/* scroll-padding-top = altezza nav fissa (72px) + un po' d'aria: gli anchor in-page
+   (#vetrina, #servizi, #profilo...) si fermano sotto la nav, non nascosti dietro. */
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.6;
   -webkit-font-smoothing: antialiased; overflow-x: hidden; transition: background .4s, color .4s; }
 ::selection { background: var(--accent-soft); color: var(--accent); }
@@ -782,9 +784,9 @@ body:has(.cookie) .wa-fab { display: none; }
 .prose { max-width: 72ch; font-size: 17px; line-height: 1.75; color: var(--text); }
 .prose > p { margin: 0 0 20px; color: var(--muted); text-wrap: pretty; }
 .prose .lead { font-size: 19.5px; color: var(--text); }
-.prose h2 { font-family: var(--mono); font-weight: 800; font-size: clamp(22px, 2.8vw, 30px); letter-spacing: -.02em; margin: 78px 0 16px; scroll-margin-top: 90px; }
+.prose h2 { font-family: var(--mono); font-weight: 800; font-size: clamp(22px, 2.8vw, 30px); letter-spacing: -.02em; margin: 78px 0 16px; }
 .prose h2 .num { color: var(--accent); font-size: .72em; font-weight: 500; margin-right: 12px; }
-.prose > h3 { font-family: var(--mono); font-weight: 700; font-size: 19px; margin: 28px 0 10px; letter-spacing: -.01em; scroll-margin-top: 90px; }
+.prose > h3 { font-family: var(--mono); font-weight: 700; font-size: 19px; margin: 28px 0 10px; letter-spacing: -.01em; }
 .prose a:not(.btn) { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; text-decoration-color: color-mix(in oklch, var(--accent) 40%, transparent); }
 .prose a:not(.btn):hover { text-decoration-color: var(--accent); }
 .prose strong { color: var(--text); font-weight: 700; }
