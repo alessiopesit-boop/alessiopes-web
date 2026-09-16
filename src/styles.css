@@ -728,6 +728,28 @@ a.card { color: inherit; }
 @media (max-width: 760px) { .wa-fab { display: flex; } }
 /* Nascosto mentre il banner cookie e' visibile, per non sovrapporsi. */
 body:has(.cookie) .wa-fab { display: none; }
+/* Sulla pagina /preventivo la barra sticky sostituisce il FAB (evita la sovrapposizione). */
+body:has(app-preventivo) .wa-fab { display: none; }
+
+/* ---------- BARRA INVIO STICKY /preventivo (mobile) ---------- */
+.cfg-sticky { display: none; }
+@media (max-width: 760px) {
+  .cfg-sticky { display: flex; align-items: center; gap: 12px;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 46;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: color-mix(in oklch, var(--panel) 92%, transparent);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--line); }
+  .cfg-sticky .cfg-sticky-total { display: flex; flex-direction: column; line-height: 1.1; }
+  .cfg-sticky .lbl { font-size: 10.5px; color: var(--faint); letter-spacing: 0.04em; }
+  .cfg-sticky .amt { font-size: 21px; font-weight: 800; color: var(--text); }
+  .cfg-sticky .amt .cur { color: var(--accent); }
+  .cfg-sticky .btn { margin: 0 0 0 auto; width: auto; flex: none; padding: 12px 18px; }
+  /* Spazio in fondo alla pagina /preventivo per non coprire l'ultimo contenuto. */
+  body:has(app-preventivo) main { padding-bottom: 84px; }
+}
+/* Con il banner cookie visibile, nascondi la barra (come il FAB). */
+body:has(.cookie) .cfg-sticky { display: none; }
 
 /* ============================================================
    BLOG / GUIDE
