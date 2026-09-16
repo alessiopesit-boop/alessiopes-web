@@ -122,6 +122,9 @@ export class Preventivo {
       // Cookieless: leggo solo i query param dell'URL, nessun cookie/tag.
       const parts = [q.get('utm_source'), q.get('utm_medium'), q.get('utm_campaign')].filter(Boolean);
       if (parts.length) this.adSource.set(parts.join(' / '));
+      // Click-id di Google Ads: lo passo nel messaggio per l'attribuzione offline (nessun cookie/tag).
+      const gc = q.get('gclid') || q.get('gbraid') || q.get('wbraid');
+      if (gc) this.gclid.set(gc);
     });
   }
 
@@ -136,6 +139,17 @@ export class Preventivo {
   readonly note = signal('');
   // Provenienza campagna (es. "google / cpc"), popolata dagli UTM lato browser. Vuota = traffico organico.
   private readonly adSource = signal('');
+  // Click-id di Google Ads (gclid/gbraid/wbraid) letto dall'URL. Vuoto = niente Ads.
+  private readonly gclid = signal('');
+  // Marker di provenienza per il messaggio: UTM + gclid. Vuoto = organico.
+  private readonly adMarker = computed(() => {
+    const p: string[] = [];
+    const s = this.adSource();
+    if (s) p.push(s);
+    const g = this.gclid();
+    if (g) p.push('gclid:' + g);
+    return p.join(' · ');
+  });
 
   // derivati
   readonly type = computed(() => this.types[this.typeIdx()]);
@@ -235,8 +249,8 @@ export class Preventivo {
     }
     lines.push('');
     lines.push('Vorrei un preventivo preciso. Grazie!');
-    // Marker di provenienza (canale + campagna UTM): solo se arrivo da una campagna, altrimenti messaggio pulito.
-    const src = this.adSource();
+    // Marker di provenienza (canale + campagna UTM + gclid): solo se arrivo da una campagna, altrimenti messaggio pulito.
+    const src = this.adMarker();
     if (src) {
       lines.push('');
       lines.push('(Da: ' + channel + ' · ' + src + ')');
@@ -245,7 +259,7 @@ export class Preventivo {
   }
 
   private subject(): string {
-    const src = this.adSource();
+    const src = this.adMarker();
     return 'Richiesta preventivo dal sito' + (src ? ' (' + src + ')' : '');
   }
 
