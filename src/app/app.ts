@@ -5,6 +5,7 @@ import { Footer } from './shared/footer/footer';
 import { CookieBanner } from './shared/cookie-banner/cookie-banner';
 import { PageLoader } from './shared/page-loader/page-loader';
 import { SeoService } from './core/seo.service';
+import { TrackService } from './core/track.service';
 
 @Component({
   selector: 'app-root',
@@ -14,5 +15,6 @@ import { SeoService } from './core/seo.service';
 export class App {
   constructor() {
     inject(SeoService).init();
+    inject(TrackService).init();
   }
 }
