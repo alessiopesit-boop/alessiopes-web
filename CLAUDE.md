@@ -99,6 +99,7 @@ npm run audit    # Lighthouse su TUTTE le pagine prerenderizzate (vedi sotto)
 
 - **Cloudflare Web Analytics** (cookieless, niente profilazione): beacon `static.cloudflareinsights.com/beacon.min.js` con `data-cf-beacon` token, in fondo al `<body>` di `index.html`. Modalità JS-beacon (nessun proxy/cambio DNS: il sito resta su GitHub Pages). I dati compaiono nella dashboard Cloudflare solo dopo che la versione col beacon è online.
 - Essendo senza cookie e senza profilazione, non è dietro consenso: è solo **dichiarato** nella pagina `/privacy` (sezione 3) e accennato nel `CookieBanner`. Se in futuro aggiungi strumenti con cookie/profilazione (es. Google Analytics, pixel), allora servirà il gating dietro consenso.
+- **Tracking link di campagna** (`core/track.service.ts`): per l'outreach uso link personalizzati `alessiopes.it/?c=<id>`. Al caricamento (solo browser) `TrackService.init()` legge `?c=`, manda un ping cookieless (una `Image()`) a un **Cloudflare Worker** che notifica su Telegram "chi ha aperto", poi ripulisce l'URL dal parametro. Nessun cookie, niente se manca `?c`. L'URL del Worker sta nella costante `TRACK_ENDPOINT` (vuota = disattivato). Dichiarato in `/privacy` (sezione 3). Codice/guida del Worker fuori dal repo (privato). NB: Apps Script scartato perche' non serve richieste anonime.
 
 ### Regole per ogni nuova pagina/contenuto (blog/guide compresi)
 
