@@ -318,12 +318,12 @@ section.block.tight { padding: 80px 0; }
 .card-link .arrow { transition: transform .2s; } .card:hover .card-link .arrow { transform: translateX(4px); }
 
 /* ---------- ABOUT ---------- */
-.about-grid { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 56px; align-items: start; }
+.about-grid { display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: start; }
 /* Se la foto è nascosta (vedi @if nei template), il testo prende tutta la larghezza. */
 .about-grid:not(:has(.about-photo)) { grid-template-columns: 1fr; }
 .about-photo { position: relative; }
 .about-photo image-slot { width: 100%; aspect-ratio: 4/5; display: block; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); }
-.about-photo img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; border-radius: 16px; border: 1px solid var(--line); }
+.about-photo img { width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; display: block; border-radius: 16px; border: 1px solid var(--line); }
 .photo-cap { font-family: var(--mono); font-size: 12.5px; color: var(--faint); margin-top: 14px; display: flex; align-items: center; gap: 8px; }
 .photo-cap .led { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 8px var(--accent-2); }
 .about-lede { font-size: clamp(19px, 2.1vw, 26px); line-height: 1.5; font-weight: 500; letter-spacing: -0.01em; text-wrap: pretty; }
@@ -446,8 +446,8 @@ footer { border-top: 1px solid var(--line); padding: 44px 0; }
   /* Piu' spazio sotto il terminale cosi' "scorri" non gli finisce sopra. */
   .scroll-cue { bottom: 20px; }
   .term-body { min-height: 280px; }
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-photo { max-width: 360px; }
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-photo { max-width: 200px; }
   .svc-grid { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .why-grid { grid-template-columns: 1fr; }
