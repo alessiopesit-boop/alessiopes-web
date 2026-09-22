@@ -205,7 +205,7 @@ export const ARTICLES: Article[] = [
     h1: "L'AI può farmi il sito da sola? Cosa cambia (e cosa no)",
     dek: "Generatori e ChatGPT sembrano fare tutto in un clic. Cosa fa bene l'AI, cosa non sa fare da sola e perché un sito che funziona ha ancora bisogno di una persona che sa cosa sta facendo.",
     description:
-      "L'AI può farmi il sito? Cosa fa davvero l'intelligenza artificiale, cosa non fa da sola e perché per un sito veloce, sicuro e che porta contatti serve ancora una persona.",
+      "L'AI può farmi il sito? Cosa fa davvero l'intelligenza artificiale, cosa non fa da sola e perché per un sito veloce e sicuro serve ancora una persona.",
     category: 'Guida · Scelte',
     crumb: "L'AI mi fa il sito?",
     datePublished: '2026-09-16',
