@@ -43,18 +43,19 @@ export interface Article {
 export const ARTICLES: Article[] = [
   {
     slug: 'quanto-costa-un-ecommerce',
-    title: 'Quanto costa un e-commerce nel 2026? Prezzi reali',
-    h1: 'Quanto costa un e-commerce nel 2026? La guida ai prezzi reali',
+    title: 'Quanto costa un e-commerce? Costi e prezzi reali 2026',
+    h1: 'Quanto costa un e-commerce? La guida a costi e prezzi reali',
     dek: 'Aprire un negozio online: cifre vere per un e-commerce sul tuo gestionale o su misura, cosa fa salire il conto, i costi che restano ogni anno e dove si perdono (o si guadagnano) le vendite.',
     description:
-      'Quanto costa un e-commerce nel 2026? Prezzi reali per aprire un negozio online su misura o sul tuo gestionale, i costi annui e il budget marketing spiegati chiari.',
+      'Quanto costa un e-commerce? Costi e prezzi reali di un negozio online su misura o sul tuo gestionale, cosa fa salire il conto e le voci che restano ogni anno.',
     category: 'Guida · Prezzi',
     crumb: 'Quanto costa un e-commerce',
     datePublished: '2026-07-24',
-    dateModified: '2026-07-24',
+    dateModified: '2026-09-22',
     dateLabel: '24 luglio 2026',
     readingMin: 5,
-    keywords: 'quanto costa un e-commerce, prezzo negozio online, aprire un e-commerce, costo shop online',
+    keywords:
+      'quanto costa un e-commerce, costi ecommerce, costo ecommerce, prezzo sito ecommerce, costi negozio online, prezzo e-commerce, aprire un e-commerce',
     faq: [
       {
         q: 'Meglio una piattaforma pronta (Shopify) o un e-commerce su misura?',
