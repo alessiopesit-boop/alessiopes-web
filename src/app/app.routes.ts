@@ -7,6 +7,8 @@ const SITO_O_FB = ARTICLE_BY_SLUG['sito-web-o-pagina-facebook'];
 const TROVARE_GOOGLE = ARTICLE_BY_SLUG['farsi-trovare-su-google'];
 const SITO_VETRINA = ARTICLE_BY_SLUG['sito-vetrina-cos-e-a-chi-serve'];
 const COSTO_ECOMMERCE = ARTICLE_BY_SLUG['quanto-costa-un-ecommerce'];
+const AI_SITO = ARTICLE_BY_SLUG['ai-per-fare-un-sito-web'];
+const RIFARE_SITO = ARTICLE_BY_SLUG['quando-rifare-il-sito-web'];
 
 export const routes: Routes = [
   {
@@ -97,6 +99,24 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/blog/sito-vetrina-cos-e-a-chi-serve/sito-vetrina-cos-e-a-chi-serve').then(
         (m) => m.SitoVetrinaCosEAChiServe,
+      ),
+  },
+  {
+    path: 'blog/ai-per-fare-un-sito-web',
+    title: AI_SITO.title + ' · Alessio Pes',
+    data: { description: AI_SITO.description, article: AI_SITO },
+    loadComponent: () =>
+      import('./pages/blog/ai-per-fare-un-sito-web/ai-per-fare-un-sito-web').then(
+        (m) => m.AiPerFareUnSito,
+      ),
+  },
+  {
+    path: 'blog/quando-rifare-il-sito-web',
+    title: RIFARE_SITO.title + ' · Alessio Pes',
+    data: { description: RIFARE_SITO.description, article: RIFARE_SITO },
+    loadComponent: () =>
+      import('./pages/blog/quando-rifare-il-sito-web/quando-rifare-il-sito-web').then(
+        (m) => m.QuandoRifareIlSito,
       ),
   },
   {
