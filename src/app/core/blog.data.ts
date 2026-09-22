@@ -199,6 +199,65 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
+  {
+    slug: 'ai-per-fare-un-sito-web',
+    title: "L'AI può farmi il sito da sola? Cosa cambia davvero",
+    h1: "L'AI può farmi il sito da sola? Cosa cambia (e cosa no)",
+    dek: "Generatori e ChatGPT sembrano fare tutto in un clic. Cosa fa bene l'AI, cosa non sa fare da sola e perché un sito che funziona ha ancora bisogno di una persona che sa cosa sta facendo.",
+    description:
+      "L'AI può farmi il sito? Cosa fa davvero l'intelligenza artificiale, cosa non fa da sola e perché per un sito veloce, sicuro e che porta contatti serve ancora una persona.",
+    category: 'Guida · Scelte',
+    crumb: "L'AI mi fa il sito?",
+    datePublished: '2026-09-16',
+    dateModified: '2026-09-16',
+    dateLabel: '16 settembre 2026',
+    readingMin: 5,
+    keywords:
+      "sito web con ai, farsi un sito con l'intelligenza artificiale, creare sito con chatgpt, l'ai sostituisce i programmatori",
+    faq: [
+      {
+        q: 'Posso farmi il sito da solo con ChatGPT o un generatore AI?',
+        a: "Puoi ottenere in fretta una bozza o un sito-template, e per un esperimento va bene. Il problema arriva dopo: un sito davvero veloce, sicuro, che si faccia trovare su Google e porti contatti richiede scelte e responsabilità che l'AI da sola non prende. Spesso ti ritrovi un sito uguale a mille altri, da rifare.",
+      },
+      {
+        q: "L'AI sostituirà i programmatori?",
+        a: "Li rende più veloci, non li sostituisce. L'AI è un ottimo assistente (la uso anch'io per andare più spedito), ma qualcuno deve capire la tua attività, decidere cosa serve, collegare le cose e restare responsabile del risultato nel tempo.",
+      },
+      {
+        q: "Un sito fatto con l'AI si posiziona su Google?",
+        a: "Non per magia. Comparire su Google dipende da contenuti pensati per chi cerca, struttura corretta, velocità e collegamenti: cose da impostare con criterio. Un sito sfornato in automatico di solito parte svantaggiato proprio qui.",
+      },
+    ],
+  },
+  {
+    slug: 'quando-rifare-il-sito-web',
+    title: 'Il sito è vecchio: quando conviene rifarlo (e perché)',
+    h1: 'Il sito è vecchio: quando conviene rifarlo (e perché)',
+    dek: 'I segnali che è ora di cambiare, cosa ti costa davvero tenere un sito datato e come rifarlo senza perdere i contenuti e le posizioni che hai già su Google.',
+    description:
+      'Quando conviene rifare il sito web? I segnali di un sito vecchio, quanto ti costa in clienti persi e come rifarlo senza perdere posizioni su Google.',
+    category: 'Guida · Scelte',
+    crumb: 'Quando rifare il sito',
+    datePublished: '2026-09-16',
+    dateModified: '2026-09-16',
+    dateLabel: '16 settembre 2026',
+    readingMin: 5,
+    keywords: 'quando rifare il sito, sito web vecchio, rifare sito web, restyling sito',
+    faq: [
+      {
+        q: 'Ogni quanto va rifatto un sito?',
+        a: "Non c'è una scadenza fissa: un sito fatto bene dura anni. In media si interviene ogni 3-5 anni, ma contano i segnali (lento, non si vede da telefono, non porta contatti), non l'età in sé.",
+      },
+      {
+        q: 'Rifare il sito mi fa perdere le posizioni su Google?',
+        a: 'Solo se fatto male. Con le giuste accortezze (stessi indirizzi delle pagine o reindirizzamenti corretti, contenuti mantenuti) il rifacimento non ti fa perdere posizioni, anzi spesso migliora perché il sito diventa più veloce e leggibile.',
+      },
+      {
+        q: 'Meglio ritoccare o rifare da capo?',
+        a: "Se le fondamenta sono buone e il problema è solo l'aspetto, a volte basta un restyling. Se il sito è lento, insicuro, non responsive o su tecnologia superata, ritoccarlo è mettere una pezza: conviene ripartire da una base solida e non rifarlo di nuovo tra un anno.",
+      },
+    ],
+  },
 ];
 
 export const ARTICLE_BY_SLUG: Record<string, Article> = Object.fromEntries(
