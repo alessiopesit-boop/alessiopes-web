@@ -907,8 +907,8 @@ body:has(.cookie) .cfg-sticky { display: none; }
     background: linear-gradient(90deg, transparent,
       color-mix(in oklch, var(--text) 16%, transparent) 22%,
       color-mix(in oklch, var(--text) 16%, transparent) 78%, transparent); }
-  .prose h2:first-of-type { margin-top: 6px; padding-top: 0; }
-  .prose h2:first-of-type::before { display: none; }
+  /* La prima sezione ha spazio + la stessa linea tenue delle altre (non piu' attaccata all'intro). */
+  .prose h2:first-of-type { margin-top: 32px; padding-top: 32px; }
   .callout p, .art-steps p, .inline-cta p, .art-table table, .rel-card p { font-size: 15.5px; }
   .rel-card h3 { font-size: 17px; }
   .related { grid-template-columns: 1fr; }
