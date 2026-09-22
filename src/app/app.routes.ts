@@ -13,19 +13,19 @@ const RIFARE_SITO = ARTICLE_BY_SLUG['quando-rifare-il-sito-web'];
 export const routes: Routes = [
   {
     path: '',
-    title: 'Alessio Pes · Siti web e software su misura per attività',
+    title: 'Realizzazione siti web e software su misura · Alessio Pes',
     data: {
       description:
-        'Siti web, gestionali e app su misura per attività e aziende: veloci, sicuri e davvero tuoi, senza WordPress. Sviluppo e infrastruttura, sempre io.',
+        'Realizzazione di siti web, gestionali e app su misura per attività e aziende: veloci, sicuri e davvero tuoi, senza WordPress. Segue tutto una persona sola.',
     },
     loadComponent: () => import('./pages/home/home').then((m) => m.Home),
   },
   {
     path: 'servizi',
-    title: 'Servizi e prezzi · Alessio Pes',
+    title: 'Prezzi siti web, e-commerce e software · Alessio Pes',
     data: {
       description:
-        'Sito vetrina, e-commerce, portali e app su misura: cosa includono, quanto costano e cosa resta a te ogni anno. Prezzi chiari, niente WordPress.',
+        'Quanto costa un sito web, un e-commerce o un gestionale su misura: servizi, cosa includono e prezzi chiari. Niente WordPress, tutto davvero tuo.',
     },
     loadComponent: () => import('./pages/servizi/servizi').then((m) => m.Servizi),
   },
@@ -130,19 +130,19 @@ export const routes: Routes = [
   },
   {
     path: 'preventivo',
-    title: 'Calcola il preventivo · Alessio Pes',
+    title: 'Preventivo sito web online e gratis · Alessio Pes',
     data: {
       description:
-        'Scegli cosa ti serve e ottieni una stima del tuo sito in un minuto. Indicativa e senza impegno: poi me la mandi su WhatsApp.',
+        'Calcola online il preventivo del tuo sito web in un minuto: scegli cosa ti serve e hai una stima chiara, gratis e senza impegno, poi me la mandi su WhatsApp.',
     },
     loadComponent: () => import('./pages/preventivo/preventivo').then((m) => m.Preventivo),
   },
   {
     path: 'google',
-    title: 'Farsi trovare su Google · Alessio Pes',
+    title: 'Farsi trovare su Google: Profilo e Google Ads · Alessio Pes',
     data: {
       description:
-        'Farsi trovare su Google con Profilo Google, Google Ads e Local Services Ads: come funzionano, quanto costano e cosa conviene alla tua attività.',
+        'Farsi trovare su Google con Profilo Google, Google Ads e Local Services Ads: come funzionano, quanto costano e da dove conviene partire per la tua attività.',
     },
     loadComponent: () => import('./pages/google/google').then((m) => m.Google),
   },
