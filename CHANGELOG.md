@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.10.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.9.1...v1.10.0) (2026-09-25)
+
+
+### Features
+
+* **blog:** due guide nuove (AI e quando rifare il sito) ([#68](https://github.com/alessiopesit-boop/alessiopes-web/issues/68)) ([0259181](https://github.com/alessiopesit-boop/alessiopes-web/commit/025918137f6f5ffacee7557f124b6cf3fa65b0a9))
+* **blog:** SEO e-commerce + rifiniture mobile (spaziatura e tabella) ([#69](https://github.com/alessiopesit-boop/alessiopes-web/issues/69)) ([a10872e](https://github.com/alessiopesit-boop/alessiopes-web/commit/a10872e045ed5f8b82b83ffb66b12e52bc3109b8))
+* **blog:** titoli-domanda e risposte brevi per la ricerca AI ([#77](https://github.com/alessiopesit-boop/alessiopes-web/issues/77)) ([a4d5e16](https://github.com/alessiopesit-boop/alessiopes-web/commit/a4d5e16269343389d68bf52b762e631b6f59c045))
+* **chi-sono:** foto profilo (headshot) nella pagina Chi sono ([#71](https://github.com/alessiopesit-boop/alessiopes-web/issues/71)) ([97bde13](https://github.com/alessiopesit-boop/alessiopes-web/commit/97bde13c3a13b6fb3ffb0fb8d9aed67c608ae4d1))
+* **preventivo:** barra invio sticky su mobile e cattura gclid ([#67](https://github.com/alessiopesit-boop/alessiopes-web/issues/67)) ([a56a475](https://github.com/alessiopesit-boop/alessiopes-web/commit/a56a4756f4de830e4b546b8c1c0d7c18e4ece2bd))
+* **seo:** schema Person (E-E-A-T) collegato al business ([#76](https://github.com/alessiopesit-boop/alessiopes-web/issues/76)) ([8394a69](https://github.com/alessiopesit-boop/alessiopes-web/commit/8394a694e176989e82f3864fd25c145f97d683e1))
+* **seo:** title e description mirati su home, servizi, google e preventivo ([#70](https://github.com/alessiopesit-boop/alessiopes-web/issues/70)) ([a8aaf5d](https://github.com/alessiopesit-boop/alessiopes-web/commit/a8aaf5da1843ef00783720445c866db90badcfb1))
+* **track:** tracciamento cookieless dei link di campagna ([#65](https://github.com/alessiopesit-boop/alessiopes-web/issues/65)) ([e5fd82f](https://github.com/alessiopesit-boop/alessiopes-web/commit/e5fd82fd670c4e8c2123b67d440285e376f4968d))
+
+
+### Bug Fixes
+
+* **chi-sono:** foto piu' grande su mobile (meno spazio ai lati) ([#75](https://github.com/alessiopesit-boop/alessiopes-web/issues/75)) ([c9cc8d1](https://github.com/alessiopesit-boop/alessiopes-web/commit/c9cc8d18897e27682be5c0c992fbc459600100a0))
+* **chi-sono:** foto profilo quadrata e piu' piccola, mobile curato ([#72](https://github.com/alessiopesit-boop/alessiopes-web/issues/72)) ([b136a06](https://github.com/alessiopesit-boop/alessiopes-web/commit/b136a06387a38cb9abb859e902f1626afaf8976b))
+* **chi-sono:** foto profilo ri-centrata orizzontalmente ([#74](https://github.com/alessiopesit-boop/alessiopes-web/issues/74)) ([d96c852](https://github.com/alessiopesit-boop/alessiopes-web/commit/d96c852a0cf627b5bb91439c2645db2db0a927b1))
+* **chi-sono:** ritaglio foto centrato e foto centrata su mobile/tablet ([#73](https://github.com/alessiopesit-boop/alessiopes-web/issues/73)) ([99f6527](https://github.com/alessiopesit-boop/alessiopes-web/commit/99f65275f2f899a4526c2e4189094668b63c8f9f))
+
 ## [1.9.1](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.9.0...v1.9.1) (2026-07-27)
 
 
