@@ -28,6 +28,7 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": "https://alessiopes.it/#business",
     "name": "Alessio Pes",
     "description": "Siti web, gestionali e app su misura per attività e aziende. Veloci, sicuri e davvero tuoi, senza WordPress. Sviluppo e infrastruttura curati da una persona sola.",
     "url": "https://alessiopes.it/",
@@ -37,7 +38,36 @@
     "areaServed": "IT",
     "priceRange": "€€",
     "knowsLanguage": "it",
-    "founder": { "@type": "Person", "name": "Alessio Pes" }
+    "founder": { "@id": "https://alessiopes.it/#alessio" }
+  }
+  </script>
+  <!-- Entità Person (E-E-A-T): identità dell'autore, collegata al business.
+       hasCredential: aggiungere qui le certificazioni quando confermate (nome, ente, anno). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://alessiopes.it/#alessio",
+    "name": "Alessio Pes",
+    "url": "https://alessiopes.it/chi-sono/",
+    "image": "https://alessiopes.it/alessio.webp",
+    "jobTitle": "Sviluppatore full-stack",
+    "worksFor": { "@id": "https://alessiopes.it/#business" },
+    "knowsAbout": [
+      "Sviluppo web",
+      "Angular",
+      "TypeScript",
+      "Java",
+      "Spring",
+      "API REST",
+      "E-commerce",
+      "SEO tecnica",
+      "DevOps"
+    ],
+    "sameAs": [
+      "https://it.trustpilot.com/review/alessiopes.it",
+      "https://github.com/alessiopesit-boop"
+    ]
   }
   </script>
 
