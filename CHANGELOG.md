@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.10.0...v1.11.0) (2026-09-25)
+
+
+### Features
+
+* **chi-sono:** certificazioni verificabili (Google Ads, Cisco) ([#79](https://github.com/alessiopesit-boop/alessiopes-web/issues/79)) ([f83e7dd](https://github.com/alessiopesit-boop/alessiopes-web/commit/f83e7ddd456c53676b51092de72ad0a2c40bb315))
+
 ## [1.10.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.9.1...v1.10.0) (2026-09-25)
 
 
