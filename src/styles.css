@@ -346,6 +346,17 @@ section.block.tight { padding: 80px 0; }
   border-radius: 7px; padding: 6px 11px; background: var(--bg-2); transition: border-color .2s, color .2s, transform .2s; }
 .stk-tags span:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
 
+/* ---------- Certificazioni (badge verificabili) ---------- */
+.certs { display: flex; flex-wrap: wrap; gap: 12px; }
+.cert { display: flex; align-items: center; gap: 12px; text-decoration: none; background: var(--panel);
+  border: 1px solid var(--line); border-radius: 12px; padding: 13px 16px; transition: border-color .2s, transform .2s; }
+.cert:hover { border-color: var(--accent); transform: translateY(-1px); }
+.cert .ck { flex: none; color: var(--accent-2); font-size: 13px; }
+.cert .ct { display: flex; flex-direction: column; gap: 2px; }
+.cert .cn { font-family: var(--mono); font-size: 14px; color: var(--text); letter-spacing: -0.01em; }
+.cert .cm { font-family: var(--mono); font-size: 12.5px; color: var(--faint); }
+.cert:hover .cm { color: var(--accent); }
+
 /* ---------- FAQ ---------- */
 .faq { display: grid; gap: 0; max-width: 820px; }
 .faq details { border-top: 1px solid var(--line); padding: 4px 0; }

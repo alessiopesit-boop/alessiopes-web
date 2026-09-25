@@ -42,7 +42,8 @@
   }
   </script>
   <!-- Entità Person (E-E-A-T): identità dell'autore, collegata al business.
-       hasCredential: aggiungere qui le certificazioni quando confermate (nome, ente, anno). -->
+       hasCredential: certificazioni verificabili. La Google Ads scade (validFrom/expires):
+       quando è scaduta va rinnovata o rimossa (vedi CLAUDE.md, sezione Certificazioni). -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -63,6 +64,25 @@
       "E-commerce",
       "SEO tecnica",
       "DevOps"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Certificazione Google Ads sulla rete di ricerca",
+        "credentialCategory": "certification",
+        "recognizedBy": { "@type": "Organization", "name": "Google" },
+        "url": "https://skillshop.credential.net/832c0bb9-e4a2-4f90-b543-880c00fd5658",
+        "validFrom": "2026-09-25",
+        "expires": "2027-09-25"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Introduction to Cybersecurity",
+        "credentialCategory": "certificate",
+        "recognizedBy": { "@type": "Organization", "name": "Cisco Networking Academy" },
+        "url": "https://www.credly.com/badges/f7fddd91-e561-4d46-9e72-83dc87e3ebd6",
+        "validFrom": "2026-09-24"
+      }
     ],
     "sameAs": [
       "https://it.trustpilot.com/review/alessiopes.it",
