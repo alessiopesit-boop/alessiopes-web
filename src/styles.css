@@ -448,7 +448,7 @@ footer { border-top: 1px solid var(--line); padding: 44px 0; }
   .term-body { min-height: 280px; }
   .about-grid { grid-template-columns: 1fr; gap: 32px; }
   /* Su mobile/tablet (1 colonna) la foto e la sua didascalia sono centrate, non spinte a sinistra. */
-  .about-photo { max-width: 200px; margin-inline: auto; }
+  .about-photo { max-width: 300px; margin-inline: auto; }
   .about-photo .photo-cap { justify-content: center; }
   .svc-grid { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
