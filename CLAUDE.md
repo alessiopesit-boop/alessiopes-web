@@ -93,15 +93,16 @@ npm run audit    # Lighthouse su TUTTE le pagine prerenderizzate (vedi sotto)
 - `SeoService` (`core/seo.service.ts`) imposta `description`, Open Graph, Twitter e `canonical` per pagina; la description di ogni pagina sta in `data.description` della rotta.
 - Tag fissi (og:image, og:site_name, JSON-LD `ProfessionalService` + `Person`) in `index.html`. Il `ProfessionalService` (`@id` `#business`) e la `Person` (`@id` `#alessio`, E-E-A-T: `jobTitle`, `knowsAbout`, `sameAs` Trustpilot/GitHub, `hasCredential`) sono collegati via `@id` (`founder`/`worksFor`). `robots.txt`, `sitemap.xml` e `og-image.png` (1200x630) in `public/`.
 
-### Certificazioni
-
-Le certificazioni vivono in tre punti allineati: JSON-LD `hasCredential` sulla `Person` (`index.html`), il blocco "Certificazioni" in `chi-sono.html` (badge testuali `.cert` cliccabili verso la verifica ufficiale, stili in `styles.css` sezione "Certificazioni") e una riga "certificato Google Ads" sulla pagina `/google` (card "La gestione"). Niente loghi Google/Cisco: badge testuali on-brand. I file sorgente (PDF + PNG) stanno **fuori dal repo**, in `A:\dev\_business\certificazioni\` (privati).
-
-Attuali:
-- **Google Ads sulla rete di ricerca** (Google, Skillshop): emessa 25/09/2026, **scade 25/09/2027**. ⚠️ **Scade**: quando è passata la data va rinnovata (rifai il test, aggiorna `validFrom`/`expires` e l'URL) oppure **rimossa** da `hasCredential`, dal blocco `chi-sono` e dalla riga `/google`. Non lasciarla mostrata come attuale se scaduta.
-- **Introduction to Cybersecurity** (Cisco Networking Academy, Credly): completamento corso + esame finale, **entry level**, senza scadenza. Presentala come tale, non come certificazione professionale d'esame.
 - **Dominio cablato**: l'origine `https://alessiopes.it` è hardcoded in `seo.service.ts`, `index.html`, `sitemap.xml`, `robots.txt`. Se cambia il dominio, aggiornarli.
 - **Slash finale = forma canonica**: GitHub Pages serve ogni rotta come directory (`/privacy` -> `/privacy/index.html`) e fa un **301 verso lo slash finale**. Perciò `canonical`, `og:url` (`seo.service.ts`), le `<loc>` in `sitemap.xml` e le URL interne nel JSON-LD (breadcrumb, author) devono avere lo **slash finale** (tranne la root `/`), così combaciano con la URL che risponde 200 ed evitano il report "Pagina con reindirizzamento" in Search Console.
+
+### Certificazioni
+
+Le certificazioni sono sfruttate come prova di competenza in più punti allineati: JSON-LD `hasCredential` sulla `Person` (`index.html`); blocco "Certificazioni" in `chi-sono.html` (badge `.cert` con **logo webp** in `public/certs/`, cliccabili); tocchi inline in `servizi.html` ("basi certificate in cybersecurity" nella card *Più sicuro*; "certificato Google Ads" nella card *La gestione*), nella pagina `/google` (card *La gestione*) e una riga in `footer.html`. Le parole-link usano la classe `.ulink` (hover accent) e puntano alla **verifica ufficiale** (Skillshop/Credly). Stili badge/link in `styles.css` sezione "Certificazioni". I file sorgente (PDF + PNG originali) stanno **fuori dal repo**, in `A:\dev\_business\certificazioni\` (privati); nel repo solo i loghi webp ridotti.
+
+Attuali:
+- **Google Ads sulla rete di ricerca** (Google, Skillshop): emessa 25/09/2026, **scade 25/09/2027**. `expires` **non** è dichiarato nello schema per scelta, ma la certificazione scade davvero. ⚠️ Verso 09/2027 va rinnovata (rifai il test, aggiorna `validFrom`/URL) oppure **rimossa** da: `hasCredential` (index.html), blocco `chi-sono`, tocchi in `servizi`/`google`, riga footer. Non mostrarla come attuale se scaduta.
+- **Introduction to Cybersecurity** (Cisco Networking Academy, Credly): completamento corso + esame finale, **entry level**, senza scadenza. Presentala come tale (frasi tipo "basi certificate in cybersecurity"), mai come certificazione professionale d'esame o conformità formale.
 
 ### Analytics
 

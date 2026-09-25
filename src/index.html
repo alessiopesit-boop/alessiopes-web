@@ -42,8 +42,9 @@
   }
   </script>
   <!-- Entità Person (E-E-A-T): identità dell'autore, collegata al business.
-       hasCredential: certificazioni verificabili. La Google Ads scade (validFrom/expires):
-       quando è scaduta va rinnovata o rimossa (vedi CLAUDE.md, sezione Certificazioni). -->
+       hasCredential: certificazioni verificabili. La Google Ads di fatto scade il 25/09/2027
+       (non dichiarato in `expires` per scelta): quando è scaduta va rinnovata o rimossa
+       da qui e dalle pagine (vedi CLAUDE.md, sezione Certificazioni). -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -72,8 +73,7 @@
         "credentialCategory": "certification",
         "recognizedBy": { "@type": "Organization", "name": "Google" },
         "url": "https://skillshop.credential.net/832c0bb9-e4a2-4f90-b543-880c00fd5658",
-        "validFrom": "2026-09-25",
-        "expires": "2027-09-25"
+        "validFrom": "2026-09-25"
       },
       {
         "@type": "EducationalOccupationalCredential",
