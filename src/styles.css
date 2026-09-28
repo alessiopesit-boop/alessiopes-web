@@ -358,6 +358,7 @@ section.block.tight { padding: 80px 0; }
 .cert:hover .cm { color: var(--accent); }
 @media (min-width: 761px) { .cert { padding: 18px 30px 18px 18px; } .cert .clogo { width: 72px; height: 72px; } .cert .cn { font-size: 17px; } .cert .cm { font-size: 13.5px; } }
 @media (max-width: 760px) { .certs { flex-direction: column; } .cert { width: 100%; } }
+.cert-more { margin-top: 16px; font-size: 13px; color: var(--muted); }
 /* Link testuale con sottolineatura on-hover (es. "certificato Google Ads" su /google). */
 .ulink { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .2s; }
 .ulink:hover { border-bottom-color: var(--accent); }
