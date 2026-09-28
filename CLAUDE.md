@@ -103,7 +103,7 @@ Le certificazioni sono sfruttate come prova di competenza in più punti allineat
 Attuali:
 - **Google Ads sulla rete di ricerca** (Google, Skillshop): emessa 25/09/2026, **scade 25/09/2027**. `expires` **non** è dichiarato nello schema per scelta, ma la certificazione scade davvero. ⚠️ Verso 09/2027 va rinnovata (rifai il test, aggiorna `validFrom`/URL) oppure **rimossa** da: `hasCredential` (index.html), blocco `chi-sono`, tocchi in `servizi`/`google`, riga footer. Non mostrarla come attuale se scaduta.
 - **Introduction to Cybersecurity** (Cisco Networking Academy, Credly): completamento corso + esame finale, **entry level**, senza scadenza. Presentala come tale (frasi tipo "basi certificate in cybersecurity"), mai come certificazione professionale d'esame o conformità formale.
-- **Local SEO Essentials with Semrush** (Semrush Academy): certificato di completamento con esame, **scade 24/09/2027**. Niente badge dedicato -> solo testo + link al PDF ufficiale. ⚠️ Verso 09/2027 rinnovare o **rimuovere** da `hasCredential`, riga `.cert-more` in chi-sono e nota su `/google`. `expires` non dichiarato nello schema (coerente con la Google Ads).
+- **Local SEO Essentials with Semrush** (Semrush Academy): certificazione **con esame** (non solo completamento corso), **scade 24/09/2027**. Niente badge dedicato -> solo testo + link al PDF ufficiale. ⚠️ Verso 09/2027 rinnovare o **rimuovere** da `hasCredential`, riga `.cert-more` in chi-sono e nota su `/google`. `expires` non dichiarato nello schema (coerente con la Google Ads).
 
 ### Analytics
 
