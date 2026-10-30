@@ -144,7 +144,7 @@ Deciso il 2026-07-14. Il sito serve **due imbuti**: il micro-locale arriva via S
 - **Vendi il beneficio, non la tecnica**: "niente WordPress" resta ma come vantaggio (veloce, sicuro, tuo). Arma differenziante da tenere in evidenza: sviluppo full-stack + **infrastruttura** (server, deploy) + **integrazione col gestionale/CRM** del cliente (card "Cresce con te" in `servizi.html`).
 - **Prezzo sul valore**, non "costo meno di un'agenzia": tolta l'ancora "22% in meno di un'agenzia". La trasparenza (forfettario, prezzo bloccato) resta.
 - **Paletti di onestà (MAI violare)**: niente statistiche inventate ("converte il doppio", "+50% utenti"), niente "100/100 PageSpeed" come promessa (la performance non è garantita, vedi `npm run audit`), niente "impossibile da hackerare" (i prodotti dinamici hanno DB/server veri), niente "hosting gratis" (il server lo gestisci e lo fatturi nel canone), niente strumenti che non usi (Strapi/Sanity/CMS headless). Si alza il tetto con **competenza reale + demo**, non gonfiando un curriculum (è davvero all'inizio, 1 cliente).
-- **Eccezione blog**: resta tarato su "piccola attività" di proposito (intento di ricerca SEO locale). Non allargarlo.
+- **Eccezione blog**: le guide di base (costi, vetrina, Facebook, Google) restano tarate su "piccola attività" di proposito (intento di ricerca SEO locale): non allargarle. Dal 2026-10-30 il blog ospita anche guide **per PMI strutturate / e-commerce** (fascia alta, es. `accessibilita-e-commerce-obbligo` sull'EAA): lì il target è l'azienda, non la micro-attività. Le guide normative non danno cifre di sanzioni non verificate e rimandano a un consulente legale per il caso specifico.
 
 ## Prezzi e promo di lancio
 

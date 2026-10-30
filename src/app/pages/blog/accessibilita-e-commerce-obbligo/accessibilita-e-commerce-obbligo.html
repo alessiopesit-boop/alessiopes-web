@@ -1,0 +1,133 @@
+<app-article slug="accessibilita-e-commerce-obbligo">
+
+  <p class="lead">Dal <strong>28 giugno 2025</strong> l'accessibilità del sito non è più solo una buona pratica: per molte aziende che vendono online è un <strong>obbligo di legge</strong>. Lo prevede l'European Accessibility Act, recepito in Italia con il <strong>D.Lgs. 82/2022</strong>. Qui ti spiego in parole semplici chi è obbligato, chi è esentato, cosa vuol dire concretamente "sito accessibile" e come metterti in regola senza buttare soldi in soluzioni che non funzionano.</p>
+
+  <div class="takeaways">
+    <div class="tk-head">In sintesi</div>
+    <ul>
+      <li>Dal 28 giugno 2025 i <strong>servizi di commercio elettronico</strong> rivolti ai consumatori rientrano nell'obbligo di accessibilità.</li>
+      <li>Sono esentate le <strong>microimprese</strong> che forniscono servizi: meno di 10 persone e fatturato (o bilancio) fino a 2 milioni di euro. Sopra queste soglie, l'obbligo riguarda te.</li>
+      <li>Il riferimento tecnico sono le <strong>WCAG 2.1 livello AA</strong>: tastiera, contrasto, testi alternativi, moduli e checkout utilizzabili da tutti.</li>
+      <li>Un <strong>widget di accessibilità non basta</strong>: i problemi si risolvono nel codice del sito, non con un pannello sopra.</li>
+    </ul>
+  </div>
+
+  <h2><span class="num mono">01</span>Cosa dice la legge sull'accessibilità dei siti?</h2>
+  <p>L'<strong>European Accessibility Act</strong> (direttiva UE 2019/882) è la norma europea che rende accessibili una serie di prodotti e servizi di uso quotidiano. L'Italia l'ha recepita con il <strong>D.Lgs. 82/2022</strong>, che si applica a prodotti e servizi immessi sul mercato dal <strong>28 giugno 2025</strong>.</p>
+  <p>Tra i servizi coperti ci sono esplicitamente i <strong>servizi di commercio elettronico</strong>: in pratica, il sito o l'app con cui vendi a distanza ai consumatori. Non conta cosa vendi (abbigliamento, ricambi, prodotti alimentari): conta che il cliente possa <strong>trovare, scegliere e comprare</strong> anche se usa uno screen reader, naviga solo da tastiera o vede poco.</p>
+  <p>Per i servizi digitali dei privati la vigilanza è affidata ad <strong>AgID</strong>, che ha pubblicato linee guida e, a maggio 2026, il regolamento su come svolge i controlli.</p>
+
+  <h2><span class="num mono">02</span>Chi è obbligato e chi è esentato?</h2>
+  <p>La regola generale è semplice, i casi concreti meno. Ecco un orientamento di massima:</p>
+
+  <div class="art-table">
+    <table>
+      <thead>
+        <tr><th>La tua situazione</th><th>Obbligo</th><th>Note</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>E-commerce verso consumatori, 10 o più persone <em>oppure</em> oltre 2 milioni di fatturato</td><td><span class="hl">Sì</span></td><td>È il caso tipico a cui si rivolge la norma</td></tr>
+        <tr><td>Microimpresa (meno di 10 persone <em>e</em> fino a 2 milioni) che vende online</td><td><span class="hl">Esentata</span></td><td>L'esenzione vale per chi fornisce servizi, come un e-commerce</td></tr>
+        <tr><td>Sito vetrina senza vendita online</td><td><span class="hl">In genere no</span></td><td>Non è un servizio di commercio elettronico</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Due precisazioni importanti. La prima: le soglie si guardano sull'<strong>azienda</strong>, non sul sito. Un negozio online piccolo di un'azienda strutturata è comunque soggetto all'obbligo. La seconda: la legge prevede una deroga per <strong>onere sproporzionato</strong>, ma non è un lasciapassare. Va valutata seriamente e documentata, e "rifare il sito costa" da solo non basta.</p>
+
+  <div class="callout note">
+    <div class="ct-body">
+      <div class="ct-label mono">Nota</div>
+      <p>Questa guida ti orienta, ma <strong>non è una consulenza legale</strong>. Se hai dubbi sul tuo caso (gruppi di aziende, vendita solo B2B, servizi particolari), fai verificare la posizione a un consulente. Io mi occupo della parte tecnica: rendere il sito accessibile davvero.</p>
+    </div>
+  </div>
+
+  <h2><span class="num mono">03</span>Cosa vuol dire "sito accessibile" in pratica?</h2>
+  <p>Il riferimento tecnico sono le <strong>WCAG 2.1 a livello AA</strong>, le linee guida internazionali richiamate dalla norma europea EN 301 549. Detto così sembra astratto; in un e-commerce si traduce in cose molto concrete:</p>
+  <ul>
+    <li><strong>Tutto si usa da tastiera.</strong> Menu, filtri, carrello e checkout devono funzionare anche senza mouse, con il punto in cui ti trovi sempre visibile.</li>
+    <li><strong>Le immagini parlano.</strong> Le foto dei prodotti hanno un testo alternativo che dice cosa mostrano, perché uno screen reader lo legge al posto dell'immagine.</li>
+    <li><strong>Il testo si legge.</strong> Contrasto sufficiente tra testo e sfondo e pagina che regge lo zoom senza rompersi.</li>
+    <li><strong>I moduli sono chiari.</strong> Ogni campo (indirizzo, carta, CAP) ha un'etichetta vera e gli errori spiegano cosa correggere, non solo "campo non valido".</li>
+    <li><strong>La struttura ha senso.</strong> Titoli in ordine, pulsanti che sono pulsanti, link con un testo che dice dove portano.</li>
+    <li><strong>Informazioni sull'accessibilità.</strong> Il servizio deve anche spiegare come soddisfa i requisiti, in una forma accessibile.</li>
+  </ul>
+  <p>Il punto più delicato è quasi sempre il <strong>percorso d'acquisto</strong>: scheda prodotto, carrello e pagamento. Un catalogo bellissimo con un checkout inutilizzabile da tastiera è proprio il caso che la legge vuole evitare.</p>
+
+  <h2><span class="num mono">04</span>Perché un widget di accessibilità non basta?</h2>
+  <p>Molti offrono la soluzione "in un clic": un plugin o un widget (detto <em>overlay</em>) che aggiunge al sito un pannello con ingranditore, alto contrasto e simili. È comodo da vendere, ma non risolve il problema.</p>
+
+  <div class="callout warn">
+    <div class="ct-body">
+      <div class="ct-label mono">Attenzione</div>
+      <p>Un overlay lavora <strong>sopra</strong> il sito, non dentro. Se il pulsante "Aggiungi al carrello" non si raggiunge da tastiera, o un campo del checkout non ha un'etichetta, il widget non lo sistema: il problema resta nel codice. E chi usa uno screen reader ha già i suoi strumenti, quindi spesso il pannello è solo d'intralcio.</p>
+    </div>
+  </div>
+
+  <p>L'accessibilità si costruisce come la velocità o la sicurezza: <strong>nel modo in cui il sito è fatto</strong>. Per questo, su un e-commerce vecchio o costruito su un tema pieno di plugin, a volte correggere costa quasi quanto <a routerLink="/blog/quando-rifare-il-sito-web">rifare il sito</a> su basi pulite.</p>
+
+  <blockquote class="pullquote">
+    <p>Un sito accessibile non è un sito con un pulsante in più: è un sito che funziona per chiunque provi a comprare.</p>
+    <cite>il principio con cui lavoro</cite>
+  </blockquote>
+
+  <h2><span class="num mono">05</span>Come mettere in regola il tuo e-commerce?</h2>
+  <p>Non serve partire dal panico, ma da una verifica seria. Ecco il percorso che seguo:</p>
+
+  <ol class="art-steps">
+    <li>
+      <h3>Verifica automatica e manuale</h3>
+      <p>Gli strumenti automatici (come Lighthouse) trovano in fretta una parte dei problemi: contrasto, immagini senza testo alternativo, campi senza etichetta. Ma non vedono tutto, quindi poi si prova il sito a mano, da tastiera e con uno screen reader.</p>
+    </li>
+    <li>
+      <h3>Priorità al percorso d'acquisto</h3>
+      <p>Si parte da ciò che blocca una vendita: ricerca, scheda prodotto, carrello, checkout, registrazione. Le pagine secondarie vengono dopo.</p>
+    </li>
+    <li>
+      <h3>Correggere o rifare</h3>
+      <p>Se le fondamenta sono buone, si correggono i punti critici. Se il sito è un insieme di plugin e temi che nessuno controlla davvero, conviene ripartire da una base pulita, magari tenendo il gestionale e il magazzino che già usi.</p>
+    </li>
+    <li>
+      <h3>Mantenere nel tempo</h3>
+      <p>L'accessibilità non si fa una volta sola: ogni nuova pagina, banner o funzione può romperla. Va controllata a ogni modifica, come si fa con i test.</p>
+    </li>
+  </ol>
+
+  <p>Un esempio concreto: questo sito passa il controllo automatico di accessibilità di Lighthouse con <strong>100 su ogni pagina</strong>, e lo ricontrollo a ogni modifica prima di pubblicare. È lo stesso metodo che applico ai progetti dei clienti, insieme ai test manuali.</p>
+
+  <h2><span class="num mono">06</span>Solo un obbligo o anche un vantaggio?</h2>
+  <p>Vista solo come obbligo, l'accessibilità sembra un costo. In realtà le cose che chiede sono le stesse che rendono un negozio online <strong>più facile da usare per tutti</strong>: testi leggibili sotto il sole dal telefono, moduli che non fanno sbagliare, pulsanti chiari, pagine ordinate. Chi ha la vista stanca, chi compra di fretta, chi ha un telefono vecchio: sono clienti anche loro.</p>
+  <p>E c'è un effetto collaterale utile: una struttura pulita (titoli in ordine, testi alternativi, link descrittivi) è anche quella che aiuta Google a capire il sito. Non è una scorciatoia per <a routerLink="/blog/farsi-trovare-su-google">farsi trovare su Google</a>, ma va nella stessa direzione.</p>
+  <p>Se stai pensando a un nuovo negozio online, conviene progettarlo accessibile fin dall'inizio: costa molto meno che sistemarlo dopo. Per capire gli ordini di grandezza leggi <a routerLink="/blog/quanto-costa-un-ecommerce">quanto costa un e-commerce</a>, oppure guarda le soluzioni nella pagina <a routerLink="/servizi">servizi</a>.</p>
+
+  <div class="inline-cta">
+    <div class="txt">
+      <h3>Vuoi sapere a che punto è il tuo e-commerce?</h3>
+      <p>Raccontami com'è fatto il tuo negozio online: ti dico cosa va sistemato e se conviene correggere o rifare.</p>
+    </div>
+    <a routerLink="/preventivo" class="btn btn-primary">Richiedi un preventivo <span class="arrow">→</span></a>
+  </div>
+
+  <h2><span class="num mono">07</span>Domande frequenti sull'accessibilità e-commerce</h2>
+  <p>Le domande più comuni di chi vende online. <a routerLink="/faq">Trovi tutte le altre nella pagina FAQ</a>.</p>
+
+  <div class="faq art-faq">
+    <details>
+      <summary>Il mio e-commerce è obbligato a essere accessibile? <span class="pm">+</span></summary>
+      <div class="ans">Se vendi online ai consumatori e la tua azienda non è una microimpresa, molto probabilmente sì: dal 28 giugno 2025 il D.Lgs. 82/2022, che recepisce l'European Accessibility Act, vale anche per i servizi di commercio elettronico. Sono esentate le microimprese che forniscono servizi, cioè meno di 10 persone e fatturato annuo (o totale di bilancio) fino a 2 milioni di euro.</div>
+    </details>
+    <details>
+      <summary>Basta installare un widget o un plugin per l'accessibilità? <span class="pm">+</span></summary>
+      <div class="ans">No. I widget (detti overlay) aggiungono un pannello di opzioni sopra il sito, ma non correggono il codice: se un pulsante non si usa da tastiera o un campo del checkout non ha un'etichetta, il problema resta. L'accessibilità si ottiene sistemando il sito, non coprendolo.</div>
+    </details>
+    <details>
+      <summary>Sono una microimpresa: posso ignorare l'accessibilità? <span class="pm">+</span></summary>
+      <div class="ans">Per legge sei esentato, ma conviene comunque curarla: un sito accessibile è più facile da usare per tutti (anche da telefono o per chi ha la vista stanca), e se l'azienda supera le soglie l'obbligo scatta. Partire con un sito fatto bene costa meno che rifarlo dopo.</div>
+    </details>
+    <details>
+      <summary>Chi controlla e cosa rischio se non sono in regola? <span class="pm">+</span></summary>
+      <div class="ans">La vigilanza sui servizi è affidata ad AgID: chiunque può segnalare un sito non accessibile tramite il suo portale, e AgID può chiedere di correggere i problemi. La legge prevede anche sanzioni amministrative. Importi e procedura dipendono dal caso: per una valutazione precisa sulla tua azienda conviene sentire un consulente legale.</div>
+    </details>
+  </div>
+
+</app-article>
