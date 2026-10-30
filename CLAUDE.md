@@ -84,7 +84,7 @@ npm run audit    # Lighthouse su TUTTE le pagine prerenderizzate (vedi sotto)
 
 `scripts/audit.mjs` builda la produzione, serve `dist/.../browser` e gira Lighthouse (Chrome/Edge headless, `lighthouse` in devDependencies) su **tutte** le rotte prerenderizzate (le scopre da solo cercando gli `index.html`, quindi resta in sync da sé). Stampa una tabella con i 4 punteggi + LCP/CLS/TBT per pagina.
 
-- **Gate (esce 1)**: solo le categorie **deterministiche** A11y / Best Practices / SEO < 100. Sono riproducibili e indipendenti dalla macchina.
+- **Gate (esce 1)**: solo le categorie **deterministiche** A11y / Best Practices / SEO < 100. Sono riproducibili e indipendenti dalla macchina. L'audit blocca il beacon Cloudflare Analytics (`blockedUrlPatterns`): su `localhost:<porta>` fallisce il CORS e i suoi errori in console abbassavano Best Practices a 96 solo in locale (in produzione è 100).
 - **Performance**: mostrata ma **informativa**, marker `⚠`. In locale Lighthouse simula CPU 4x + 4G lento e risente del carico della macchina: il valore assoluto **non** è comparabile a PageSpeed Insights (infra Google), che resta l'autorità sulla performance.
 - Flag: `--no-build` (salta la build), `--detail` (elenca gli audit falliti per pagina), oppure passa rotte specifiche (`npm run audit -- /preventivo /servizi`).
 

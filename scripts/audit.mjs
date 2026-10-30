@@ -154,6 +154,9 @@ async function run() {
       port: chrome.port,
       output: 'json',
       logLevel: 'error',
+      // The Cloudflare beacon fails CORS on localhost:<port> and logs console errors,
+      // dropping Best Practices to 96 locally only (production is 100).
+      blockedUrlPatterns: ['*cloudflareinsights.com*'],
     });
     const c = result.lhr.categories;
     const a = result.lhr.audits;
