@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { ARTICLE_BY_SLUG } from './core/blog.data';
 
 const QUANTO_COSTA = ARTICLE_BY_SLUG['quanto-costa-un-sito-web'];
+const MAGAZZINO_UNICO = ARTICLE_BY_SLUG['magazzino-unico-negozio-e-ecommerce'];
 const WP_SU_MISURA = ARTICLE_BY_SLUG['wordpress-o-sito-su-misura'];
 const SITO_O_FB = ARTICLE_BY_SLUG['sito-web-o-pagina-facebook'];
 const TROVARE_GOOGLE = ARTICLE_BY_SLUG['farsi-trovare-su-google'];
@@ -54,6 +55,15 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/blog/quanto-costa-un-ecommerce/quanto-costa-un-ecommerce').then(
         (m) => m.QuantoCostaUnEcommerce,
+      ),
+  },
+  {
+    path: 'blog/magazzino-unico-negozio-e-ecommerce',
+    title: MAGAZZINO_UNICO.title + ' · Alessio Pes',
+    data: { description: MAGAZZINO_UNICO.description, article: MAGAZZINO_UNICO },
+    loadComponent: () =>
+      import('./pages/blog/magazzino-unico-negozio-e-ecommerce/magazzino-unico-negozio-e-ecommerce').then(
+        (m) => m.MagazzinoUnico,
       ),
   },
   {
