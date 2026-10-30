@@ -42,6 +42,40 @@ export interface Article {
 
 export const ARTICLES: Article[] = [
   {
+    slug: 'accessibilita-e-commerce-obbligo',
+    title: "Accessibilità e-commerce: l'obbligo EAA spiegato chiaro",
+    h1: 'Accessibilità del sito e-commerce: cosa chiede la legge e come metterti in regola',
+    dek: "Dal 28 giugno 2025 chi vende online ai consumatori deve avere un sito accessibile. Chi è obbligato, chi è esentato, cosa controllare davvero e perché un widget non basta.",
+    description:
+      "Accessibilità e-commerce: cosa prevede l'European Accessibility Act (D.Lgs. 82/2022), chi è obbligato e chi è esentato, cosa controllare e come metterti in regola.",
+    category: 'Guida · Normativa',
+    crumb: 'Accessibilità e-commerce',
+    datePublished: '2026-10-30',
+    dateModified: '2026-10-30',
+    dateLabel: '30 ottobre 2026',
+    readingMin: 6,
+    keywords:
+      'accessibilità e-commerce, european accessibility act, eaa e-commerce, d.lgs. 82/2022, sito accessibile obbligo, wcag 2.1 aa, accessibilità siti web aziende',
+    faq: [
+      {
+        q: 'Il mio e-commerce è obbligato a essere accessibile?',
+        a: "Se vendi online ai consumatori e la tua azienda non è una microimpresa, molto probabilmente sì: dal 28 giugno 2025 il D.Lgs. 82/2022, che recepisce l'European Accessibility Act, vale anche per i servizi di commercio elettronico. Sono esentate le microimprese che forniscono servizi, cioè meno di 10 persone e fatturato annuo (o totale di bilancio) fino a 2 milioni di euro.",
+      },
+      {
+        q: "Basta installare un widget o un plugin per l'accessibilità?",
+        a: "No. I widget (detti overlay) aggiungono un pannello di opzioni sopra il sito, ma non correggono il codice: se un pulsante non si usa da tastiera o un campo del checkout non ha un'etichetta, il problema resta. L'accessibilità si ottiene sistemando il sito, non coprendolo.",
+      },
+      {
+        q: "Sono una microimpresa: posso ignorare l'accessibilità?",
+        a: "Per legge sei esentato, ma conviene comunque curarla: un sito accessibile è più facile da usare per tutti (anche da telefono o per chi ha la vista stanca), e se l'azienda supera le soglie l'obbligo scatta. Partire con un sito fatto bene costa meno che rifarlo dopo.",
+      },
+      {
+        q: 'Chi controlla e cosa rischio se non sono in regola?',
+        a: "La vigilanza sui servizi è affidata ad AgID: chiunque può segnalare un sito non accessibile tramite il suo portale, e AgID può chiedere di correggere i problemi. La legge prevede anche sanzioni amministrative. Importi e procedura dipendono dal caso: per una valutazione precisa sulla tua azienda conviene sentire un consulente legale.",
+      },
+    ],
+  },
+  {
     slug: 'quanto-costa-un-ecommerce',
     title: 'Quanto costa un e-commerce? Costi e prezzi reali 2026',
     h1: 'Quanto costa un e-commerce? La guida a costi e prezzi reali',

@@ -9,6 +9,7 @@ const SITO_VETRINA = ARTICLE_BY_SLUG['sito-vetrina-cos-e-a-chi-serve'];
 const COSTO_ECOMMERCE = ARTICLE_BY_SLUG['quanto-costa-un-ecommerce'];
 const AI_SITO = ARTICLE_BY_SLUG['ai-per-fare-un-sito-web'];
 const RIFARE_SITO = ARTICLE_BY_SLUG['quando-rifare-il-sito-web'];
+const ACCESSIBILITA = ARTICLE_BY_SLUG['accessibilita-e-commerce-obbligo'];
 
 export const routes: Routes = [
   {
@@ -117,6 +118,15 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/blog/quando-rifare-il-sito-web/quando-rifare-il-sito-web').then(
         (m) => m.QuandoRifareIlSito,
+      ),
+  },
+  {
+    path: 'blog/accessibilita-e-commerce-obbligo',
+    title: ACCESSIBILITA.title + ' · Alessio Pes',
+    data: { description: ACCESSIBILITA.description, article: ACCESSIBILITA },
+    loadComponent: () =>
+      import('./pages/blog/accessibilita-e-commerce-obbligo/accessibilita-e-commerce-obbligo').then(
+        (m) => m.AccessibilitaEcommerce,
       ),
   },
   {
