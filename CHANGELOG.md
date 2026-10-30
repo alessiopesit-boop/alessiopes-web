@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.12.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.11.0...v1.12.0) (2026-10-30)
+
+
+### Features
+
+* **blog:** guida accessibilita' e-commerce (European Accessibility Act) ([adfe2d4](https://github.com/alessiopesit-boop/alessiopes-web/commit/adfe2d44a6ffc197cfa565653fbf27bfb0abfec4))
+* **blog:** guida magazzino unico tra negozio ed e-commerce ([8c9bac0](https://github.com/alessiopesit-boop/alessiopes-web/commit/8c9bac088dcd574b107333411a9ec4db6c58401a))
+* **certificazioni:** aggiunta Local SEO (Semrush Academy) ([9a90265](https://github.com/alessiopesit-boop/alessiopes-web/commit/9a902655525ba09f7d0408c83a1bdb448d067104))
+
 ## [1.11.0](https://github.com/alessiopesit-boop/alessiopes-web/compare/v1.10.0...v1.11.0) (2026-09-25)
 
 
