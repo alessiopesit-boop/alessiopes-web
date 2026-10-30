@@ -106,6 +106,36 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'magazzino-unico-negozio-e-ecommerce',
+    title: 'Magazzino unico tra negozio ed e-commerce: come farlo',
+    h1: 'Magazzino unico tra negozio ed e-commerce: come smettere di vendere ciò che non hai',
+    dek: "Vendi in negozio e online, ma le giacenze non tornano mai: ordini su prodotti finiti, rimborsi, clienti delusi. Come collegare cassa, gestionale e sito perché il magazzino sia uno solo.",
+    description:
+      "Magazzino unico tra negozio fisico ed e-commerce: come collegare cassa, gestionale e sito per avere giacenze sempre giuste ed evitare ordini su prodotti esauriti.",
+    category: 'Guida · E-commerce',
+    crumb: 'Magazzino unico negozio ed e-commerce',
+    datePublished: '2026-10-30',
+    dateModified: '2026-10-30',
+    dateLabel: '30 ottobre 2026',
+    readingMin: 6,
+    keywords:
+      'magazzino unico negozio e online, sincronizzare magazzino e-commerce, e-commerce collegato al gestionale, giacenze negozio fisico e online, integrazione gestionale e-commerce, overselling',
+    faq: [
+      {
+        q: 'Posso collegare il mio gestionale al sito e-commerce?',
+        a: "Quasi sempre sì. Se il gestionale ha delle API (un modo ufficiale per far parlare i programmi tra loro) si collega direttamente; se non le ha, spesso si può lavorare con le esportazioni automatiche dei dati. La prima cosa da verificare è proprio questa, prima di parlare di grafica.",
+      },
+      {
+        q: 'Meglio un modulo pronto o un collegamento su misura?',
+        a: "Se esiste un modulo affidabile per il tuo gestionale e la tua piattaforma, e fa quello che ti serve, spesso è la scelta più economica: usalo. Il su misura conviene quando il modulo non esiste, non copre il tuo processo (cassa, preordini, più magazzini) o quando vuoi rifare anche il sito.",
+      },
+      {
+        q: 'Lo scanner in cassa sostituisce il registratore telematico?',
+        a: "No. Lo scanner collegato al magazzino serve a scaricare le giacenze quando vendi in negozio, così il sito sa cosa è rimasto. Lo scontrino e la parte fiscale restano al registratore telematico, che continua a funzionare come prima.",
+      },
+    ],
+  },
+  {
     slug: 'quanto-costa-un-sito-web',
     title: 'Quanto costa un sito web nel 2026? Guida ai prezzi reali',
     h1: 'Quanto costa un sito web nel 2026? La guida ai prezzi reali',
